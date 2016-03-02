@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    
+
+
+    <%= form_for(@exercise_entry) do |f| %>
+  <% if @exercise_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exercise_entry.errors.count, "error") %> prohibited this exercise_entry from being saved:</h2>
+
+      <ul>
+      <% @exercise_entry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+        
+        <div class="field form-group">
+    <%= f.label :reps %><br>
+    <%= f.number_field :reps, min: 1, max: 30 %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :sets %><br>
+    <%= f.number_field :sets, min: 1, max: 20 %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight, min: 0, max: 1500 %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+        
+        <%= f.hidden_field :exercise_id %>
+
+<br>
+              <div class="actions">
+          <%= f.submit "Create New Log", exercise_id:"exercise_id", :class => "btn btn-md btn-primary", :style=>'width: 200px'%>
+        </div>
+
+        </div>
+        </div>
+    <% end %>

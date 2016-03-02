@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+<%= form_for(@routine) do |f| %>
+        <% if @routine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@routine.errors.count, "error") %> prohibited this routine from being saved:</h2>
+
+      <ul>
+      <% @routine.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field form-group">
+      <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+    </div>
+        
+    <div class="field form-group">
+      <%= f.label :description %>
+        <%= f.text_area :description, class: 'form-control' %>
+    </div>
+
+        <div class="actions form-group">
+          <%= f.submit :class => "btn btn-md btn-primary", :style=>'width: 265px' %>
+        </div>      
+        
+        </div>
+        </div>
+
+
+  <% end %>
+

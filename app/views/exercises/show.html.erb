@@ -1,0 +1,62 @@
+<div class="container">
+  
+  <title>Exercises | Weight Lifting Pro</title>
+  
+  <p id="notice"><%= notice %></p>
+
+<p>
+  <h3>
+    <div class="row">
+      <div class="col-xs-7 col-xs-offset-4">
+        <%= @exercise.sample_exercise.name %>
+      </div>
+    </div>
+  </h3>
+</p>
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <% @exercise.exercise_entries.each do |log| %>
+          <div class="well">
+            <div class="row">
+              <p>
+              </p>
+              <h4><strong><%= log.created_at.to_formatted_s(:long) %></strong> </h4>
+              
+              <p>
+                <strong>Reps:</strong>
+                <%= log.reps %>
+              </p>
+
+              <p>
+                <strong>Sets:</strong>
+                <%= log.sets %>
+              </p>
+
+              <p>
+                <strong>Weight:</strong>
+                <%= log.weight %>
+              </p>
+              
+              <% if log.notes? %>
+            <p>
+                <strong>Notes:</strong>
+                <%= log.notes %>
+              </p>
+              <% end %>
+
+            </div>
+          </div>
+
+      <% end %>
+      
+
+  <%= link_to 'Edit', edit_exercise_path(@exercise) %>
+  |
+  <%= link_to 'All Exercises', exercises_path %>
+</div>
+
+  </div>
+
+  </div>
+<br>
+<br>

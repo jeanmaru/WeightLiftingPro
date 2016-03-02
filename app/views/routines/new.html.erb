@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-6">
+      <%= yield %>
+
+      <title>New Routine | Weight Lifting Pro</title>
+
+      <ul class="nav nav-tabs" role="tablist">
+        <li><%= link_to 'My Routines', routines_path %></li>
+        <li class="active"><%= link_to 'New Routine', new_routine_path %></li>
+      </ul>
+
+      <h3>New Routine</h3>
+
+
+      <%= render 'form' %>
+      <%= link_to 'Back', routines_path %>
+
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,24 @@
+<Title> Weight Lifting Pro </Title>
+
+<div class="container">
+<body>
+
+<% if user_signed_in? %>
+
+    <h3> Welcome Back, <%=@user.fname %>!  </h3>
+
+
+<% else %>
+
+    <h1><strong>Welcome to Weight Lifting Pro!</strong></h1>
+    <p class="lead"> This app helps you log your routines. </p>
+
+
+<% end %>
+</body>
+
+</div>
+
+
+
+

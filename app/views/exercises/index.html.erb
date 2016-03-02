@@ -1,0 +1,98 @@
+<div class="container">
+   <div class="row">
+      <div class="col-xs-3">
+      </div>
+      <div class="col-xs-9">
+        <%= yield %>
+
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="active"><%= link_to 'My Exercises', exercises_path %> </li>
+    <li><%= link_to 'New Exercise', new_exercise_path %></li>
+    <li><%= link_to 'All Exercises', sample_exercises_path %></li>
+  </ul>
+
+  <title>My Exercises | Weight Lifting Pro</title>
+  <h3><%= current_user.fname %>'s Exercises</h3>
+
+  <table class ="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Notes</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+  <% @exercises.each do |exercise| %>
+
+      <tr>
+        <td>
+         <span class="has-tooltip" data-toggle="tooltip" data-placement="top" title="<%= "Created on #{exercise.created_at.strftime("%m/%e/%Y at %w:%M %p")}, Last modified on #{exercise.updated_at.strftime("%m/%e/%Y at %w:%M %p")}" %>">
+           <%= exercise.sample_exercise.name %>
+         </span>
+        </td>
+
+        <td>
+          <% if exercise.notes? %>
+
+              <!-- Button trigger modal -->
+              <% if exercise.notes? %>
+                  <button type="button" class="btn btn-link has-popover" data-toggle="modal" data-toggle="popover"
+                          title="Notes" data-target="#exercise-<%= exercise.id %>-notes" data-content="<%= exercise.notes %>">View Notes</button>
+              <% end %>
+
+              <!-- Modal -->
+              <div class="myModalWindow">
+              <div class="modal fade" id="exercise-<%= exercise.id %>-notes" tabindex="-1" role="dialog"
+                   aria-labelledby="exercise-<%= exercise.id %>-label" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="exercise-<%= exercise.id %>-label">Notes</h4>
+                    </div>
+                    <div class="modal-body">
+                      <%= exercise.notes %>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+  <% end %>
+      </td>
+        
+        <td>
+          <%= link_to ' Add Log ', new_exercise_entry_path(:exercise_id => exercise.id), class: 'btn btn-success btn-sm glyphicon
+        glyphicon-plus', style: "color: white" %>
+        </td>
+        <td> <%= link_to ' Edit ', edit_exercise_path(exercise), class: 'btn btn-info btn-sm', style: "color: white" %>
+        </td>
+        <td> <%= link_to ' Show ', exercise, class: 'btn btn-default btn-sm'%>
+        </td>
+        <td><%= link_to ' Delete ', exercise, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn
+        btn-danger btn-sm', style: "color: white" %>
+        </td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+        <%= link_to new_exercise_path, style: "color: white", class: 'btn btn-success' do %>
+            <i class="glyphicon glyphicon-plus"></i> New Exercise
+        <% end %>
+</div>
+   </div>
+</div>
+
+<br>
+<br>

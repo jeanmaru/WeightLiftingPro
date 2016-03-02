@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-6">
+      <%= yield %>
+      
+      <title> Log an Exercise | Weight Lifting Pro</title>
+
+      <h3>Log an Exercise</h3>
+      <!--<= link_to @exercise.sample_exercise.name, exercises_path%>-->
+      <!--<= @exercise.sample_exercise.name %>-->
+      <br>
+ 
+
+      <%= render 'form' %>
+      <br>
+      <br>
+<%= link_to 'All Logs', exercise_entries_path %> |
+      <%= link_to 'My Exercises', exercises_path %>
+      
+    </div>
+
+  </div>
+
+</div>
+
+<br>
+<br>

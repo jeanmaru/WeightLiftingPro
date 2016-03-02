@@ -1,0 +1,28 @@
+<Title> View Users | Weight Lifting Pro</Title>
+
+<div class="container">
+
+<h3>User Information</h3>
+  <ul class="list-group">
+    <li class="list-group-item row">
+     <b> Email: </b>  <%= @user.email if @user.email %>
+    </li>
+    <li class="list-group-item row">
+      <b> Name: </b> <%= @user.fname%> <%= @user.lname%>
+    </li>
+    <li class="list-group-item row">
+      <b> Last Login: </b> <%= @user.last_sign_in_at%>
+    </li>
+    <li class="list-group-item row">
+     <b>  User Type: </b>                 <% if current_user.admin? %>
+          Admin
+      <% else %>
+          User
+      <% end %>
+    </li>
+
+  </ul>
+
+  <%= link_to 'View Users', users_path %>
+
+</div>

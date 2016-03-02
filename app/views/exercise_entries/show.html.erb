@@ -1,0 +1,45 @@
+<div class="container">
+  <title>Exercise Entry  | Weight Lifting Pro</title>
+  <p id="notice"><%= notice %></p>
+
+  <p>
+  <h4>
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-4">
+        <%= @exercise_entry.exercise.sample_exercise.name %> 
+      </div>
+    </div>
+  </h4>
+  </p>
+
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-4">
+
+<p>
+  <strong>Reps:</strong>
+  <%= @exercise_entry.reps %>
+</p>
+
+<p>
+  <strong>Sets:</strong>
+  <%= @exercise_entry.sets %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @exercise_entry.weight %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @exercise_entry.notes %>
+</p>
+
+      
+<%= link_to 'Edit', edit_exercise_entry_path(@exercise_entry) %> |
+<%= link_to 'Exercises Log', exercise_entries_path %> |
+      <%= link_to 'My Exercises', exercises_path %>
+
+    </div>
+  </div>
+</div>

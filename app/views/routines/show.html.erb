@@ -1,0 +1,44 @@
+<div class="container">
+  <title>Exercises | Weight Lifting Pro</title>
+
+  <p id="notice"><%= notice %></p>
+
+  <p>
+  <h3>
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+    <%= @routine.name %>
+          </div>
+    </div>
+  </h3>
+  </p>
+
+  <div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <% @routine.exercises.each do |exercise| %>
+        <h3><% @routine.name %> </h3>
+        <div class="well">
+          <div class="row">
+              <p>
+              </p>
+            
+              <h4><%= exercise.sample_exercise.name %> </h4>
+              <p>
+                <strong>Notes:</strong>
+                <%= exercise.notes %>
+              </p>
+
+            </div>
+          </div>
+
+    <% end %>
+
+    <%= link_to 'Edit', edit_routine_path(@routine) %> |
+    <%= link_to 'Back', routines_path %>
+  </div>
+</div>
+  </div>
+
+
+<br>
+<br>

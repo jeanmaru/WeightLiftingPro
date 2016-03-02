@@ -1,0 +1,56 @@
+
+  <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+      <div class="form-group">
+        <%= f.label :fname, "First Name" %>
+        <%= f.text_field :fname, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :lname, "Last Name" %>
+        <%= f.text_field :lname, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <p><h4>User Type</h4></p>
+        <%= f.radio_button(:admin, false) %>
+        <%= f.label :admin, "NO, user is NOT an admin" %>
+        <p>        <%= f.radio_button(:admin, true) %>
+          <%= f.label :admin, "YES, user IS an admin" %></p>
+ 
+      </div>
+
+      <fieldset>
+        <div class="form-group">
+          <div class="field">
+            <p>
+              <%= f.label "Birthday"%>
+              <br>
+              <%= f.date_select :dob, required: true, start_year: 1920, end_year: 2015, default: 18.years.ago, autofocus:
+                                            true %>
+            </p>
+
+            <p>
+              <%= f.radio_button :gender, 'Female'%>
+              <%= f.label :female %>
+              <%= f.radio_button :gender, 'Male'%>
+              <%= f.label :male %>
+            </p>
+        </div>
+
+        </div>
+      </fieldset>
+      <div class="actions">
+        <%= f.submit :class => "btn btn-primary", :style=>'width: 230px'%>
+
+      </div>
+  <% end %>
+  </div>
+</div>

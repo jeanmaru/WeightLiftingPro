@@ -1,0 +1,53 @@
+<Title> View Users | Weight Lifting Pro</Title>
+
+      
+<div class="container">
+  <div class="row">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-1">
+    </div>
+    <div class="col-md-8">
+
+    <h3>Users</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+        <tr>
+          <td><b> Email </b></td>
+          <td><b> First Name </b></td>
+          <td><b> Last Name </b></td>
+          <td><b> Last Login </b></td>
+          <td><b> Type of User </b></td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+
+          <% @users.each do |user| %>
+            <tr>
+
+              <td><%= link_to user.email, user %></td>
+              <td><%= user.fname %></td>
+              <td><%= user.lname %></td>
+              <td> <%= user.last_sign_in_at%>
+
+              <td>
+                <% if user.admin %>
+                    Admin
+                <% else %>
+                    User
+                <% end %>
+              </td>
+              <td><%= link_to 'Edit', edit_user_path(user), class: 'btn btn-default btn-sm' %></td>
+              <td><%= link_to "Delete", user, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger btn-sm',  style: "color: white" %>
+              </td>
+
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-9">
+      <%= yield %>
+
+
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><%= link_to 'My Routines', routines_path %> </li>
+        <li><%= link_to 'New Routine', new_routine_path %></li>
+      </ul>
+
+      <title>Routines | Weight Lifting Pro</title>
+      <h3><%= current_user.fname%>'s Exercises</h3>
+
+
+      <table class ="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @routines.each do |routine| %>
+            <tr>
+              <td>
+         <span class="has-tooltip" data-toggle="tooltip" data-placement="top" title="<%= "Created on #{routine.created_at.strftime("%m/%e/%Y at %w:%M %p")}, Last modified on #{routine.updated_at.strftime("%m/%e/%Y at %w:%M %p")}" %>">
+          <%= routine.name %>
+         </span>
+              </td>
+
+              <td>
+                <% if routine.description? %>
+
+                    <!-- Button trigger modal -->
+                    <% if routine.description? %>
+                        <button type="button" class="btn btn-link has-popover" data-toggle="modal" data-toggle="popover"
+                                title="Description" data-target="#routine-<%= routine.id %>-description" data-content="<%= routine.description %>">View Description</button>
+                    <% end %>
+
+                    <!-- Modal -->
+                    <div class="myModalWindow">
+                      <div class="modal fade" id="routine-<%= routine.id %>-description" tabindex="-1" role="dialog"
+                           aria-labelledby="routine-<%= routine.id %>-label" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="routine-<%= routine.id %>-label">description</h4>
+                            </div>
+                            <div class="modal-body">
+                              <%= routine.description %>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                <% end %>
+
+
+              </td>
+
+              <td> <%= link_to ' Edit ', edit_routine_path(routine), class: 'btn btn-info btn-sm', style: "color: white" %>
+              </td>
+              <td> <%= link_to ' Show ', routine_path(routine), class: 'btn btn-default btn-sm' %>
+              </td>
+              <td><%= link_to 'Delete', routine, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn
+        btn-danger btn-sm', style: "color: white" %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to new_routine_path, style: "color: white", class: 'btn btn-success' do %>
+          <i class="glyphicon glyphicon-plus"></i> New Routine
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

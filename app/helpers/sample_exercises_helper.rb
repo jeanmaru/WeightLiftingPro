@@ -1,0 +1,2 @@
+module SampleExercisesHelper
+end
