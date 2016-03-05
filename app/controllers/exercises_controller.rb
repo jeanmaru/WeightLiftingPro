@@ -32,11 +32,12 @@ end
     @exercise = current_user.exercises.new(exercise_params)
     @exercise.save
     respond_with(@exercise)
-
-    # @my_exercises = current_user.exercises.where(sample_exercise_id: params[:sample_exercise_id])
-    # if @my_exercises.include?(@exercise.sample_exercise_id)
-    #   redirect_to @exercise, notice: 'You already have this exercise.'
   end
+
+
+
+  
+  
 
   def update
     @exercise.update(exercise_params)
