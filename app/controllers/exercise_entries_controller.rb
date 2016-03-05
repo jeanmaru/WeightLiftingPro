@@ -21,12 +21,6 @@ class ExerciseEntriesController < ApplicationController
     respond_with(@exercise_entry)
   end
   
-  # 
-  # def new
-  #   @exercise_entry = ExerciseEntry.new
-  #   @exercise =  Exercise.find(params[:exercise])
-  #   respond_with(@exercise_entry)
-  # end
 
   def edit
     @exercise_entry = ExerciseEntry.find(params[:id])

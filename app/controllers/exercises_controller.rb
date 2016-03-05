@@ -34,11 +34,7 @@ end
     respond_with(@exercise)
   end
 
-
-
   
-  
-
   def update
     @exercise.update(exercise_params)
     respond_with(@exercise)
