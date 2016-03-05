@@ -13,10 +13,11 @@
       </ul>
     </div>
   <% end %>
+        
 
-    <div class=" field form-group">
+        <div class=" field form-group">
       <%= f.label :sample_exercise_id, "Choose an Exercise:" %>
-      <%= f.collection_select :sample_exercise_id,  SampleExercise.order('name ASC'), :id, :name, { :prompt => "Please Select..."}, class: 'form-control' %>
+      <%= f.collection_select :sample_exercise_id,  SampleExercise.order('name ASC'), :id, :name,  {:selected => params[:sample_exercise_id] } %>
     </div>
 
     <div class=" field form-group">
@@ -28,11 +29,14 @@
       <%= f.label :notes %>
       <%= f.text_area :notes, class: 'form-control' %>
     </div>
-        
+
+
+
         <div class="actions form-group">
           <%= f.submit :class => "btn btn-md btn-primary", :style=>'width: 290px' %>
           </div>
 
+        
         </div>
         </div>
 <% end %>

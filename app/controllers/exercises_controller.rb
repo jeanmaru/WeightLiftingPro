@@ -30,17 +30,12 @@ end
 
   def create
     @exercise = current_user.exercises.new(exercise_params)
-    @my_exercises = current_user.exercises.where(sample_exercise_id: params[:sample_exercise_id])
-    if @my_exercises.include?(@exercise.sample_exercise_id)
-      redirect_to @exercise, notice: 'You already have this exercise.'  
-    else
-      @exercise.save
-      respond_with(@exercise)
-    # if @exercise.sample_exercise_id == @my_exercises
-    #   redirect_to @exercise, notice: 'You already have this exercise.'
-    # else
+    @exercise.save
+    respond_with(@exercise)
 
-    end
+    # @my_exercises = current_user.exercises.where(sample_exercise_id: params[:sample_exercise_id])
+    # if @my_exercises.include?(@exercise.sample_exercise_id)
+    #   redirect_to @exercise, notice: 'You already have this exercise.'
   end
 
   def update

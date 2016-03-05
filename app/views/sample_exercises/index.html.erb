@@ -34,9 +34,8 @@
 
               </td>
 
-              <td> <%= button_to 'Add Exercise', :controller => "exercises", :action => "new", class: 'btn btn-success btn-md' %>
+              <td> <%= button_to 'Add Exercise', new_exercise_path(:sample_exercise_id => exercise.id), class: 'btn btn-success btn-md' %>
               </td>
-              
             </tr>
         <% end %>
 
