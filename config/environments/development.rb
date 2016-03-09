@@ -6,6 +6,10 @@ WeightLiftingPro::Application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  # requires must go inside the Initializer block
+  require 'ruport' # Ruby Reporting Tool
+  require 'ruport/acts_as_reportable' # ActiveRecord data collection for Ruport.
+
   # Do not eager load code on boot.
   config.eager_load = false
 

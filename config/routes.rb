@@ -15,6 +15,7 @@ WeightLiftingPro::Application.routes.draw do
   resources :routines
   resources :sample_exercises
 
+  get '/reports/exercise_entry' => "reports#exercise_entry"
 
   # -  resources :children
   # -  resources :parents

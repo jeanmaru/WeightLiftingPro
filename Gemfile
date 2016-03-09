@@ -16,9 +16,9 @@ gem 'simple-navigation'
 gem 'backbone-on-rails'
 gem 'handlebars_assets'
 gem 'hamlbars'
-gem 'ruby-haml-js'
 
-
+gem 'ruport', :git => 'https://github.com/ruport/ruport.git', :branch => 'ruby19-compat'
+gem 'acts_as_reportable'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'

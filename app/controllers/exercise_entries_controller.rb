@@ -1,7 +1,7 @@
 class ExerciseEntriesController < ApplicationController
   before_action :set_exercise_entry, only: [:show, :edit, :update, :destroy]
-
-  respond_to :html
+  
+  respond_to :html, :pdf, :xml
 
   def index
     @exercise_entries = current_user.exercise_entries(current_user)

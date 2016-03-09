@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  respond_to :html, :js
+  
+  respond_to :html, :js, :pdf, :xml
 
   def index
     @users = User.all
