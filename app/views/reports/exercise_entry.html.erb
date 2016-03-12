@@ -1,14 +1,27 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-3">
+    <div class="col-md-3">
     </div>
-    <div class="col-xs-9">
+    <div class="col-md-6">
       <%= yield %>
       
       <title>My Report | Weight Lifting Pro</title>
-      <h3>Week of <%= start_date %></h3>
-        
-<%= @report %>
-        </div>
+      <h3>Week of <%= start_date.to_formatted_s(:long)  %></h3>
+
+      <% current_user.exercise_entries.group(created_at: :asc).each do |exercise| %>
+              
+          <% if exercise.created_at >= start_date %>
+                  
+    <table>
+      <tr> <td> <h4><%= exercise.exercise.sample_exercise.name %></h4></td> </tr>
+      <tr> <td><b> Sets: </b><%= exercise.sets %></td> </tr>
+      <tr> <td><b> Reps: </b><%= exercise.reps %></td> </tr>
+      <tr> <td><b> Weight: </b><%= exercise.weight %> lbs</td> </tr>
+      <tr> <td> <br></td></tr>
+      </table>
+            <% end %>
+          <% end %>
+
+    </div>
   </div>
 </div>

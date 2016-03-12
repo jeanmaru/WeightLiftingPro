@@ -1,9 +1,6 @@
 module ReportsHelper
   def start_date
-    Date.today
+    Date.today - 7.days
   end
 
-  def end_date
-    Date.today + 14.days
-  end
 end

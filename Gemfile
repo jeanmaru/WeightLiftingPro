@@ -20,6 +20,8 @@ gem 'hamlbars'
 gem 'ruport', :git => 'https://github.com/ruport/ruport.git', :branch => 'ruby19-compat'
 gem 'acts_as_reportable'
 
+gem 'groupdate'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 

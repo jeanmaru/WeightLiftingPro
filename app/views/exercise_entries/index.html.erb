@@ -25,7 +25,7 @@
   </thead>
 
   <tbody>
-    <% @exercise_entries.each do |exercise_entry| %>
+    <% @exercise_entries.order(created_at: :desc).each do |exercise_entry| %>
       <tr>
         <td><%= exercise_entry.exercise.sample_exercise.name %></td>
         <td><%= exercise_entry.reps %></td>
