@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <%= form_for(@exercise, html: {class: 'form-horizontal'}) do |f| %>
+        <% if @exercise.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+
+              <ul>
+                <% @exercise.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+        <div class=" field form-group">
+          <%= f.label :sample_exercise_id, "Choose an Exercise:" %>
+          <%= f.collection_select :sample_exercise_id,  SampleExercise.order('name ASC'), :id, :name %>
+        </div>
+
+        <div class=" field form-group">
+          <%= f.label :routine_id, "Add to a Routine:" %>
+          <%= f.collection_select :routine_id,  current_user.routines(current_user).order('name ASC'), :id, :name, { :prompt => "Please Select..."}, class: 'form-control' %>
+        </div>
+
+        <div class="field form-group">
+          <%= f.label :notes %>
+          <%= f.text_area :notes, class: 'form-control' %>
+        </div>
+
+
+        <div class="actions form-group">
+          <%= f.submit :class => "btn btn-md btn-primary", :style=>'width: 290px' %>
+        </div>
+
+
+        </div>
+        </div>
+    <% end %>
+
