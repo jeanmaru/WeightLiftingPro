@@ -15,6 +15,7 @@
       <table class ="table">
   <thead>
     <tr>
+      <th>Date</th>
       <th>Name</th>
       <th>Reps</th>
       <th>Sets</th>
@@ -27,6 +28,7 @@
   <tbody>
     <% @exercise_entries.order(created_at: :desc).each do |exercise_entry| %>
       <tr>
+        <td><%= exercise_entry.created_at.strftime("%B %e, %Y") %></td>
         <td><%= exercise_entry.exercise.sample_exercise.name %></td>
         <td><%= exercise_entry.reps %></td>
         <td><%= exercise_entry.sets %></td>
@@ -41,9 +43,12 @@
   </tbody>
 </table>
 
-  <br>
-      
-      
+      <%= will_paginate @exercise_entries %>
+      <br>
+      <br>
+      <br>
+
+
     </div>
   </div>
 </div>

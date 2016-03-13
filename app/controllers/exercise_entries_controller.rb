@@ -4,7 +4,7 @@ class ExerciseEntriesController < ApplicationController
   respond_to :html, :pdf, :xml
 
   def index
-    @exercise_entries = current_user.exercise_entries(current_user)
+    @exercise_entries = current_user.exercise_entries(current_user).paginate(:page => params[:page], :per_page => 10)
     # @exercise_entries = ExerciseEntry.all
     respond_with(@exercise_entries)
   end
