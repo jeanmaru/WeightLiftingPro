@@ -79,18 +79,40 @@
         <td><%= link_to ' Delete ', exercise, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn
         btn-danger btn-sm', style: "color: white" %>
         </td>
-                
-
       </tr>
     <% end %>
   </tbody>
 </table>
+        
+        <table class ="table">
+          <tr>
+            <td>
+              <%= link_to new_exercise_path, style: "color: white", class: 'btn btn-success' do %>
+                  <i class="glyphicon glyphicon-plus"></i> New Exercise
+              <% end %>
+            </td>
+            <td>
+              <%= link_to 'Exercise Log', exercise_entries_path, style: "color: white", class: 'btn btn-primary' %>
+            </td>
+            <td>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+    </table>
 
-<br>
-
-        <%= link_to new_exercise_path, style: "color: white", class: 'btn btn-success' do %>
-            <i class="glyphicon glyphicon-plus"></i> New Exercise
-        <% end %>
 </div>
    </div>
 </div>

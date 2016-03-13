@@ -12,7 +12,8 @@
 <Title> Exercise Log Summary | Weight Lifting Pro </Title>
       <h3><%= current_user.fname %>'s Exercise Log Summary</h3>
       
-      <table class ="table">
+      <div class="table-responsive">
+      <table class ="table table-striped">
   <thead>
     <tr>
       <th>Date</th>
@@ -42,10 +43,11 @@
     <% end %>
   </tbody>
 </table>
+        </div>
 
       <%= will_paginate @exercise_entries %>
       <br>
-      <%= link_to 'My Exercises', exercises_path, style: "color: white", class: 'btn btn-success' %>
+      <%= link_to 'My Exercises', exercises_path, style: "color: white", class: 'btn btn-primary' %>
       <br>
       <br>
       <br>  
