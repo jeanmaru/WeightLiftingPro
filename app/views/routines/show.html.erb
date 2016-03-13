@@ -23,10 +23,13 @@
               </p>
             
               <h4><%= exercise.sample_exercise.name %> </h4>
-              <p>
-                <strong>Notes:</strong>
+              
+                <% if exercise.notes? %>
+                <p>
+              <strong>Notes:</strong>
                 <%= exercise.notes %>
               </p>
+                <% end %>
 
             </div>
           </div>

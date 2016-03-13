@@ -7,8 +7,8 @@ WeightLiftingPro::Application.routes.draw do
   get 'home/index'
   get 'admin/index'
   post "/exercises/new"
-  
-  
+  get 'edit' => "exercises/edit"
+
   devise_for :users, :controllers => {:registrations => "users/registrations"}
   resources :users
   resources :exercises

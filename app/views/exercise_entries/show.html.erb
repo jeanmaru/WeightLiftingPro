@@ -17,23 +17,23 @@
 
       <p>
         <strong>Weight:</strong>
-        <%= @exercise_entry.weight %>
+        <%= @exercise_entry.weight %> <%= @exercise_entry.measure %>
       </p>
 
-<p>
-  <strong>Reps:</strong>
-  <%= @exercise_entry.reps %>
-</p>
-
-<p>
-  <strong>Sets:</strong>
-  <%= @exercise_entry.sets %>
-</p>
-      
-<p>
-  <strong>Notes:</strong>
-  <%= @exercise_entry.notes %>
-</p>
+        <p>
+          <strong>Reps:</strong>
+          <%= @exercise_entry.reps %>
+        </p>
+        
+        <p>
+          <strong>Sets:</strong>
+          <%= @exercise_entry.sets %>
+        </p>
+              
+        <p>
+          <strong>Notes:</strong>
+          <%= @exercise_entry.notes %>
+        </p>
 
       
 <%= link_to 'Edit', edit_exercise_entry_path(@exercise_entry) %> |

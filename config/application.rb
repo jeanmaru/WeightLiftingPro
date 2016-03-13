@@ -21,6 +21,5 @@ module WeightLiftingPro
     # config.i18n.default_locale = :de
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
     config.assets.precompile += %w( *.svg *.eot *.woff *.ttf )
-    config.autoload_paths += %W(#{config.root}/lib #{config.root}/app/reports)
   end
 end

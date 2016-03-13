@@ -30,7 +30,7 @@
         <td><%= exercise_entry.exercise.sample_exercise.name %></td>
         <td><%= exercise_entry.reps %></td>
         <td><%= exercise_entry.sets %></td>
-        <td><%= exercise_entry.weight %></td>
+        <td><%= exercise_entry.weight %> <%= exercise_entry.measure %> </td>
         <td><%= exercise_entry.notes %></td>
         <td><%= link_to 'Edit', edit_exercise_entry_path(exercise_entry), class: 'btn btn-info btn-sm', style: "color: white" %></td>
         <td><%= link_to 'Show', exercise_entry, class: 'btn btn-default btn-sm'%></td>

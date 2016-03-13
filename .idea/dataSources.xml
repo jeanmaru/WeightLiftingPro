@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1383668800">
+  <component name="DataSourceManagerImpl" format="xml" hash="3553726939">
     <data-source source="LOCAL" name="Rails weight_lifting_pro: development" uuid="1b3c9db8-6106-43f8-9891-9f7ce560d659">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>

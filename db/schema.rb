@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215203151) do
+ActiveRecord::Schema.define(version: 20160313154939) do
 
   create_table "exercise_entries", force: true do |t|
     t.integer  "reps"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160215203151) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "measure"
   end
 
   add_index "exercise_entries", ["exercise_id"], name: "index_exercise_entries_on_exercise_id"

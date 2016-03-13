@@ -15,26 +15,21 @@
 </p>
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
-      <% @exercise.exercise_entries.each do |log| %>
+      <% @exercise.exercise_entries.order(created_at: :desc).each do |log| %>
           <div class="well">
             <div class="row">
-              <p>
-              </p>
-              <h4><strong><%= log.created_at.to_formatted_s(:long) %></strong> </h4>
+
+              <h4><strong><%= log.created_at.strftime("%B %e, %Y") %></strong> </h4>
               
-              <p>
                 <strong>Reps:</strong>
                 <%= log.reps %>
-              </p>
-
-              <p>
+                <br>
                 <strong>Sets:</strong>
                 <%= log.sets %>
-              </p>
 
               <p>
                 <strong>Weight:</strong>
-                <%= log.weight %>
+                <%= log.weight %> <%= log.measure %>
               </p>
               
               <% if log.notes? %>
