@@ -35,11 +35,17 @@ end
     @exercise.save
     respond_with(@exercise)
   end
-
   
   def update
     @exercise.update(exercise_params)
-    respond_with(@exercise)
+    
+    respond_to do |format|
+      format.html { redirect_to exercises_path(@exercise), :notice => 'Exercise Successfuly Updated!' }
+      format.json  { render :show, status: :ok, location: @user }
+    end
+    
+    # flash[:notice] = "Exercise Successfuly Updated!" if @exercise.save 
+    # respond_with(@exercise) 
   end
 
   def destroy

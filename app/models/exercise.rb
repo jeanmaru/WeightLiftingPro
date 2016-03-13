@@ -4,7 +4,8 @@ class Exercise < ActiveRecord::Base
   belongs_to :routine
   has_many :exercise_entries
 
-  validates :sample_exercise_id, presence: true, :uniqueness => true
+  validates_presence_of :sample_exercise_id
+  validates_uniqueness_of :sample_exercise_id, scope: [:user_id]
   
   end
 
