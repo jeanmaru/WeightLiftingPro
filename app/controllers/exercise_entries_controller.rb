@@ -49,6 +49,6 @@ class ExerciseEntriesController < ApplicationController
     end
 
     def exercise_entry_params
-      params.require(:exercise_entry).permit(:reps, :sets, :weight, :notes, :exercise_id, :user_id)
+      params.require(:exercise_entry).permit(:reps, :sets, :weight, :measure, :notes, :exercise_id, :user_id)
     end
 end
