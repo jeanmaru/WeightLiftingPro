@@ -15,7 +15,9 @@
 </p>
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
-      <% @exercise.exercise_entries.order(created_at: :desc).each do |log| %>
+      <% @exercise.exercise_entries.order(created_at: :desc).paginate(:page => params[:page], :per_page => 5).each do |log| %>
+          
+          
           <div class="well">
             <div class="row">
 
@@ -43,11 +45,16 @@
           </div>
 
       <% end %>
-      
+
+      <%= will_paginate @exercise_entries %>
+      <br>
 
   <%= link_to 'Edit', edit_exercise_path(@exercise) %>
   |
   <%= link_to 'My Exercises', exercises_path %>
+      <br>
+      <br>
+      <br>
 </div>
 
   </div>
