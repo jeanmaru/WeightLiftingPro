@@ -20,8 +20,8 @@
         </div>
 
         <div class=" field form-group">
-          <%= f.label :routine_id, "Add to a Routine:" %>
-          <%= f.collection_select :routine_id,  current_user.routines(current_user).order('name ASC'), :id, :name, { :prompt => "Please Select..."}, class: 'form-control' %>
+          <%= f.label :routine_id, "Add to a Routine:" %> <br>
+          <%= f.collection_select :routine_id,  current_user.routines(current_user).order('name ASC'), :id, :name, include_blank: "Select a Routine", class: 'form-control' %>
         </div>
 
         <div class="field form-group">

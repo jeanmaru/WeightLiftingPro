@@ -13,7 +13,7 @@ class ExercisesController < ApplicationController
     # respond_with(@exercise)
     # redirect_to exercises_url
     @exercise = current_user.exercises.find(params[:id])
-    @exercise_entries = @exercise.exercise_entries.paginate(:page => params[:page], :per_page => 5)
+    @exercise_entries = @exercise.exercise_entries.paginate(:page => params[:page], :per_page => 3)
   end
 
   def new
@@ -43,9 +43,6 @@ end
       format.html { redirect_to exercises_path(@exercise), :notice => 'Exercise Successfuly Updated!' }
       format.json  { render :show, status: :ok, location: @user }
     end
-    
-    # flash[:notice] = "Exercise Successfuly Updated!" if @exercise.save 
-    # respond_with(@exercise) 
   end
 
   def destroy
