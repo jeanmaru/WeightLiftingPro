@@ -14,9 +14,12 @@
             </div>
         <% end %>
 
+        <!--<div class=" field form-group">-->
+          <!--<= f.label :sample_exercise_id, "Choose an Exercise:" %>-->
+          <!--<= f.collection_select :sample_exercise_id,  SampleExercise.order('name ASC'), :id, :name, {:disabled => "disabled"}%>-->
+        <!--</div>-->
         <div class=" field form-group">
-          <%= f.label :sample_exercise_id, "Choose an Exercise:" %>
-          <%= f.collection_select :sample_exercise_id,  SampleExercise.order('name ASC'), :id, :name %>
+          <h4><strong> <%= @exercise.sample_exercise.name %> </strong></h4>
         </div>
 
         <div class=" field form-group">
