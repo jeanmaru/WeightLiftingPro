@@ -20,9 +20,8 @@
         <div class="field form-group">
           <%= f.label :weight %><br>
           <%= f.number_field :weight, min: 0, max: 1500 %>
-          <%= f.select(:measure, options_for_select([['lbs'], ['kg']])) %>
+          <%= f.select :measure, options_for_select([['lbs'], ['kg']], @exercise_entry.measure) %>
         </div>
-
         
         <div class="field form-group">
         <%= f.label :reps %><br>

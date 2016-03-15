@@ -6,6 +6,4 @@ class ExerciseEntry < ActiveRecord::Base
   
   validates :reps, :sets, :measure, presence: true
   
-  
-  
 end
