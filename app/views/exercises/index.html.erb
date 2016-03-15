@@ -15,7 +15,7 @@
   <title>My Exercises | Weight Lifting Pro</title>
   <h3><%= current_user.fname %>'s Exercises</h3>
 
-  <table class ="table">
+  <table class ="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -26,7 +26,7 @@
 
   <tbody>
 
-  <% @exercises.each do |exercise| %>
+  <% @exercises.order(created_at: :desc).each do |exercise| %>
 
       <tr>
         <td>
