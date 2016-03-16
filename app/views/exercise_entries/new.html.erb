@@ -12,8 +12,18 @@
       <!--<= render 'exercise_name' %>-->
       
       <br>
- 
-<!-- <= @exercise.id %> -->
+      
+      <% if @exercise.notes? %>
+    <p>
+        <h5>
+          <strong>Exercise Notes: </strong>  <%= @exercise.notes %>
+        </h5>
+      </p>
+          <br>
+    <% end %>
+
+
+      <!-- <= @exercise.id %> -->
       
       <%= render 'form' %>
       <br>
