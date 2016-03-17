@@ -17,8 +17,8 @@
                 <li><%= link_to 'Edit User', edit_user_registration_path %></li>
                 <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
                 <li> <%= link_to "My Exercises", exercises_url %> </li>
+                <li> <%= link_to "My Exercise Log", exercise_entries_url %> </li>
                 <li> <%= link_to "My Routines", routines_url %> </li>
-                <li> <%= link_to "Exercise Log", exercise_entries_url %> </li>
 
 
                 <% if current_user.admin? %>
