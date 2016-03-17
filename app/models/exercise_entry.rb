@@ -4,6 +4,7 @@ class ExerciseEntry < ActiveRecord::Base
   belongs_to :exercise
   belongs_to :user
   
-  validates :reps, :sets, :measure, presence: true
+  validates :reps, :sets, presence: true
+  validates_presence_of :measure, :if => :weight?
   
 end
