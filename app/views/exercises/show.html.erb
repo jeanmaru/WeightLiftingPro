@@ -23,18 +23,20 @@
 
               <h4><strong><%= log.created_at.strftime("%B %e, %Y") %></strong> </h4>
               
+              
+                <strong>Weight:</strong>
+                <%= log.weight %> <%= log.measure %>
+              
+              <br>
                 <strong>Reps:</strong>
                 <%= log.reps %>
                 <br>
                 <strong>Sets:</strong>
                 <%= log.sets %>
-
-              <p>
-                <strong>Weight:</strong>
-                <%= log.weight %> <%= log.measure %>
-              </p>
               
               <% if log.notes? %>
+                  <br>
+                  <br>
             <p>
                 <strong>Notes:</strong>
                 <%= log.notes %>
