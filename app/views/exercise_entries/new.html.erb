@@ -14,18 +14,18 @@
 
       <h3>Log an Exercise</h3>
 
-      <!--<= render 'exercise_name' %>-->
+      <!--<= render 'exercise_name', disabled: true %>-->
       
       <br>
       
-      <% if @exercise.notes? %>
-    <p>
-        <h5>
-          <strong>Exercise Notes: </strong>  <%= @exercise.notes %>
-        </h5>
-      </p>
-          <br>
-    <% end %>
+      <!--< if @exercise.notes? %>-->
+    <!--<p>-->
+        <!--<h5>-->
+        <!--  <strong>Exercise Notes: </strong>  <= @exercise.notes %>
+        <!--</h5>-->
+      <!--</p>-->
+          <!--<br>-->
+    <!--< end %>-->
 
 
       <!-- <= @exercise.id %> -->
@@ -34,7 +34,8 @@
       <br>
       <br>
 <%= link_to 'Exercise Log', exercise_entries_path %> |
-      <%= link_to 'My Exercises', exercises_path %>
+      <%= link_to 'My Exercises', exercises_path %> |
+      <%= link_to "Back", :back %>
       
     </div>
 

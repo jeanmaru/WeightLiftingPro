@@ -26,10 +26,38 @@
               
                 <% if exercise.notes? %>
                 <p>
-              <strong>Notes:</strong>
+              <strong>Exercise Notes:</strong>
                 <%= exercise.notes %>
               </p>
                 <% end %>
+
+            <% if exercise.exercise_entries.present?%>
+          <table>
+                  <tr>
+                    <td> <h5> <strong> Last Log: <%= exercise.exercise_entries.order("created_at").last.created_at.strftime("%B %e, %Y") %></strong></h5></td>
+                  </tr>
+                  <tr>
+                    <td> <strong> Weight: </strong><%= exercise.exercise_entries.order("created_at").last.weight %> <%= exercise.exercise_entries.order("created_at").last.measure %> </td>
+                  </tr>
+                  <tr>
+                    <td> <strong> Reps: </strong><%= exercise.exercise_entries.order("created_at").last.reps %></td>
+                  </tr>
+                  <tr>
+                    <td><strong> Sets: </strong><%= exercise.exercise_entries.order("created_at").last.sets %></td>
+                  </tr>
+            <% if exercise.exercise_entries.order("created_at").last.notes.present? %>
+                <tr>
+                  <td><strong> Exercise Log Notes: </strong><%= exercise.exercise_entries.order("created_at").last.notes %></td>
+                  </tr>
+                <% end %>
+                </table>
+            <% end %>
+
+
+            <br>
+
+            <%= link_to ' Add Log ', new_exercise_entry_path(:exercise_id => exercise.id), class: 'btn btn-success btn-sm glyphicon
+        glyphicon-plus', style: "color: white" %>
 
             </div>
           </div>

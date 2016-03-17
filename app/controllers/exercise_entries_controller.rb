@@ -26,12 +26,32 @@ class ExerciseEntriesController < ApplicationController
     @exercise_entry = ExerciseEntry.find(params[:id])
   end
 
+  # def create
+  #   @exercise_entry = current_user.exercise_entries.new(exercise_entry_params)
+  #   @exercise_entry.save
+    
+    # flash[:notice] = 'Exercise Entry Successfully Created!'
+    # @exercise_entry.save
+    
+  #   respond_with(@exercise_entry)
+  # end
+
+
   def create
     @exercise_entry = current_user.exercise_entries.new(exercise_entry_params)
-    @exercise_entry.save
-    respond_with(@exercise_entry)
+
+    respond_to do |format|
+      if @exercise_entry.save
+        # flash[:notice] = 'Exercise Entry Successfully Created!'
+        format.html { redirect_to(@exercise_entry) }
+        format.xml { render xml: @exercise_entry, status: :created, location: @exercise_entry }
+      else
+        format.html { render action: "new" }
+        format.xml { render xml: @exercise_entry.errors, status: :unprocessable_entity }
+      end
+    end
   end
-  
+
 
   def update
     @exercise_entry.update(exercise_entry_params)
