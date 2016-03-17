@@ -47,6 +47,7 @@ end
 
   def destroy
     @exercise.destroy
+    flash[:notice] = 'Exercise Successfully Deleted.'
     respond_with(@exercise)
   end
 
