@@ -12,7 +12,8 @@
     <%= f.input :fname, required: true, label: 'First Name'  %>
     <%= f.input :lname, optional: true, label: 'Last Name' %>
     <%= f.input :email, required: true, autofocus: true, label: 'Email' %>
-    <%= f.input :body_weight, optional: true, label: 'Body Weight (in lbs)', autofocus: true %>
+    <%= f.input :body_weight, optional: true, label: 'Body Weight', autofocus: true %>
+    <%= f.select(:measure, options_for_select([['lbs'], ['kg']])) %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum " if
                                  @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>

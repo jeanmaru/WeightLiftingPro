@@ -37,9 +37,52 @@
                 <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 3 %>
                     <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_85 %> <%= exercise.measure %> </span> </b></td> </tr>
                     <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_150 %> <%= exercise.measure %> </span> </b></td> </tr>
-
               <% end %>
+
+                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 5 %>
+                    <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_200 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_250 %> <%= exercise.measure %> </span> </b></td> </tr>
+                <% end %>
+
+                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 10 %>
+                    <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_50 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_75 %> <%= exercise.measure %> </span> </b></td> </tr>
+                <% end %>
+
+                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 11 %>
+                    <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_85 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= current_user.body_weight %>  <%= current_user.measure %> </span> </b></td> </tr>
+                <% end %>
+
+                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 12 %>
+                    <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_15 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_25 %> <%= exercise.measure %> </span> </b></td> </tr>
+                <% end %>
+
+                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 13 %>
+                    <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_30 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_50 %> <%= exercise.measure %> </span> </b></td> </tr>
+                <% end %>
+
+                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 17 %>
+                    <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_60 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_75 %> <%= exercise.measure %> </span> </b></td> </tr>
+                <% end %>
+
+                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 20 %>
+                    <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_35 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_50 %> <%= exercise.measure %> </span> </b></td> </tr>
+                <% end %>
+
+                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 22 %>
+                    <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_45 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_60 %> <%= exercise.measure %> </span> </b></td> </tr>
+                <% end %>
                 
+                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 25 %>
+                    <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_85 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= current_user.body_weight %>  <%= current_user.measure %> </span> </b></td> </tr>
+                <% end %>
                 
                 
                 

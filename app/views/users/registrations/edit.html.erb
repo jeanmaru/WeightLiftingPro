@@ -20,7 +20,7 @@
     <br>
     
     <%= f.input :body_weight, optional: true, label: 'Body Weight', autofocus: true %> 
-    <%= f.select(:measure, options_for_select([['lbs'], ['kg']])) %>
+    <%= f.select(:measure, options_for_select([['lbs'], ['kg']], @user.measure)) %>
   </div>
       <div class="field">
         <p>

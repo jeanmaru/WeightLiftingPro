@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :fname, :dob, presence: true
+  validates :fname, :dob, :measure, :body_weight, presence: true
 
   has_many :exercises
   has_many :routines
