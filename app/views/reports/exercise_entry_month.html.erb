@@ -23,6 +23,26 @@
                 <tr> <td><b> Sets: </b><%= exercise.sets %></td> </tr>
                 <tr> <td><b> Reps: </b><%= exercise.reps %></td> </tr>
                 <tr> <td><b> Weight: </b><%= exercise.weight %> <%= exercise.measure %> </td> </tr>
+
+                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 1 %>
+                    <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_85 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_200 %> <%= exercise.measure %> </span> </b></td> </tr>
+              <% end %>
+
+                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 2 %>
+                    <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_85 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_250 %> <%= exercise.measure %> </span> </b></td> </tr>
+              <% end %>
+
+                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 3 %>
+                    <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_85 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_150 %> <%= exercise.measure %> </span> </b></td> </tr>
+
+              <% end %>
+                
+                
+                
+                
                 <tr> <td> <br></td></tr>
               </table>
           <% end %>
