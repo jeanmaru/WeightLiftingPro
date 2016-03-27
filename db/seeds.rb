@@ -67,3 +67,13 @@
 # sample_exercise_list.each do |name|
 #   SampleExercise.create( name: name  )
 # end
+
+sample_exercise_list = [
+     "Power Clean",
+     "Clean and Press",
+     "Pull Ups"
+]
+
+sample_exercise_list.each do |name|
+  SampleExercise.create( name: name  )
+end
