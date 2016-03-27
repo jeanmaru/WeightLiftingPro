@@ -1,14 +1,19 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-sm-4">
     </div>
     <div class="col-md-6">
       <%= yield %>
       
       <title>My Exercise Log Report | Weight Lifting Pro</title>
-      
-      <h3>Week of <%= start_date.to_formatted_s(:long)  %></h3>
 
+      <h3 class="text-center"><%= current_user.fname %>'s Exercise Report </br>
+      Week of <%= start_date.to_formatted_s(:long)  %></h3>
+        
+      <br>
+      
+      
+      
       <% current_user.exercise_entries.order(created_at: :desc).each do |exercise| %>
               
           <% if exercise.created_at >= start_date %>
@@ -25,5 +30,9 @@
           <% end %>
 
     </div>
+    <div class="col-sm-4">
+    </div>
   </div>
 </div>
+<br>
+<br>

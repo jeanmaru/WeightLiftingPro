@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-md-6">
+      <%= yield %>
+
+      <title>My Exercise Log Report | Weight Lifting Pro</title>
+
+      <h3 class="text-center"><%= current_user.fname %>'s Exercise Report </br>
+        Week of <%= start_date_month.to_formatted_s(:long)  %></h3>
+
+      <br>
+
+
+      <% current_user.exercise_entries.order(created_at: :desc).each do |exercise| %>
+
+          <% if exercise.created_at >= start_date_month %>
+
+              <table>
+                <tr> <td> <h4> <strong><%= exercise.created_at.strftime("%A, %B %e, %Y") %> </strong></h4></td> </tr>
+                <tr> <td> <h4><%= exercise.exercise.sample_exercise.name %></h4></td> </tr>
+                <tr> <td><b> Sets: </b><%= exercise.sets %></td> </tr>
+                <tr> <td><b> Reps: </b><%= exercise.reps %></td> </tr>
+                <tr> <td><b> Weight: </b><%= exercise.weight %> <%= exercise.measure %> </td> </tr>
+                <tr> <td> <br></td></tr>
+              </table>
+          <% end %>
+      <% end %>
+
+    </div>
+    <div class="col-sm-4">
+    </div>
+  </div>
+</div>
+<br>
+<br>
