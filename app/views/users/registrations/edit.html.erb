@@ -19,9 +19,12 @@
 
     <br>
     
-    <%= f.input :body_weight, optional: true, label: 'Body Weight', autofocus: true %> 
+    <%= f.input :body_weight, label: 'Body Weight', autofocus: true %> 
     <%= f.select(:measure, options_for_select([['lbs'], ['kg']], @user.measure)) %>
+
+    <%= f.select(:level, options_for_select([['Beginner'], ['Intermediate'], ['Advanced']], @user.level), {:prompt => "--select county--"}) %>
   </div>
+      
       <div class="field">
         <p>
           <%= f.label "Birthday"%>

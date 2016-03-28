@@ -52,7 +52,7 @@ class UsersController < ApplicationController
   private
   # Never trust parameters from the scary internet, only allow the whitelist through.
   def user_params
-    params.require(:user).permit(:lname, :fname, :email, :dob, :gender, :body_weight, :measure)
+    params.require(:user).permit(:lname, :fname, :email, :dob, :gender, :body_weight, :measure, :level)
   end
 
   # Use callbacks to share common setup or constraints between actions.

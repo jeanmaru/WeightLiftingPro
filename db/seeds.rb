@@ -9,10 +9,24 @@
 
 # User.create!(fname:  "Admin User",
 #              email: "jess@jessrudolph.com",
+#              body_weight: "160",
+#              gender: "Female",
+#              level: "Beginner",
+#              measure: "lbs",
 #              password:              "password1234",
 #              password_confirmation: "password1234",
 #              admin: true)
 
+# User.create!(fname:  "Jess",
+#              email: "jam.rudolph@gmail.com",
+#              body_weight: "160",
+#              gender: "Female",
+#              level: "Beginner",
+#              measure: "lbs",
+#              password:              "password",
+#              password_confirmation: "password",
+#              admin: false)
+# 
 # 99.times do |n|
 #   name  = Faker::Name.name
 #   email = "jess-#{n+1}@jessrudolph.com"
