@@ -50,10 +50,15 @@
 
       <%= will_paginate @exercise_entries %>
       <br>
+      <%= link_to "Back", :back %>
 
-  <%= link_to 'Edit Exercise', edit_exercise_path(@exercise) %>
-  |
-  <%= link_to 'My Exercises', exercises_path %>
+        <div class="col-md-10">
+          <%= link_to 'Edit Exercise', edit_exercise_path(@exercise) %>
+          |
+          <%= link_to 'My Exercises', exercises_path %>
+      
+ 
+        </div>
       <br>
       <br>
       <br>

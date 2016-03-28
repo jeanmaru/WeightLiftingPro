@@ -13,6 +13,8 @@
       <title> Log an Exercise | Weight Lifting Pro</title>
 
       <h3>Log an Exercise</h3>
+      <td> <%= link_to ' Log History ', @exercise%>
+      </td>
 
       <!--<= render 'exercise_name', disabled: true %>-->
       
@@ -33,10 +35,15 @@
       <%= render 'form' %>
       <br>
       <br>
-<%= link_to 'Exercise Log', exercise_entries_path %> |
-      <%= link_to 'My Exercises', exercises_path %> |
+
       <%= link_to "Back", :back %>
       
+      <div class="col-md-10">
+        <%= link_to 'Exercise Log', exercise_entries_path %> |
+        <%= link_to 'My Exercises', exercises_path %> 
+      </div>
+
+
     </div>
 
   </div>

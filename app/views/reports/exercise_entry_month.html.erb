@@ -84,7 +84,7 @@
                     <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= current_user.body_weight %>  <%= current_user.measure %> </span> </b></td> </tr>
                 <% end %>
 
-                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 32 %>
+                <% if current_user.body_weight.present? && exercise.exercise.sample_exercise.id == 32    %>
                     <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_50 %> <%= exercise.measure %> </span> </b></td> </tr>
                     <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_75 %> <%= exercise.measure %> </span> </b></td> </tr>
                 <% end %>
