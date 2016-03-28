@@ -12,9 +12,22 @@
       </div>
     </div>
   </h3>
-</p>
+  </p>
+
+
+  <div class="row">
+          <div class="col-xs-7 col-xs-offset-4">
+        <%= link_to ' Add Log ', new_exercise_entry_path(:exercise_id => @exercise.id), class: 'btn btn-success btn-sm glyphicon
+        glyphicon-plus', style: "color: white" %>
+          </div>
+        </div>
+  
+
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
+
+      <br>
+      
       <% @exercise.exercise_entries.order(created_at: :desc).paginate(:page => params[:page], :per_page => 3).each do |log| %>
           
           
