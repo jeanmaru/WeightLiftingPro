@@ -17,7 +17,6 @@ gem 'backbone-on-rails'
 gem 'handlebars_assets'
 gem 'hamlbars'
 
-gem 'ruport', :git => 'https://github.com/ruport/ruport.git', :branch => 'ruby19-compat'
 gem 'acts_as_reportable'
 
 gem 'groupdate'
