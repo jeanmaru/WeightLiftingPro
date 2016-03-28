@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160313171459) do
+ActiveRecord::Schema.define(version: 20160328224741) do
 
   create_table "exercise_entries", force: true do |t|
     t.integer  "reps"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20160313171459) do
     t.decimal  "body_weight"
     t.boolean  "admin",                  default: false
     t.string   "measure"
+    t.string   "level"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
