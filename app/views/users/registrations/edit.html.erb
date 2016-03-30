@@ -4,50 +4,79 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
 
-  <div class="form-inputs">
-    <%= f.input :fname, required: true, autofocus: true, label: 'First Name'  %>
-    <%= f.input :lname, optional: true, autofocus: true, label: 'Last Name' %>
-    <%= f.input :email, required: true, autofocus: true %>
+      <div class="field form-group">
+
+        <br />
+          <%= f.label "First Name" %> <br />
+          <%= f.text_field :fname, :style => "width:20%", autofocus: true %>
+
+        <br />
+          <%= f.label "Last Name" %> <br />
+          <%= f.text_field :lname, :style => "width:20%", autofocus: true %>
+
+        
+        <br />
+          <%= f.label :email %><br />
+          <%= f.email_field :email, :style => "width:20%", autofocus: true %>
+        
+        
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
+        
+        <br />
+          <%= f.label :password %> <br /> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, :style => "width:20%", autocomplete: "off" %>
 
-    
-    <br>
-    <%= f.label :body_weight %> <br>
-    <%= f.number_field :body_weight, required: true, autofocus: true, min: 100, max: 800 %> 
-    <%= f.select(:measure, options_for_select([['lbs'], ['kg']], @user.measure)) %>
-  </div>
 
-      <div class="field">
-    <p>
+
+        <br />
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, :style => "width:20%", autocomplete: "off" %>
+
+
+        <br />
+        <br />        
+        <br />
+        
+
+        <%= f.label :body_weight %> <br>
+        <%= f.number_field :body_weight, required: true, autofocus: true, min: 100, max: 800 %> 
+        <%= f.select(:measure, options_for_select([['lbs'], ['kg']], @user.measure)) %>
+        
+        <br />
+
+      
       <%= f.label :level %> <br>
       <%= f.select :level, options_for_select([['Beginner'], ['Intermediate'], ['Advanced']]), {:prompt => "Please Select a Level..."}, class: "form-control", :style=>'width: 200px' %>
-    </p>
-      
-        <p>
-          <%= f.label "Birthday"%>
+
+        <br />
+
+        <%= f.label "Birthday"%>
           <br>
           <%= f.date_select :dob, required: true, start_year: 1920, end_year: 2015, default: 18.years.ago, autofocus:
                                         true %>
-        </p>
 
-        <p>
-          <%= f.radio_button :gender, 'Female'%>
+
+        <br />
+        <br />
+        
+        <%= f.radio_button :gender, 'Female'%>
           <%= f.label :female %>
           <%= f.radio_button :gender, 'Male'%>
           <%= f.label :male %>
-        </p>
       </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update", class:"btn btn-primary" %>
-  </div>
+      
+      <br />
+      
+      <div class="form-actions">
+        <%= f.submit "Update", class:"btn btn-primary", :style=>'width: 235px;' %>
+      </div>
+      
+      
 <% end %>
 <br>
   <br>
