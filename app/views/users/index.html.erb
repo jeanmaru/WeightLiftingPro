@@ -17,9 +17,8 @@
           <td><b> Email </b></td>
           <td><b> First Name </b></td>
           <td><b> Last Name </b></td>
-          <td><b> Last Login </b></td>
-          <td><b> Type of User </b></td>
-          <td> </td>
+          <td><b> Last Login Date </b></td>
+          <td><b> User Type </b></td>
           <td> </td>
           <td> </td>
         </tr>
@@ -30,7 +29,7 @@
               <td><%= link_to user.email, user %></td>
               <td><%= user.fname %></td>
               <td><%= user.lname %></td>
-              <td> <%= user.last_sign_in_at%>
+              <td> <%= user.last_sign_in_at.strftime("%B %e, %Y")    %>
 
               <td>
                 <% if user.admin %>
@@ -39,7 +38,7 @@
                     User
                 <% end %>
               </td>
-              <td><%= link_to 'Edit', edit_user_path(user), class: 'btn btn-default btn-sm' %></td>
+              <td><%= link_to 'Edit', edit_user_path(user), class: 'btn btn-info btn-sm', style: "color: white"  %></td>
               <td><%= link_to "Delete", user, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger btn-sm',  style: "color: white" %>
               </td>
 
