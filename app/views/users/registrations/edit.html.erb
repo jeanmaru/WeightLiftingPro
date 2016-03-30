@@ -8,8 +8,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :fname, required: true, label: 'First Name'  %>
-    <%= f.input :lname, optional: true, label: 'Last Name' %>
+    <%= f.input :fname, required: true, autofocus: true, label: 'First Name'  %>
+    <%= f.input :lname, optional: true, autofocus: true, label: 'Last Name' %>
     <%= f.input :email, required: true, autofocus: true %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -17,15 +17,19 @@
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %>
 
-    <br>
     
-    <%= f.input :body_weight, label: 'Body Weight', autofocus: true %> 
+    <br>
+    <%= f.label :body_weight %> <br>
+    <%= f.number_field :body_weight, required: true, autofocus: true, min: 100, max: 800 %> 
     <%= f.select(:measure, options_for_select([['lbs'], ['kg']], @user.measure)) %>
-
-    <%= f.select(:level, options_for_select([['Beginner'], ['Intermediate'], ['Advanced']], @user.level), {:prompt => "--select county--"}) %>
   </div>
-      
+
       <div class="field">
+    <p>
+      <%= f.label :level %> <br>
+      <%= f.select :level, options_for_select([['Beginner'], ['Intermediate'], ['Advanced']]), {:prompt => "Please Select a Level..."}, class: "form-control", :style=>'width: 200px' %>
+    </p>
+      
         <p>
           <%= f.label "Birthday"%>
           <br>
