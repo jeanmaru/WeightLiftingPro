@@ -1,46 +1,83 @@
 <Title>Sign Up | Weight Lifting Pro</Title>
 
 <div class="container">
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <!--Must use simple form for f.error notices-->
-  <%= f.error_notification %>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
+      <h2>Sign up</h2>
+      
       <%= devise_error_messages! %>
 
-  <div class="form-inputs">
-    <%= f.input :fname, required: true, label: 'First Name'  %>
-    <%= f.input :lname, optional: true, label: 'Last Name' %>
-    <%= f.input :email, required: true, autofocus: true, label: 'Email' %>
-    <%= f.input :body_weight, optional: true, label: 'Body Weight', autofocus: true %>
-    <%= f.select(:measure, options_for_select([['lbs'], ['kg']], @user.measure)) %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum " if
-                                 @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+      <div class="field form-group">
 
-  </div>
+        <br />
+        <%= f.label "First Name" %> <br />
+        <%= f.text_field :fname, :style => "width:20%", autofocus: true %>
 
-      <div class="field">
-      <p>
-        <%= f.label "Birthday"%>
-        <br>
-        <%= f.date_select :dob, required: true, start_year: 1920, end_year: 2015, default: 18.years.ago, autofocus:
-            true %>
-      </p>
+        <br />
+        <%= f.label "Last Name" %> <br />
+        <%= f.text_field :lname, :style => "width:20%", autofocus: true %>
 
-        <p>
-          <%= f.radio_button :gender, 'Female'%>
-          <%= f.label :female %>
-          <%= f.radio_button :gender, 'Male'%>
-          <%= f.label :male %>
-        </p>
 
+        <br />
+        <%= f.label :email %><br />
+        <%= f.email_field :email, :style => "width:20%", autofocus: true %>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+
+
+
+        <div class="field form-group">
+
+
+          <%= f.label :password %> <br /> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, :style => "width:20%", autocomplete: "off" %>
+
+
+          <br />
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, :style => "width:20%", autocomplete: "off" %>
+        </div>
+      </div>
+      
+      <div class="field form-group">
+        <%= f.label :body_weight %> <br />
+        <%= f.number_field :body_weight, autofocus: true, min: 100, max: 800 %>
+        <%= f.select(:measure, options_for_select([['lbs'], ['kg']], @user.measure), :selected => @user.measure) %>
       </div>
 
+      <div class="field form-group">
+        <%= f.label :level, "Lfiting Experience Level: " %> <br />
+        <%= f.select(:level, options_for_select([['Beginner'], ['Intermediate'], ['Advanced']], @user.level), :selected => @user.level) %>
+      </div>
+
+
+      <div class="field form-group">
+        <%= f.label "Birthday"%> <br />
+        <%= f.date_select :dob, required: true, start_year: 1920, end_year: 2015, default: 18.years.ago, autofocus:
+                                      true %>
+
+
+        <br />
+        <%= f.radio_button :gender, 'Female'%>
+        <%= f.label :female %>
+        <%= f.radio_button :gender, 'Male'%>
+        <%= f.label :male %>
+      </div>
+
+      <br />
+
   <div class="form-actions">
-    <%= f.button :submit, "Sign up", class: "btn btn-primary btn-md" %>
+    <%= f.submit "Sign up", class: "btn btn-primary btn-md", :style=>'width: 235px;' %>
   </div>
 <% end %>
+  <br />
+  <br />
 
-<%= render "devise/shared/links" %>
+
+  <%= render "devise/shared/links" %>
     </div>
+<br />
+<br />
+<br />
