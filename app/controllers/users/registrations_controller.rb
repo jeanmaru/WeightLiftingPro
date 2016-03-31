@@ -33,7 +33,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
   def sign_up_params
     params.require(:user).permit(:email, :password, :password_confirmation, :lname, :fname, :dob, :gender,
-                                 :body_weight)
+                                 :body_weight, :measure, :level)
   end
 
   def set_minimum_password_length
