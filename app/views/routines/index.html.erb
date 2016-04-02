@@ -20,7 +20,6 @@
         <tr>
           <th>Name</th>
           <th>Description</th>
-          <th colspan="3"></th>
         </tr>
         </thead>
 
@@ -64,13 +63,12 @@
                     </div>
 
                 <% end %>
-
-
+                
               </td>
 
+              <td> <%= link_to ' View Exercises ', routine_path(routine), class: 'btn btn-default btn-sm' %>
+              </td>
               <td> <%= link_to ' Edit ', edit_routine_path(routine), class: 'btn btn-info btn-sm', style: "color: white" %>
-              </td>
-              <td> <%= link_to ' Show ', routine_path(routine), class: 'btn btn-default btn-sm' %>
               </td>
               <td><%= link_to 'Delete', routine, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn
         btn-danger btn-sm', style: "color: white" %></td>
@@ -82,12 +80,12 @@
 
       <div class="row">
         <div class="col-xs-3">
-          <%= link_to new_exercise_path, style: "color: white", class: 'btn btn-success' do %>
-              <i class="glyphicon glyphicon-plus"></i> New Exercise  <% end %>
+          <%= link_to new_routine_path, style: "color: white", class: 'btn btn-success' do %>
+              <i class="glyphicon glyphicon-plus"></i> New Routine <% end %>
         </div>
 
-        <div class="col-md-7">
-          <%= link_to 'My Exercise Log', exercise_entries_path, style: "color: white", class: 'btn btn-primary' %>
+        <div class="col-md-8">
+          <%= link_to 'My Exercises', exercises_path, style: "color: white", class: 'btn btn-primary' %>
         </div>
 
         <div class="col-xs-1">

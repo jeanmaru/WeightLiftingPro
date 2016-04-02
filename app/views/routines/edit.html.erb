@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="row">
     <div class="col-xs-3">
@@ -14,10 +13,15 @@
       
       <h3>Edit Routine</h3>
 
-
       <%= render 'form' %>
-      <%= link_to 'Back', routines_path %>
+      
+      <div class="row">
+        <div class="col-md-11"></div>
+        <%= link_to 'Back', :back %>
+      </div>
     </div>
+    
+  </div>
   </div>
 </div>
 
