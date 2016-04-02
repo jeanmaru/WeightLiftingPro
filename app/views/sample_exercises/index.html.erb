@@ -41,15 +41,22 @@
 
         </tbody>
       </table>
+      <br />
 
-      <br>
-      <%= link_to 'My Exercises', exercises_path, class: 'btn btn-primary btn-md', style: "color: white"  %>
-      <br>
-      <br>
+      <div class="row">
+        <div class="col-md-10">
+          <%= link_to 'My Exercises', exercises_path, style: "color: white", class: 'btn btn-primary' %>
+        </div>
 
+        <div class="col-xs-1">
+          <%= link_to "Back", :back %>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<br>
-<br>
+<br />
+<br />
+<br />

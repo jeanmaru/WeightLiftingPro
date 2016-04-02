@@ -17,13 +17,10 @@
     <div class="col-xs-4 col-xs-offset-4">
     <% @routine.exercises.each do |exercise| %>
         <h3><% @routine.name %> </h3>
+          
         <div class="well">
           <div class="row">
-              <p>
-              </p>
-            
               <h4><%= exercise.sample_exercise.name %> </h4>
-              
                 <% if exercise.notes? %>
                 <p>
               <strong>Exercise Notes:</strong>
@@ -52,7 +49,6 @@
                 <% end %>
                 </table>
             <% end %>
-
 
             <br>
 
