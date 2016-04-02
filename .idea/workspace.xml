@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="8314c326-d043-4739-8245-9af3325c5815" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exercises/index.html.erb" afterPath="$PROJECT_DIR$/app/views/exercises/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exercise_entries/new.html.erb" afterPath="$PROJECT_DIR$/app/views/exercise_entries/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/routines/index.html.erb" afterPath="$PROJECT_DIR$/app/views/routines/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="weight_lifting_pro.iws" />
@@ -69,21 +68,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/exercises/index.html.erb">
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/routines/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.875">
-              <caret line="99" column="30" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.9315069">
+              <caret line="96" column="12" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/exercise_entries/new.html.erb">
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/exercises/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0273973">
-              <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+            <state vertical-scroll-proportion="-14.875">
+              <caret line="103" column="22" selection-start-line="89" selection-start-column="1" selection-end-line="103" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -112,7 +111,6 @@
         <option value="$PROJECT_DIR$/app/views/users/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/exercise_entries_helper.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/exercise_entries.css.scss" />
-        <option value="$PROJECT_DIR$/app/views/routines/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/sample_exercises/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/exercises/_form_edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/exercises/edit.html.erb" />
@@ -154,6 +152,7 @@
         <option value="$PROJECT_DIR$/app/views/exercise_entries/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/exercises/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/exercise_entries/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/routines/index.html.erb" />
       </list>
     </option>
   </component>
@@ -329,6 +328,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sample_exercises" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weight_lifting_pro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="weight_lifting_pro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routines" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -861,31 +882,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="uml://DATABASE/1b3c9db8-6106-43f8-9891-9f7ce560d659">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>1b3c9db8-6106-43f8-9891-9f7ce560d659</OriginalElement>
-          <nodes>
-            <node x="" y="">1b3c9db8-6106-43f8-9891-9f7ce560d659.table:exercises</node>
-            <node x="" y="">1b3c9db8-6106-43f8-9891-9f7ce560d659.table:users</node>
-            <node x="" y="">1b3c9db8-6106-43f8-9891-9f7ce560d659.table:sample_exercises</node>
-            <node x="" y="">1b3c9db8-6106-43f8-9891-9f7ce560d659.table:sqlite_sequence</node>
-            <node x="" y="">1b3c9db8-6106-43f8-9891-9f7ce560d659.table:exercise_entries</node>
-            <node x="" y="">1b3c9db8-6106-43f8-9891-9f7ce560d659.table:routines</node>
-            <node x="" y="">1b3c9db8-6106-43f8-9891-9f7ce560d659.table:schema_migrations</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.5904645476772616" x="522.4906832298136" y="396.78260869565213" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/exercises_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31073445">
@@ -1076,14 +1072,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.60509557">
           <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/exercise_entries/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35031846">
-          <caret line="15" column="6" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1290,18 +1278,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/exercises/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/exercise_entries/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.875">
-          <caret line="99" column="30" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.5479452">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/exercise_entries/new.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/exercise_entries/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0273973">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.07534247">
+          <caret line="15" column="6" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/exercises/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.875">
+          <caret line="103" column="22" selection-start-line="89" selection-start-column="1" selection-end-line="103" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/routines/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9315069">
+          <caret line="96" column="12" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="12" />
           <folding />
         </state>
       </provider>

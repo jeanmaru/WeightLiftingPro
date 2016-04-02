@@ -80,36 +80,21 @@
       </table>
 
 
-      
-          <table class ="table">
-            <tr>
-              <td>
-                <%= link_to new_routine_path, style: "color: white", class: 'btn btn-success' do %>
-                    <i class="glyphicon glyphicon-plus"></i> New Routine
-                <% end %>
-              </td>
-              <td>
-                <%= link_to 'My Exercises', exercises_path, style: "color: white", class: 'btn btn-primary' %>
-              </td>
-              <td>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
+      <div class="row">
+        <div class="col-xs-3">
+          <%= link_to new_exercise_path, style: "color: white", class: 'btn btn-success' do %>
+              <i class="glyphicon glyphicon-plus"></i> New Exercise  <% end %>
+        </div>
 
+        <div class="col-md-7">
+          <%= link_to 'My Exercise Log', exercise_entries_path, style: "color: white", class: 'btn btn-primary' %>
+        </div>
+
+        <div class="col-xs-1">
+          <%= link_to "Back", :back %>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>
