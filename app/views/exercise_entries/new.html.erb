@@ -6,32 +6,40 @@
       <%= yield %>
 
       <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><%= link_to 'My Exercise Log', exercise_entries_path %> </li>
+        <li class="active"><%= link_to 'New Exercise Log', exercises_path %> </li>
       </ul>
 
 
       <title> Log an Exercise | Weight Lifting Pro</title>
-
+      
       <h3>Log an Exercise</h3>
-      <td> <%= link_to ' Log History ', @exercise%>
+      
+      <div class="col-lg-8">
+      </div>
+
+      <td> <%= link_to ' Exercise History ', @exercise %>
       </td>
-
-      <!--<= render 'exercise_name', disabled: true %>-->
-      
       <br>
-      
-      <!--< if @exercise.notes? %>-->
-    <!--<p>-->
-        <!--<h5>-->
-        <!--  <strong>Exercise Notes: </strong>  <= @exercise.notes %>
-        <!--</h5>-->
-      <!--</p>-->
-          <!--<br>-->
-    <!--< end %>-->
+      <br>
 
+      <% if @exercise.present? %>
+              <div class="row">
+             <div class="col-md-12 col-md-offset-2">
 
-      <!-- <= @exercise.id %> -->
-      
+          <%= render 'exercise_name'%>
+
+          <% if @exercise.notes? %>
+              <p>
+              <h5>
+                <strong>Exercise Notes: </strong>  <%= @exercise.notes %>
+              </h5>
+              </p>
+              </div>
+             </div>
+            <% end %>
+      <% end %>
+<br>
+
       <%= render 'form' %>
       <br>
       <br>
@@ -39,7 +47,7 @@
       <%= link_to "Back", :back %>
       
       <div class="col-md-10">
-        <%= link_to 'Exercise Log', exercise_entries_path %> |
+        <%= link_to 'All Exercises Log', exercise_entries_path %> |
         <%= link_to 'My Exercises', exercises_path %> 
       </div>
 

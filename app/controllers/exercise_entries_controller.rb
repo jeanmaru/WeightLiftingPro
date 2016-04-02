@@ -42,7 +42,7 @@ class ExerciseEntriesController < ApplicationController
 
     respond_to do |format|
       if @exercise_entry.save
-        # flash[:notice] = 'Exercise Entry Successfully Created!'
+        #flash[:notice] = 'Exercise Entry Successfully Created!'
         format.html { redirect_to(@exercise_entry) }
         format.xml { render xml: @exercise_entry, status: :created, location: @exercise_entry }
       else
