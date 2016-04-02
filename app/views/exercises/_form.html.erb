@@ -16,7 +16,7 @@
         
         <div class=" field form-group">
       <%= f.label :sample_exercise_id, "Choose an Exercise:" %>
-      <%= f.collection_select :sample_exercise_id,  SampleExercise.order('name ASC'), :id, :name,  {:selected => params[:sample_exercise_id] } %>
+      <%= f.collection_select :sample_exercise_id,  SampleExercise.order('name ASC'), :id, :name,  {:selected => params[:sample_exercise_id] },  class: 'form-control' %>
     </div>
 
     <div class=" field form-group">
