@@ -13,8 +13,22 @@
       <title> Log an Exercise | Weight Lifting Pro</title>
       
       <h3>Log an Exercise</h3>
+
+      <% if @exercise.present? %>
+
+              <%= render 'exercise_name'%>
+
+              <% if @exercise.notes? %>
+                  <p>
+                  <h5>
+                    <strong>Exercise Notes: </strong>  <%= @exercise.notes %>
+                  </h5>
+                  </p>
+
+              <% end %>
+      <% end %>
       
-      <div class="col-lg-8">
+      <div class="col-lg-9">
       </div>
 
       <td> <%= link_to ' Exercise History ', @exercise %>
@@ -22,22 +36,7 @@
       <br>
       <br>
 
-      <% if @exercise.present? %>
-              <div class="row">
-             <div class="col-md-12 col-md-offset-2">
 
-          <%= render 'exercise_name'%>
-
-          <% if @exercise.notes? %>
-              <p>
-              <h5>
-                <strong>Exercise Notes: </strong>  <%= @exercise.notes %>
-              </h5>
-              </p>
-              </div>
-             </div>
-            <% end %>
-      <% end %>
 <br>
 
       <%= render 'form' %>
