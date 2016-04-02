@@ -28,10 +28,10 @@
               <% end %>
       <% end %>
       
-      <div class="col-lg-9">
+      <div class="col-lg-10">
       </div>
 
-      <td> <%= link_to ' Exercise History ', @exercise %>
+      <td> <%= link_to 'History', @exercise %>
       </td>
       <br>
       <br>
@@ -46,7 +46,7 @@
       <%= link_to "Back", :back %>
       
       <div class="col-md-10">
-        <%= link_to 'All Exercises Log', exercise_entries_path %> |
+        <%= link_to 'My Exercise Log', exercise_entries_path %> |
         <%= link_to 'My Exercises', exercises_path %> 
       </div>
 
