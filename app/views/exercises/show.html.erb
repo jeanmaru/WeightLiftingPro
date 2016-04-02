@@ -20,10 +20,8 @@
         <% if @exercise.routine.nil? %>
            <i>*This exercise does not belong to a routine </i>
               <% else  %>
-          <span style="color:darkgreen"> Routine: <%= @exercise.routine.name %> </span>
-            <p>
+          <span style="color:darkgreen"> Routine: <%= @exercise.routine.name %> </span> |
               <%= link_to 'View Routine', routine_path(@exercise.routine.id)  %>
-            </p>
       <% end %>      
       </div>
     </div>
@@ -79,15 +77,20 @@
 
       <%= will_paginate @exercise_entries %>
       <br>
-      <%= link_to "Back", :back %>
-
+    <div class ="row">
         <div class="col-md-10">
           <%= link_to 'Edit Exercise', edit_exercise_path(@exercise) %>
           |
           <%= link_to 'My Exercises', exercises_path %>
-      
- 
         </div>
+      <div class="col-md-2">
+        <%= link_to "Back", :back %>
+
+      </div>
+    </div>
+
+
+
       <br>
       <br>
       <br>
