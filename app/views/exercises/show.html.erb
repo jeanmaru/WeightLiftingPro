@@ -21,6 +21,9 @@
            <i>*This exercise does not belong to a routine </i>
               <% else  %>
           <span style="color:darkgreen"> Routine: <%= @exercise.routine.name %> </span>
+            <p>
+              <%= link_to 'View Routine', routine_path(@exercise.routine.id)  %>
+            </p>
       <% end %>      
       </div>
     </div>
