@@ -35,16 +35,15 @@ class RoutinesController < ApplicationController
   end
   
   def remove_exercise_from_routine
-    exercise = Exercise.find(params[:id])
-    routine = exercise.routines.find(params[:routine][:id])
+    @exercise = Exercise.find(params[:id])
+    @routine = exercise.routines.find(params[:id])
     
     if routine
-      exercise.routines.delete(routine)
+      @exercise.routines.delete(routine)
     end
   end
 
 
-  # 
   # def remove
   #   @comment = current_user.comments.find(params[:id])
   #   @comment_id = params[:id]

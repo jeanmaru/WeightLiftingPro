@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="8314c326-d043-4739-8245-9af3325c5815" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/exercises/_form_edit.html.erb" afterPath="$PROJECT_DIR$/app/views/exercises/_form_edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/exercises_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/exercises_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reports/exercise_entry_month.html.erb" afterPath="$PROJECT_DIR$/app/views/reports/exercise_entry_month.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/routines_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/routines_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/routines/show.html.erb" afterPath="$PROJECT_DIR$/app/views/routines/show.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -72,21 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/routines/show.html.erb">
+      <file leaf-file-name="exercise_entry_month.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/reports/exercise_entry_month.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-36.875">
-              <caret line="59" column="148" selection-start-line="59" selection-start-column="148" selection-end-line="59" selection-end-column="148" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routines_controller.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/routines_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16025642">
-              <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.27027026">
+              <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -121,7 +109,6 @@
         <option value="$PROJECT_DIR$/app/controllers/reports_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reports/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/reports/exercise_entry_month.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reports/exercise_entry_week.html.erb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="dbtable:/a0d16d11/1b3c9db8-6106-43f8-9891-9f7ce560d659/..users" />
@@ -154,9 +141,10 @@
         <option value="$PROJECT_DIR$/app/views/exercises/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/exercises/_form_edit.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/exercises_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/routines/show.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/views/routines/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/routines_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/reports/exercise_entry_month.html.erb" />
       </list>
     </option>
   </component>
@@ -1132,16 +1120,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reports/exercise_entry_month.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.328767">
-          <caret line="10" column="92" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="92" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#b#0;n#td#0;n#tr#6;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/sample_exercises/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22716628">
@@ -1309,18 +1287,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/routines/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/routines_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-36.875">
-          <caret line="59" column="148" selection-start-line="59" selection-start-column="148" selection-end-line="59" selection-end-column="148" />
+        <state vertical-scroll-proportion="1.3141025">
+          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/routines_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/routines/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16025642">
-          <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.740991">
+          <caret line="59" column="76" selection-start-line="59" selection-start-column="76" selection-end-line="59" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reports/exercise_entry_month.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27027026">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding />
         </state>
       </provider>
