@@ -51,9 +51,15 @@
             <% end %>
 
             <br>
-
+            <div class="col-md-8">
             <%= link_to ' Add Log ', new_exercise_entry_path(:exercise_id => exercise.id), class: 'btn btn-success btn-sm glyphicon
         glyphicon-plus', style: "color: white" %>
+              </div>
+            
+            <div class="col-md-2">
+              <!--<=button_to("Remove", :controller=>"routines", :action=>"remove_exercise_from_routine", :exercise_id => exercise.id, :method=>:post) %>-->
+            <!--<= link_to 'Remove', @routine.exercises.delete(exercise.id), class: 'btn btn-danger btn-sm', style: "color: white" %>-->
+            </div>
 
             </div>
           </div>

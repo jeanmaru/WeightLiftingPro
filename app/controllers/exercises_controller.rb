@@ -2,8 +2,8 @@ class ExercisesController < ApplicationController
   before_action :set_exercise, only: [:show, :edit, :update, :destroy]
   
   respond_to :html, :json, :pdf, :xml
-
-
+  
+  
   def index
     @exercises = current_user.exercises(current_user)
   end

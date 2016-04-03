@@ -7,6 +7,7 @@ WeightLiftingPro::Application.routes.draw do
   get 'home/index'
   get 'admin/index'
   post "/exercises/new"
+  post "/routines/remove_exercise_from_routine"
 
   devise_for :users, :controllers => {:registrations => "users/registrations"}
   resources :users

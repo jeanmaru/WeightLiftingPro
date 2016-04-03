@@ -33,6 +33,34 @@ class RoutinesController < ApplicationController
     @routine.destroy
     respond_with(@routine)
   end
+  
+  def remove_exercise_from_routine
+    exercise = Exercise.find(params[:id])
+    routine = exercise.routines.find(params[:routine][:id])
+    
+    if routine
+      exercise.routines.delete(routine)
+    end
+  end
+
+
+  # 
+  # def remove
+  #   @comment = current_user.comments.find(params[:id])
+  #   @comment_id = params[:id]
+  #   @comment.destroy
+  # end
+  # 
+  # def unfriend
+  #   @friend = User.find(params[:friend_id])
+  #   @curr_user_id = current_user.id
+  #   @curr_user = User.find(current_user.id)
+  #   @friendship = @curr_user.friendships.find_by(params[:user_id])
+  #   @friendship.destroy
+  #   @friendship = @friend.friendships.find_by(params[:user_id])
+  #   @friendship.destroy
+  #   redirect_to root_url
+  # end
 
   private
     def set_routine
