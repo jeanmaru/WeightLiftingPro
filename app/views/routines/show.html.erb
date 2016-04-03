@@ -56,9 +56,9 @@
         glyphicon-plus', style: "color: white" %>
               </div>
             
-            <div class="col-md-2">
-              <%=button_to("Remove", :controller=>"routines", :action=>"remove_exercise_from_routine", :exercise_id => exercise.id, :method=>:post) %>
-            <!--<= link_to 'Remove', @routine.exercises.delete(exercise.id), class: 'btn btn-danger btn-sm', style: "color: white" %>-->
+            <div class="col-md-3">
+              <%= button_to "Remove", {:controller=>"routines", :action=>"remove_exercise_from_routine", :routine_id => @routine.id, :exercise_id => exercise.id, :method=>:post},  {class:"btn
+btn-danger btn-sm"}  %>
             </div>
 
             </div>
