@@ -20,16 +20,16 @@
 
         <br />
           <%= f.label "First Name" %> <br />
-          <%= f.text_field :fname, :style => "width:20%", autofocus: true %>
+          <%= f.text_field :fname, :style => "width:20%", autofocus: true,  class: 'form-control' %>
 
         <br />
           <%= f.label "Last Name" %> <br />
-          <%= f.text_field :lname, :style => "width:20%", autofocus: true %>
+          <%= f.text_field :lname, :style => "width:20%", autofocus: true,  class: 'form-control' %>
 
         
         <br />
           <%= f.label :email %><br />
-          <%= f.email_field :email, :style => "width:20%", autofocus: true %>
+          <%= f.email_field :email, :style => "width:20%", autofocus: true,  class: 'form-control' %>
         
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -42,24 +42,25 @@
 
 
         <%= f.label :password %> <br /> <i>(leave blank if you don't want to change it)</i><br />
-          <%= f.password_field :password, :style => "width:20%", autocomplete: "off" %>
+          <%= f.password_field :password, :style => "width:20%", autocomplete: "off",  class: 'form-control' %>
         
 
         <br />
           <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, :style => "width:20%", autocomplete: "off" %>
+          <%= f.password_field :password_confirmation, :style => "width:20%", autocomplete: "off",  class: 'form-control' %>
         </div>
 
        <br />        
 </div>
 
-        <div class="field form-group">
+        <div class="form-group">
           <%= f.label :body_weight %> <br />
-          <%= f.number_field :body_weight, required: true, autofocus: true, min: 100, max: 800 %>
-          <%= f.select(:measure, options_for_select([['lbs'], ['kg']], @user.measure), :selected => @user.measure) %>
+          <%= f.number_field :body_weight, required: true, autofocus: true, min: 100, max: 800, :style => "width:10%",  class: "form-control" %>
+          <%= f.select(:measure, options_for_select([['lbs'], ['kg']], @user.measure), :selected => @user.measure,  :style => "width:10%", class: "form-control")%>
         </div>
-      
-        <div class="field form-group">
+
+
+      <div class="field form-group">
           <%= f.label :level, "Lfiting Experience Level: " %> <br />
           <%= f.select(:level, options_for_select([['Beginner'], ['Intermediate'], ['Advanced']], @user.level), :selected => @user.level) %>
         </div>
