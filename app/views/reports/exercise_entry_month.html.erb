@@ -6,7 +6,7 @@
       <%= yield %>
 
       <title>Reports | Weight Lifting Pro</title>
-      
+
       <ul class="nav nav-tabs" role="tablist">
         <li class="active"><%= link_to 'Last Month Report', reports_exercise_entry_month_url %> </li>
         <li><%= link_to 'Last Week Report', reports_exercise_entry_week_url %></li>
@@ -30,10 +30,10 @@
                 <tr> <td><b> Sets: </b><%= exercise.sets %></td> </tr>
                 <tr> <td><b> Reps: </b><%= exercise.reps %></td> </tr>
                 <tr> <td><b> Weight: </b><%= exercise.weight %> <%= exercise.measure %> </td> </tr>
-                
-                
+
+
                 <!-- Exercise: Squat -->
-                
+
                 <% if current_user.gender = 'Female' && exercise.exercise.sample_exercise.id == 1 %>
                     <% case current_user.level
                          when 'Beginner' %>
@@ -61,39 +61,39 @@
                     <% end %>
                 <% end %>
 
-                
+
 
                 <!-- Exercise: Deadlift -->
 
-                    <% if current_user.gender = 'Female' && exercise.exercise.sample_exercise.id == 2 %>
-                        <% case current_user.level
-                             when 'Beginner' %>
-                            <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_20 %> <%= exercise.measure %> </span> </b></td> </tr>
-                            <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_45 %> <%= exercise.measure %> </span> </b></td> </tr>
-                        <% when 'Intermediate'  %>
-                            <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_40 %> <%= exercise.measure %> </span> </b></td> </tr>
-                            <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_85 %> <%= exercise.measure %> </span> </b></td> </tr>
-                        <% when  'Advanced'  %>
-                            <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_60 %> <%= exercise.measure %> </span> </b></td> </tr>
-                            <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_150 %> <%= exercise.measure %> </span> </b></td> </tr>
-                        <% end %>
+                <% if current_user.gender = 'Female' && exercise.exercise.sample_exercise.id == 2 %>
+                    <% case current_user.level
+                         when 'Beginner' %>
+                        <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_20 %> <%= exercise.measure %> </span> </b></td> </tr>
+                        <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_45 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <% when 'Intermediate'  %>
+                        <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_40 %> <%= exercise.measure %> </span> </b></td> </tr>
+                        <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_85 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <% when  'Advanced'  %>
+                        <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_60 %> <%= exercise.measure %> </span> </b></td> </tr>
+                        <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_150 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <% end %>
 
-                    <% elsif current_user.gender = 'Male' && exercise.exercise.sample_exercise.id == 2 %>
-                        <% case current_user.level
-                             when 'Beginner' %>
-                            <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_30 %> <%= exercise.measure %> </span> </b></td> </tr>
-                            <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_100 %> <%= exercise.measure %> </span> </b></td> </tr>
-                        <% when 'Intermediate'  %>
-                            <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_50 %> <%= exercise.measure %> </span> </b></td> </tr>
-                            <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_125 %> <%= exercise.measure %> </span> </b></td> </tr>
-                        <% when  'Advanced'  %>
-                            <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_85 %> <%= exercise.measure %> </span> </b></td> </tr>
-                            <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_250 %> <%= exercise.measure %> </span> </b></td> </tr>
-                        <% end %>
+                <% elsif current_user.gender = 'Male' && exercise.exercise.sample_exercise.id == 2 %>
+                    <% case current_user.level
+                         when 'Beginner' %>
+                        <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_30 %> <%= exercise.measure %> </span> </b></td> </tr>
+                        <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_100 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <% when 'Intermediate'  %>
+                        <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_50 %> <%= exercise.measure %> </span> </b></td> </tr>
+                        <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_125 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <% when  'Advanced'  %>
+                        <tr> <td> <b> <span style="color:orangered">Max Goal for 5 Reps: <%= bw_85 %> <%= exercise.measure %> </span> </b></td> </tr>
+                        <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_250 %> <%= exercise.measure %> </span> </b></td> </tr>
+                    <% end %>
                 <% end %>
 
-                
-                
+
+
                 <!-- Exercise: Bench Press -->
 
                 <% if current_user.gender = 'Female' && exercise.exercise.sample_exercise.id == 3 %>
@@ -122,8 +122,8 @@
                         <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_150 %> <%= exercise.measure %> </span> </b></td> </tr>
                     <% end %>
                 <% end %>
-                
-                
+
+
 
                 <!-- Exercise: Leg Press -->
 
@@ -154,7 +154,7 @@
                     <% end %>
                 <% end %>
 
-                
+
 
                 <!-- Exercise: Calf Raise - Standing -->
 
@@ -185,7 +185,7 @@
                     <% end %>
                 <% end %>
 
-                
+
 
                 <!-- Exercise: Bent-Over Row -->
 
@@ -216,8 +216,8 @@
                     <% end %>
                 <% end %>
 
-                
-                
+
+
                 <!-- Exercise: Bicep Curls - Individual -->
 
                 <% if current_user.gender = 'Female' && exercise.exercise.sample_exercise.id == 12 %>
@@ -246,12 +246,12 @@
                         <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_35 %> <%= exercise.measure %> </span> </b></td> </tr>
                     <% end %>
                 <% end %>
-                
+
 
 
 
                 <!-- Exercise: Bicep Curls - Together -->
-                
+
                 <% if current_user.gender = 'Female' && exercise.exercise.sample_exercise.id == 13 %>
                     <% case current_user.level
                          when 'Beginner' %>
@@ -278,9 +278,9 @@
                         <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_70 %> <%= exercise.measure %> </span> </b></td> </tr>
                     <% end %>
                 <% end %>
-                
 
-                
+
+
                 <!--Exercise: Rear Delt Row -->
 
                 <% if current_user.gender = 'Female' && exercise.exercise.sample_exercise.id == 20 %>
@@ -309,11 +309,11 @@
                         <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_50 %> <%= exercise.measure %> </span> </b></td> </tr>
                     <% end %>
                 <% end %>
-                
-                
-                
+
+
+
                 <!-- Exercise: Shoulder Press / Overhead Press -->
-                
+
                 <% if current_user.gender = 'Female' && exercise.exercise.sample_exercise.id == 25 %>
                     <% case current_user.level
                          when 'Beginner' %>
@@ -402,9 +402,9 @@
                         <tr> <td> <b> <span style="color:crimson">Max Goal for 1 Rep: <%= bw_200 %>  <%= exercise.measure %> </span> </b></td> </tr>
                     <% end %>
                 <% end %>
-                
-                
-            <br />              
+
+
+                <br />
               </table>
           <% end %>
       <% end %>
