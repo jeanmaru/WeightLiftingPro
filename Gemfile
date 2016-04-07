@@ -18,6 +18,7 @@ gem 'handlebars_assets'
 gem 'hamlbars'
 
 gem 'acts_as_reportable'
+gem 'pdfkit'
 
 gem 'groupdate'
 gem 'will_paginate', '~> 3.0.6'

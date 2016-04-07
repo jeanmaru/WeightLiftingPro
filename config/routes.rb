@@ -8,12 +8,16 @@ WeightLiftingPro::Application.routes.draw do
   get 'admin/index'
   post "/exercises/new"
   post "/routines/remove_exercise_from_routine"
+  post "/reports/download_pdf"
+  get "/reports/download_pdf"
+
 
   devise_for :users, :controllers => {:registrations => "users/registrations"}
   resources :users
   resources :exercises
   resources :routines
   resources :sample_exercises
+
 
   get '/reports/exercise_entry_week' => "reports#exercise_entry_week"
   get '/reports/exercise_entry_month' => "reports#exercise_entry_month"

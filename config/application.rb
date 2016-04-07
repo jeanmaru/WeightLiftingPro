@@ -2,6 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
@@ -21,5 +22,10 @@ module WeightLiftingPro
     # config.i18n.default_locale = :de
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
     config.assets.precompile += %w( *.svg *.eot *.woff *.ttf )
+
+    # in application.rb(Rails3) or environment.rb(Rails2)
+    require 'pdfkit'
+    config.middleware.use PDFKit::Middleware
+    
   end
 end
