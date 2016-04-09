@@ -14,13 +14,16 @@
       <br>
 
       <h3 class="text-center"><%= current_user.fname %>'s Exercise Report </br>
-      Week of <%= start_date.to_formatted_s(:long)  %></h3>
+      Week of <%= start_date_week.to_formatted_s(:long)  %></h3>
         
       <br>
-      
+
+      <%= button_to "Download PDF", {:controller=>"reports", :action=>"download_weekly_pdf"}, {class:"btn btn-primary btn-sm"} %>
+
+
       <% current_user.exercise_entries.order(created_at: :desc).each do |exercise| %>
               
-          <% if exercise.created_at >= start_date %>
+          <% if exercise.created_at >= start_date_week %>
                   
     <table>
       <tr> <td> <h4> <strong><%= exercise.created_at.strftime("%A, %B %e, %Y") %> </strong><br>

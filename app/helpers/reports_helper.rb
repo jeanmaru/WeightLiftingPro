@@ -1,5 +1,5 @@
 module ReportsHelper
-  def start_date
+  def start_date_week
     Date.today - 7.days
   end
   

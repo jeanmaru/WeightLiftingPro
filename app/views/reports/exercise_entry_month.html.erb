@@ -19,7 +19,7 @@
 
       <br>
 
-      <%= button_to "Download PDF", {:controller=>"reports", :action=>"download_pdf"}, {class:"btn btn-primary btn-sm"} %>
+      <%= button_to "Download PDF", {:controller=>"reports", :action=>"download_monthly_pdf"}, {class:"btn btn-primary btn-sm"} %>
 
       
       <% current_user.exercise_entries.order(created_at: :desc).each do |exercise| %>
