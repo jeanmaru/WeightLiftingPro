@@ -19,6 +19,8 @@ gem 'hamlbars'
 
 gem 'acts_as_reportable'
 gem 'pdfkit'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 gem 'groupdate'
 gem 'will_paginate', '~> 3.0.6'

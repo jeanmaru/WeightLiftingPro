@@ -19,11 +19,11 @@
 
       <br>
 
-      <%= button_to "Download PDF", {:controller=>"reports", :action=>"download_pdf", :user_id => current_user}, {class:"btn btn-primary btn-sm"} %>
+      <%= button_to "Download PDF", {:controller=>"reports", :action=>"download_pdf"}, {class:"btn btn-primary btn-sm"} %>
 
-      
-      
-      
+
+      <!--<= button_to "Download PDF", exercise_entries_month(format: 'pdf') %>-->
+
       <% current_user.exercise_entries.order(created_at: :desc).each do |exercise| %>
           
 
