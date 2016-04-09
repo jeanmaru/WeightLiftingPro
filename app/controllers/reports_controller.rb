@@ -7,12 +7,6 @@ class ReportsController < ApplicationController
               :layout => 'pdf.html.erb',
               :filename => "My_Monthly_Exercise_Report.pdf",
               :page_size => 'Letter',
-              :margin => {
-                  :top      => '0.5in',
-                  :bottom   => '1in',
-                  :left     => '0in',
-                  :right    => '0in'
-              },
               :template => '/generate_monthly_report_pdf.pdf.erb',
               :disposition => 'attachment')
 
