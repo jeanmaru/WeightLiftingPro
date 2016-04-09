@@ -1,17 +1,15 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-3">
-    </div>
-    <div class="col-xs-8">
+<%= wicked_pdf_stylesheet_link_tag "documents.css.scss" %>
+
+
+
       <%= yield %>
 
-
-      <h3 class="text-center"><%= current_user.fname %>'s Exercise Report </br>
+      <h3><%= current_user.fname %>'s Exercise Report </br>
         Month Beginning <%= start_date_month.to_formatted_s(:long)  %></h3>
 
       <br>
 
-      
+
       <% current_user.exercise_entries.order(created_at: :desc).each do |exercise| %>
 
 
@@ -20,6 +18,7 @@
               <table>
                 <tr> <td> <h4> <strong><%= exercise.created_at.strftime("%A, %B %e, %Y") %> </strong></h4></td> </tr>
                 <tr> <td> <h4><%= exercise.exercise.sample_exercise.name %></h4></td> </tr>
+                <div class="document">
                 <tr> <td><b> Sets: </b><%= exercise.sets %></td> </tr>
                 <tr> <td><b> Reps: </b><%= exercise.reps %></td> </tr>
                 <tr> <td><b> Weight: </b><%= exercise.weight %> <%= exercise.measure %> </td> </tr>
@@ -396,16 +395,14 @@
                     <% end %>
                 <% end %>
 
+                </div>
 
                 <br />
               </table>
           <% end %>
       <% end %>
 
-    </div>
-    <div class="col-sm-4">
-    </div>
-  </div>
-</div>
+
+
 <br>
 <br>

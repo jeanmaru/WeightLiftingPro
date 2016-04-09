@@ -19,66 +19,6 @@
 //= require backbone
 //= require_self
 
-//= require underscore
-//= require backbone
-//= require weight_lifting_pro
-//= require_tree ../templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
-//= require_tree ./models
-//= require underscore
-//= require backbone
-//= require weight_lifting_pro
-//= require_tree ../templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
-//= require_tree ./collections
-//= require underscore
-//= require backbone
-//= require weight_lifting_pro
-//= require_tree ../templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
-//= require_tree ./views
-//= require underscore
-//= require backbone
-//= require weight_lifting_pro
-//= require_tree ../templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
-//= require_tree ./routers
-//= require underscore
-//= require backbone
-//= require weight_lifting_pro
-//= require_tree ../templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
-//= require_tree ../templates
-//= require underscore
-//= require backbone
-//= require weight_lifting_pro
-//= require_tree ../templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
-//= require_tree .
-
-window.App = {
-    Models: {},
-    Collections: {},
-    Views: {}
-}
 
 $(document).ready(function() {
     $('.has-tooltip').tooltip();
