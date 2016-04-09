@@ -5,25 +5,15 @@
     <div class="col-xs-8">
       <%= yield %>
 
-      <title>Reports | Weight Lifting Pro</title>
-
-      <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><%= link_to 'Last Month Report', reports_exercise_entry_month_url %> </li>
-        <li><%= link_to 'Last Week Report', reports_exercise_entry_week_url %></li>
-      </ul>
-      <br>
-
 
       <h3 class="text-center"><%= current_user.fname %>'s Exercise Report </br>
         Month Beginning <%= start_date_month.to_formatted_s(:long)  %></h3>
 
       <br>
 
-      <%= button_to "Download PDF", {:controller=>"reports", :action=>"download_pdf"}, {class:"btn btn-primary btn-sm"} %>
-
       
       <% current_user.exercise_entries.order(created_at: :desc).each do |exercise| %>
-          
+
 
           <% if exercise.created_at >= start_date_month %>
 

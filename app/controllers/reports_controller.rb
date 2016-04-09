@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   def download_pdf
-    html = render_to_string(:action => '/exercise_entry_month')
+    html = render_to_string(:action => '/generate_monthly_report_pdf.pdf.erb')
     pdf = WickedPdf.new.pdf_from_string(html)
 
     send_data(pdf,
@@ -13,6 +13,7 @@ class ReportsController < ApplicationController
                   :left     => '0in',
                   :right    => '0in'
               },
+              :template => '/generate_monthly_report_pdf.pdf.erb',
               :disposition => 'attachment')
 
   end
