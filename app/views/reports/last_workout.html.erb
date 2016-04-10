@@ -19,7 +19,8 @@
       <h3 class="text-center"><%= current_user.fname %>'s Exercise Report for Last Workouts </h3>
 
       <br>
-      <!--< current_user.exercise_entries.order(created_at: :desc).each do |exercise| %>-->
+      
+      <%= button_to "Download PDF", {:controller=>"reports", :action=>"download_last_pdf"}, {class:"btn btn-primary btn-sm"} %>
 
 
     <% current_user.exercise_entries.order(created_at: :desc).group(:exercise_id).each do |exercise| %>

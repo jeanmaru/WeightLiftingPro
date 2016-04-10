@@ -15,6 +15,8 @@ WeightLiftingPro::Application.routes.draw do
   post "/reports/download_weekly_pdf"
   get "/reports/download_weekly_pdf"
 
+  post "/reports/download_last_pdf"
+  get "/reports/download_last_pdf"
 
   devise_for :users, :controllers => {:registrations => "users/registrations"}
   resources :users

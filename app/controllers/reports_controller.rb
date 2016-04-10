@@ -25,7 +25,18 @@ class ReportsController < ApplicationController
               :disposition => 'attachment')
 
   end
-  
+
+  def download_last_pdf
+    html = render_to_string(:action => '/generate_last_report_pdf.pdf.erb')
+    pdf = WickedPdf.new.pdf_from_string(html)
+
+    send_data(pdf,
+              :layout => 'pdf.html.erb',
+              :filename => "My_Last_Exercise_Report.pdf",
+              :page_size => 'Letter',
+              :disposition => 'attachment')
+
+  end
   
 
 end
