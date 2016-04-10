@@ -8,10 +8,12 @@
       <title>Reports | Weight Lifting Pro</title>
 
       <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><%= link_to 'Last Month Report', reports_exercise_entry_month_url %> </li>
+        <li class="active"><%= link_to 'Last Workout', reports_last_workout_url %> </li>
         <li><%= link_to 'Last Week Report', reports_exercise_entry_week_url %></li>
+        <li><%= link_to 'Last Month Report', reports_exercise_entry_month_url %> </li>
       </ul>
       <br>
+      
 
 
       <h3 class="text-center"><%= current_user.fname %>'s Exercise Report for Last Workouts </h3>
