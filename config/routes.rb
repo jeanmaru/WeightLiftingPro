@@ -23,6 +23,7 @@ WeightLiftingPro::Application.routes.draw do
   resources :sample_exercises
 
 
+
   get '/reports/exercise_entry_week' => "reports#exercise_entry_week"
   get '/reports/exercise_entry_month' => "reports#exercise_entry_month"
 

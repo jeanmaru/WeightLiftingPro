@@ -1,0 +1,87 @@
+<Title>Create a New User | Weight Lifting Pro </Title>
+
+<div class="container">
+
+  <%= form_for User.new do |f| %>
+      <h2>Create a New User</h2>
+
+      <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+      
+      <div class="field form-group">
+
+        <br />
+        <%= f.label "First Name" %> <br />
+        <%= f.text_field :fname, :style => "width:20%", autofocus: true %>
+
+        <br />
+        <%= f.label "Last Name" %> <br />
+        <%= f.text_field :lname, :style => "width:20%", autofocus: true %>
+
+
+        <br />
+        <%= f.label :email %><br />
+        <%= f.email_field :email, :style => "width:20%", autofocus: true %>
+
+        
+        <div class="field form-group">
+
+
+          <%= f.label :password %> <br />
+          <%= f.password_field :password, :style => "width:20%", autocomplete: "off" %>
+
+
+          <br />
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, :style => "width:20%", autocomplete: "off" %>
+        </div>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :body_weight %> <br />
+        <%= f.number_field :body_weight, autofocus: true, min: 100, max: 800 %>
+        <%= f.select(:measure, options_for_select([['lbs'], ['kg']], @user.measure), :selected => @user.measure) %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :level, "Lfiting Experience Level: " %> <br />
+        <%= f.select(:level, options_for_select([['Beginner'], ['Intermediate'], ['Advanced']], @user.level), :selected => @user.level) %>
+      </div>
+
+
+      <div class="field form-group">
+        <%= f.label "Birthday"%> <br />
+        <%= f.date_select :dob, required: true, start_year: 1920, end_year: 2015, default: 18.years.ago, autofocus:
+                                      true %>
+
+
+        <br />
+        <%= f.radio_button :gender, 'Female'%>
+        <%= f.label :female %>
+        <%= f.radio_button :gender, 'Male'%>
+        <%= f.label :male %>
+      </div>
+
+      <br />
+
+      <div class="form-actions">
+        <%= f.submit "Create User", class: "btn btn-primary btn-md", :style=>'width: 235px;' %>
+      </div>
+  <% end %>
+  <br />
+  <br />
+
+
+</div>
+<br />
+<br />
+<br />
