@@ -32,22 +32,31 @@ end
 
   def create
     @exercise = current_user.exercises.new(exercise_params)
-    @exercise.save
-    respond_with(@exercise)
+    
+    respond_to do |format|
+      if @exercise.save
+        format.html {  redirect_to exercises_path(@exercise), notice: 'Exercise Successfully Created!' }
+        format.json { render :show, status: :created, location: @exercise }
+      else
+        format.html { render :new }
+        format.json { render json: @exercise.errors, status: :unprocessable_entity }
+      end
+    end
   end
+
   
   def update
     @exercise.update(exercise_params)
     
     respond_to do |format|
-      format.html { redirect_to exercises_path(@exercise), :notice => 'Exercise Successfuly Updated!' }
-      format.json  { render :show, status: :ok, location: @user }
+      format.html { redirect_to exercises_path(@exercise), :notice => 'Exercise Successfully Updated!' }
+      format.json  { render :show, status: :ok, location: @exercise }
     end
   end
 
   def destroy
     @exercise.destroy
-    flash[:notice] = 'Exercise Successfully Deleted.'
+    flash[:alert] = 'Notice: Exercise Deleted.'
     respond_with(@exercise)
   end
 
