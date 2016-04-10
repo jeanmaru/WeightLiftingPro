@@ -103,7 +103,7 @@ class UsersController < ApplicationController
     if current_user.admin?
       @user.destroy
       respond_to do |format|
-        format.html { redirect_to users_path, notice: 'User was Successfully Destroyed.' }
+        format.html { redirect_to users_path, alert: 'User Successfully Destroyed.' }
         format.json { head :no_content }
       end
     else
