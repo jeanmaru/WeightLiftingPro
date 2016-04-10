@@ -7,6 +7,7 @@ module ReportsHelper
     Date.today - 30.days
   end
 
+
   def bw_85
     current_user.body_weight * 0.85
   end

@@ -6,5 +6,7 @@ class ExerciseEntry < ActiveRecord::Base
   
   validates :reps, :sets, presence: true
   validates_presence_of :measure, :if => :weight?
+
+
   
 end

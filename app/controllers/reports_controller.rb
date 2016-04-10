@@ -1,4 +1,7 @@
 class ReportsController < ApplicationController
+
+
+
   def download_monthly_pdf
     html = render_to_string(:action => '/generate_monthly_report_pdf.pdf.erb')
     pdf = WickedPdf.new.pdf_from_string(html)
@@ -22,5 +25,7 @@ class ReportsController < ApplicationController
               :disposition => 'attachment')
 
   end
+  
+  
 
 end
