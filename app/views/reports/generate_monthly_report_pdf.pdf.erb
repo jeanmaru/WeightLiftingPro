@@ -15,11 +15,11 @@
 
               <table>
                 <tr> <td> <strong><%= exercise.created_at.strftime("%A, %B %e, %Y") %> </strong></td> </tr>
-                <tr> <td> <strong> <%= exercise.exercise.sample_exercise.name %> </strong></td> </tr>
+                <tr> <td> <%= exercise.exercise.sample_exercise.name %> </td> </tr>
                 <font size="2">
-                <tr> <td> <b> Sets: </b><%= exercise.sets %></td> </tr>
-                <tr> <td><b> Reps: </b><%= exercise.reps %></td> </tr>
-                <tr> <td><b> Weight: </b><%= exercise.weight %> <%= exercise.measure %> </td> </tr>
+                  <tr> <td> Reps: <%= exercise.reps %></td> </tr>
+                  <tr> <td> Sets: <%= exercise.sets %></td> </tr>
+                <tr> <td> Weight: <%= exercise.weight %> <%= exercise.measure %> </td> </tr>
                 </font>
 
                 <font size="2">
