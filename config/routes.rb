@@ -29,6 +29,7 @@ WeightLiftingPro::Application.routes.draw do
   get '/reports/exercise_entry_week' => "reports#exercise_entry_week"
   get '/reports/exercise_entry_month' => "reports#exercise_entry_month"
   get '/reports/last_workout' => "reports#last_workout"
+  get '/reports' => "reports#last_workout"
 
 
 

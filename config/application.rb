@@ -28,7 +28,8 @@ module WeightLiftingPro
     # in application.rb(Rails3) or environment.rb(Rails2)
     require 'pdfkit'
     config.middleware.use PDFKit::Middleware
-    
+
+    require 'will_paginate/collection'
     
     # 
     # PDFKit.configure do |config|
