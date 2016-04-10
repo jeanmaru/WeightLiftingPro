@@ -1,5 +1,5 @@
 
-<% current_user.exercise_entries.order(created_at: :desc).paginate(:page => params[:page], :per_page => 10).each do |exercise| %>
+<% current_user.exercise_entries.order(created_at: :desc).each do |exercise| %>
 
 
     <% if exercise.created_at >= start_date_month %>
@@ -386,12 +386,10 @@
 
         </table>
     <% end %>
+    <!--<= will_paginate(exercise, :total_entries => 10) %>-->
+
 <% end %>
 
-<% current_user.exercise_entries.order(created_at: :desc).paginate(:page => params[:page], :per_page => 10).each do |exercise| %>
-
-<%= will_paginate exercise %>
-<% end %>
 
 
 <br />

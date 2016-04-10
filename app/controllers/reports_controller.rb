@@ -37,6 +37,5 @@ class ReportsController < ApplicationController
               :disposition => 'attachment')
 
   end
-  
 
 end

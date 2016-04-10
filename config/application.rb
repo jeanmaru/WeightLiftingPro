@@ -29,7 +29,6 @@ module WeightLiftingPro
     require 'pdfkit'
     config.middleware.use PDFKit::Middleware
 
-    require 'will_paginate/collection'
     
     # 
     # PDFKit.configure do |config|
