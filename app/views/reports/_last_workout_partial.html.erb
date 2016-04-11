@@ -1,3 +1,4 @@
+
 <% current_user.exercise_entries.order(created_at: :desc).group(:exercise_id).each do |exercise| %>
 
 
