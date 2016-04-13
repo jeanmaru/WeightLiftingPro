@@ -1,3 +1,5 @@
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
@@ -111,16 +113,15 @@
 
     <div class="col-md-8">
       <p class="text-center">  <%= @exercise.sample_exercise.name %> Progress </p>
-      
-      <%= line_chart @exercise_entries.count(:created_at).sum(:weight), ytitle: "Weight Lifted", height: "210px",
-                     xAxis: { type: 'datetime',  format: '{value:%W/%Y}' }, discrete: true %>
 
+     <%= line_chart @exercise_entries.group(:weight).count(:weight), ytitle: "Frequency", xtitle: "Weight Lifted", height: "210px", discrete: true, yAxis: {tickInterval:1} %>
 
       <!-- <= line_chart @exercise_entries.group(:created_at).sum(:weight), ytitle: "Weight Lifted", height: "210px",
                      discrete: true, xAxis: { type: 'datetime',  format: '{value:%W/%Y}' } %> -->
       
       <!--xAxis: '%e %b'-->
-      <!--<= bar_chart @exercise_entries.group(:weight).count(:created_at), {library: { hAxis: { format: 'M/d/yy'}}}  %>-->
+      <!--<= bar_chart @exercise_entries.group(:weight).count(:created_at), {library: { hAxis: { tickInterval: 5}}}  %>-->
+      <!--<= pie_chart @exercise_entries.group(:weight).count(:created_at) %>-->
       
       <!--<= column_chart @exercise_entries.group(:created_at).sum(:weight), library: { hAxis: { format: 'MM/dd' } }  %>-->
       <div class="col-xs-10">
