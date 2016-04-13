@@ -12,7 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require_tree .
 //= require turbolinks
+//= require highcharts.js
+//= require highcharts
+//= require highcharts/highcharts-more
+//= require chartkick
 //= require bootstrap-sprockets
 //= require bootstrap/dropdown
 //= require underscore
