@@ -8,6 +8,7 @@ WeightLiftingPro::Application.routes.draw do
   get 'admin/index'
   post "/exercises/new"
   post "/routines/remove_exercise_from_routine"
+  post "/exercise_entries/graphs"
   
   post "/reports/download_monthly_pdf"
   get "/reports/download_monthly_pdf"

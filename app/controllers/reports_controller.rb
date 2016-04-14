@@ -35,7 +35,8 @@ class ReportsController < ApplicationController
               :filename => "My_Last_Exercise_Report.pdf",
               :page_size => 'Letter',
               :disposition => 'attachment')
-
   end
+  
+  
 
 end

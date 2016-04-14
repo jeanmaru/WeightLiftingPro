@@ -9,6 +9,15 @@ class ExerciseEntriesController < ApplicationController
     respond_with(@exercise_entries)
   end
 
+
+  
+  def graphs
+    @exercise_entries = current_user.exercise_entries(current_user)
+    @sample_name = @exercise_entries.select(:exercise_id)
+    respond_with(@exercise_entries)
+    # @vone = Result.where(params[:variety_one], params[:years]).includes(:trial).where(params[:region_id], params[:irrigated])
+  end
+
   def show
     # redirect_to exercise_entries_url
     respond_with(@exercise_entry)

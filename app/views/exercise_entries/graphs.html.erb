@@ -1,0 +1,68 @@
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+
+
+<div class="container">
+  <title>Exercise Log Graphs | Weight Lifting Pro</title>
+
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-9">
+      <%= yield %>
+      
+      <br>
+      <br>
+      <%= column_chart @exercise_entries.group(:exercise_id).count, ytitle: "Frequency", xtitle: "Exercise", height: "210px"%>
+
+      <br>
+      <br>
+
+      <%= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), ytitle: "Weight Lifted", height: "210px", discrete: true %>
+      <br>
+      <br>
+
+      <!--<= line_chart @exercise_entries.group(:weight).count(:weight), ytitle: "Frequency", xtitle: "Weight Lifted", height: "210px", discrete: true, yAxis: {tickInterval:1} %>-->
+      <!--<br>-->
+      <!--<br>-->
+      
+      <!--<= line_chart @exercise_entries.group(:exercise_id).pluck(:weight), ytitle: "Frequency", xtitle: "Weight Lifted", height: "230", discrete: true, yAxis: {tickInterval:1} %>-->
+      <!--<br>-->
+      <!--<br>-->
+
+      <!--<= line_chart @exercise_entries.group(:exercise_id).count, discrete: true %>-->
+
+      <br>
+      <br>
+
+      <!--module OrdersHelper-->
+      <!--def orders_chart_series(orders, start_time)-->
+      <!--orders_by_day = orders.where(:purchased_at => start_time.beginning_of_day..Time.zone.now.end_of_day).-->
+      <!--group("date(purchased_at)").-->
+      <!--select("purchased_at, sum(total_price) as total_price")-->
+      <!--(start_time.to_date..Date.today).map do |date|-->
+      <!--order = orders_by_day.detect { |order| order.purchased_at.to_date == date }-->
+      <!--order && order.total_price.to_f || 0-->
+      <!--end.inspect-->
+      <!--end-->
+      <!--end-->
+
+      <!--<br>-->
+      <!--<br>-->
+      <!--<= line_chart @exercise_entries.group(:created_at).count, ytitle: "Frequency", xtitle: "Weight Lifted", height: "230", discrete: true, yAxis: {tickInterval:1} %>-->
+      <!--<br>-->
+      <!--<br>-->
+
+      <!--<= area_chart @exercise_entries.pluck("exercise_id").uniq.map { |c| { name: c, data: @exercise_entries.where(exercise_id: c).group(:weight).count }  }, discrete: true %>-->
+
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>

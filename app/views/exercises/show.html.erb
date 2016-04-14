@@ -112,9 +112,13 @@
     <div class="col-xs-9 col-xs-offset-3">
 
     <div class="col-md-8">
-      <p class="text-center">  <%= @exercise.sample_exercise.name %> Progress </p>
+      <p class="text-center">  <%= @exercise.sample_exercise.name %> Weight Frequency </p>
 
      <%= line_chart @exercise_entries.group(:weight).count(:weight), ytitle: "Frequency", xtitle: "Weight Lifted", height: "210px", discrete: true, yAxis: {tickInterval:1} %>
+      <br>
+      <br>
+      <p class="text-center">  <%= @exercise.sample_exercise.name %> Lifting History Log </p>
+      <%= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), ytitle: "Weight Lifted", xtitle: "Log Date", height: "210px"%>
 
       <!-- <= line_chart @exercise_entries.group(:created_at).sum(:weight), ytitle: "Weight Lifted", height: "210px",
                      discrete: true, xAxis: { type: 'datetime',  format: '{value:%W/%Y}' } %> -->
