@@ -118,7 +118,7 @@
       <br>
       <br>
       <p class="text-center">  <%= @exercise.sample_exercise.name %> Lifting History Log </p>
-      <%= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), ytitle: "Weight Lifted", xtitle: "Log Date", height: "210px"%>
+      <%= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), ytitle: "Weight Lifted", xtitle: "Log Date", height: "210px", discrete: true%>
 
       <!-- <= line_chart @exercise_entries.group(:created_at).sum(:weight), ytitle: "Weight Lifted", height: "210px",
                      discrete: true, xAxis: { type: 'datetime',  format: '{value:%W/%Y}' } %> -->

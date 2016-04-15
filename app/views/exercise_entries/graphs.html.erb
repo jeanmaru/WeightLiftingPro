@@ -15,18 +15,20 @@
     </div>
     <div class="col-xs-9">
       <%= yield %>
+      <br>
+      <br>
+      <h4 class="text-center">  Exercises Log History </h4>
+      <%= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), ytitle: "Weight Lifted", height: "250px", discrete: true %>
       
       <br>
+      <br>      
       <br>
-      <%= column_chart @exercise_entries.group(:exercise_id).count, ytitle: "Frequency", xtitle: "Exercise", height: "210px"%>
+
+      <h4 class="text-center">  Exercise Frequency </h4>
+      <%= column_chart @exercise_entries.group(:exercise_id).count, ytitle: "Frequency", xtitle: "Exercise", height: "250px"%>
 
       <br>
       <br>
-
-      <%= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), ytitle: "Weight Lifted", height: "210px", discrete: true %>
-      <br>
-      <br>
-
       <!--<= line_chart @exercise_entries.group(:weight).count(:weight), ytitle: "Frequency", xtitle: "Weight Lifted", height: "210px", discrete: true, yAxis: {tickInterval:1} %>-->
       <!--<br>-->
       <!--<br>-->
