@@ -77,6 +77,13 @@
                 <%= log.notes %>
               </p>
               <% end %>
+              <br>
+
+              <div class="col-md-9">
+                  </div>
+              <div class="col-md-3">
+                <td><%= link_to 'Edit', edit_exercise_entry_path(log), class: 'btn btn-info btn-sm', style: "color: white" %></td>
+              </div>
 
             </div>
           </div>
@@ -112,13 +119,20 @@
     <div class="col-xs-9 col-xs-offset-3">
 
     <div class="col-md-8">
-      <p class="text-center">  <%= @exercise.sample_exercise.name %> Weight Frequency </p>
-
-     <%= line_chart @exercise_entries.group(:weight).count(:weight), ytitle: "Frequency", xtitle: "Weight Lifted", height: "210px", discrete: true, yAxis: {tickInterval:1} %>
-      <br>
-      <br>
-      <p class="text-center">  <%= @exercise.sample_exercise.name %> Lifting History Log </p>
+      <p class="text-center"> <strong><%= @exercise.sample_exercise.name %> Lifting History Log</strong>  </p>
       <%= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), ytitle: "Weight Lifted", xtitle: "Log Date", height: "210px", discrete: true%>
+      
+      <br>
+      <br>
+      <br>
+      
+      <p class="text-center"><strong>  <%= @exercise.sample_exercise.name %> Weight Frequency </strong> </p>
+      <%= column_chart @exercise_entries.group(:weight).count(:weight), ytitle: "Frequency", xtitle: "Weight Lifted", height: "210px", discrete: true, exporting: {
+                                                                              buttons: {
+                                                                                      contextButtons: {
+                                                                                              enabled: true,
+                                                                                              fallbackToExportServer: true,
+                                                                              }}} %>
 
       <!-- <= line_chart @exercise_entries.group(:created_at).sum(:weight), ytitle: "Weight Lifted", height: "210px",
                      discrete: true, xAxis: { type: 'datetime',  format: '{value:%W/%Y}' } %> -->
@@ -128,9 +142,11 @@
       <!--<= pie_chart @exercise_entries.group(:weight).count(:created_at) %>-->
       
       <!--<= column_chart @exercise_entries.group(:created_at).sum(:weight), library: { hAxis: { format: 'MM/dd' } }  %>-->
+    </div>
+
+
       <div class="col-xs-10">
         </div>
-    </div>
     </div>
 </div>
     <% end %>
