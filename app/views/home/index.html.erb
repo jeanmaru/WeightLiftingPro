@@ -1,22 +1,38 @@
 <Title> Weight Lifting Pro </Title>
 
 <div class="container">
-<body>
 
 <% if user_signed_in? %>
 
     <h3> Welcome Back, <%=@user.fname %>!  </h3>
-
-
+      <br>
+      <br>
+      <br>
+      
 <% else %>
 
     <h1><strong>Welcome to Weight Lifting Pro!</strong></h1>
     <p class="lead"> This app helps you log your routines. </p>
-
-
+      
 <% end %>
-</body>
 
+    <div class="row">
+      <div class="col-xs-1">
+</div>
+      
+      <div class="col-xs-3">
+        <%= link_to(image_tag("/Dumbell-01.png", size: "300"), exercises_path) %>
+      </div>
+      
+      <div class="col-xs-3">
+        <%= link_to(image_tag("/Exercise%20Log-01.png", size: "300"), exercise_entries_path) %>
+      </div>
+      
+      <div class="col-xs-3">
+        <%= link_to(image_tag("/Routines-01.png", size: "300"), routines_path) %>
+      </div>
+      
+    </div>
 </div>
 
 
