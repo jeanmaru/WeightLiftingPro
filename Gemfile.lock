@@ -140,6 +140,7 @@ GEM
     ref (2.0.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    ruby-measurement (1.2.3)
     ruport (1.6.3)
       fastercsv
       pdf-writer (= 1.1.8)
@@ -215,6 +216,7 @@ DEPENDENCIES
   less-rails
   pdfkit
   rails (= 4.0.2)
+  ruby-measurement
   sass-rails (~> 4.0.0)
   sdoc
   simple-navigation

@@ -6,6 +6,11 @@ WeightLiftingPro::Application.routes.draw do
 
   get 'home/index'
   get 'admin/index'
+  get 'calculator' => "calculator#index"
+  get 'calculator/new'
+
+
+
   post "/exercises/new"
   post "/routines/remove_exercise_from_routine"
   post "/exercise_entries/graphs"
@@ -31,6 +36,7 @@ WeightLiftingPro::Application.routes.draw do
   get '/reports/exercise_entry_month' => "reports#exercise_entry_month"
   get '/reports/last_workout' => "reports#last_workout"
   get '/reports' => "reports#last_workout"
+
 
 
 

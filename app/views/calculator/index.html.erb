@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+    </div>
+    <div class="col-xs-4">
+<%= yield %>
+      <title>Unit Converter | Weight Lifting Pro</title>
+
+      <h3><strong>Unit Converter</strong></h3>
+      <p> This calculator allows you to enter a weight and convert it to kgs or lbs. 
+        The converter assumes you are entering the opposite unit of what you select to convert to.  </p>
+
+      <br>
+
+      <%= form_for :calculator, url: { action: :new }, method: :get do |f|   %>
+          <p>Enter the number for the weight: </p>
+          <%= number_field_tag :a, params[:a], :style=>'width: 150px', class: 'form-control' %>
+          <!--<= select_tag :measurement, options_for_select([['kg'], ['lbs']], params[:measurement]) %>-->
+          <h5> convert to</h5>
+          <%= select_tag :operation, options_for_select([['kg', :kg], ['lbs', :lbs]], params[:operation]), :style=>'width: 150px', class: 'form-control' %>
+          <br>
+          <%= f.submit 'Convert', class: "btn btn-primary"  %>
+      <% end %>
+      <br>
+
+      <% unless @result.nil? %>
+          <h4><strong>= <%= @result %> <%= params[:operation]%> </strong> </h4>
+      <% end %>
+
+
+    </div>
+  </div>
+</div>
