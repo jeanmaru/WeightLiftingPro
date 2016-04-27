@@ -3,34 +3,38 @@
 <div class="container">
 
 <% if user_signed_in? %>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-xs-2">
+              <%= render 'layouts/left_panel' %>
+            </div>
+        <div class="col-xs-1">
+</div>
 
-    <h3> Welcome Back, <%=@user.fname %>!  </h3>
-      <br>
-      <br>
-      <br>
+        <div class="col-xs-3">
+          <%= link_to(image_tag("/Dumbell.png", size: "260"), exercises_path) %>
+        </div>
+
+        <div class="col-xs-3">
+          <%= link_to(image_tag("/Exercise%20Log-01.png", size: "260"), exercise_entries_path) %>
+        </div>
+
+        <div class="col-xs-3">
+          <%= link_to(image_tag("/Routines.png", size: "260"), routines_path) %>
+        </div>
       
 <% else %>
 
     <h1><strong>Welcome to Weight Lifting Pro!</strong></h1>
-    <p class="lead"> This app helps you log your routines. </p>
-      
+    <p class="lead"> This app helps you log your weight lifting exercises and routines. </p>
+      <br>
+      <br>
+      <br>
 <% end %>
 
-    <div class="row">
-      <div class="col-xs-1">
-</div>
-      
-      <div class="col-xs-3">
-        <%= link_to(image_tag("/Dumbell.png", size: "300"), exercises_path) %>
-      </div>
-      
-      <div class="col-xs-3">
-        <%= link_to(image_tag("/Exercise%20Log-01.png", size: "300"), exercise_entries_path) %>
-      </div>
-      
-      <div class="col-xs-3">
-        <%= link_to(image_tag("/Routines.png", size: "300"), routines_path) %>
-      </div>
+
       
     </div>
 </div>
