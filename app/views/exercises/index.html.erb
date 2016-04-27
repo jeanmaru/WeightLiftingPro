@@ -145,14 +145,24 @@
                         ),
                         new_exercise_path,
                         style: "color: white",
-                        class: 'btn btn-success btn-md'
+                        class: 'btn btn-success'
                 )
             %>
 
           </div>
           
           <div class="col-md-8">
-            <%= link_to 'My Exercise Log', exercise_entries_path, style: "color: white", class: 'btn btn-primary' %>
+            <%= link_to(
+                        content_tag(
+                                :i,
+                                ' My Exercise Log',
+                                class: 'fa fa-plus'
+                        ),
+                        exercise_entries_path,
+                        style: "color: white",
+                        class: 'btn btn-primary'
+                )
+            %>
           </div>
 
           <div class="col-xs-1">
