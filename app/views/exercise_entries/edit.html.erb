@@ -16,8 +16,13 @@
       <Title> Edit Exercise Entry | Weight Lifting Pro </Title>
       
       <h3>Edit Exercise Entry</h3>
+      
+      <% if @exercise.present? %>
+          <%= render 'exercise_name'%>
+      <% end %>
 
-<%= render 'form' %>
+
+      <%= render 'form' %>
 
       
       <div class="row">

@@ -36,7 +36,19 @@
       <div class="col-lg-10">
       </div>
 
-      <td> <%= link_to 'History', @exercise %>
+      <td>
+
+
+        <%= link_to(
+                    content_tag(
+                            :i,
+                            nil,
+                            class: 'fa fa-history'
+                    ),
+                    @exercise,
+                    class: 'btn btn-default btn-md'
+            )
+        %>
       </td>
       <br>
       <br>
@@ -48,11 +60,19 @@
       <br>
       <br>
 
-      <%= link_to "Back", :back %>
+
+      <%= link_to(
+                  content_tag(
+                          :i,
+                          ' back',
+                          class: 'fa fa-arrow-left'
+                  ),
+                  :back
+          )
+      %>
       
       <div class="col-md-10">
-        <%= link_to 'My Exercise Log', exercise_entries_path %> |
-        <%= link_to 'My Exercises', exercises_path %> 
+
       </div>
 
 
