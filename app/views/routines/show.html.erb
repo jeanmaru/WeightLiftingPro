@@ -20,7 +20,7 @@
           
         <div class="well">
           <div class="row">
-              <h4><%= exercise.sample_exercise.name %> </h4>
+              <h4><strong><%= exercise.sample_exercise.name %></strong> </h4>
                 <% if exercise.notes? %>
                 <p>
               <strong>Exercise Notes:</strong>
@@ -52,8 +52,18 @@
 
             <br>
             <div class="col-md-8">
-            <%= link_to ' Add Log ', new_exercise_entry_path(:exercise_id => exercise.id), class: 'btn btn-success btn-sm glyphicon
-        glyphicon-plus', style: "color: white" %>
+
+              <%= link_to(
+                          content_tag(
+                                  :i,
+                                  ' Log',
+                                  class: 'fa fa-plus'
+                          ),
+                          new_exercise_entry_path(:exercise_id => exercise.id),
+                          style: "color: white",
+                          class: 'btn btn-success'
+                  )
+              %>
               </div>
             
             <div class="col-md-3">
