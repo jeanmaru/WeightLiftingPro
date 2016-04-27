@@ -1,10 +1,7 @@
-
-
     <h4>
      <strong> <%= current_user.fname %></strong> 
     </h4>
-
-    <hr>
+ <hr>
     
     <% if @user.dob.present? %>
     <h5>
@@ -21,23 +18,21 @@
     </h5>
 
     <hr>
-    
+    <ul class="nav">
+    <li>
       <%= link_to edit_user_registration_path do %>
           <i class="fa fa-pencil-square-o" aria-hidden="true"> Edit User</i><% end %>
-    
-    <!--<h5>-->
-      <!--<= fa_icon 'pencil'%>-->
-      <!--<= link_to "  Edit User", edit_user_registration_path, style: "color: grey"   %>-->
-    <!--</h5>-->
-
+    </li>
+      
     <hr>
-
-
-    <%= link_to reports_url do %>
-        <i class="fa fa-list-ul" aria-hidden="true"> My Reports </i><% end %>
+      <li>
+        <%= link_to reports_url do %>
+            <i class="fa fa-list-ul" aria-hidden="true"> My Reports </i><% end %>
+      </li>
     
     <hr>
-
-
+    <li>
       <%= link_to calculator_url do %>
           <i class="fa fa-calculator" aria-hidden="true"> Unit Converter </i><% end %>
+    </li>
+    </ul>
