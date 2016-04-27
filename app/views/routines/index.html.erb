@@ -129,7 +129,17 @@
         </div>
 
         <div class="col-md-8">
-          <%= link_to 'My Exercises', exercises_path, style: "color: white", class: 'btn btn-primary' %>
+          <%= link_to(
+                      content_tag(
+                              :i,
+                              '  Exercises',
+                              class: 'fa fa-cogs'
+                      ),
+                      exercises_path,
+                      style: "color: white",
+                      class: 'btn btn-primary'
+              )
+          %>
         </div>
 
         <div class="col-xs-1">
