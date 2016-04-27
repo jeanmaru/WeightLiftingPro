@@ -9,18 +9,18 @@
         <i class="fa fa-pencil-square-o" aria-hidden="true"> Edit User</i><% end %></li>
   <hr>
   <li class="<%= 'active' if current_page?(exercises_path) %>"> <%= link_to exercises_path do %>
-        <i class="fa fa-bicycle" aria-hidden="true" style="color:green"> My Exercises </i><% end %> </li>
+        <i class="fa fa-cogs" aria-hidden="true" style="color:green">  Exercises </i><% end %> </li>
   <hr>
   <li class="<%= 'active' if current_page?(exercise_entries_path) %>"> <%= link_to exercise_entries_path do %>
-        <i class="fa fa-calendar" aria-hidden="true" style="color:cornflowerblue"> My Exercise Log </i><% end %>
+        <i class="fa fa-calendar" aria-hidden="true" style="color:cornflowerblue">  Exercise Log </i><% end %>
   </li>
   <hr>
   <li class="<%= 'active' if current_page?(routines_url) %>"> <%= link_to routines_url do %>
-        <i class="fa fa-exchange" aria-hidden="true" style="color:darkorange"> My Routines </i><% end %>
+        <i class="fa fa-refresh" aria-hidden="true" style="color:darkorange">  Routines </i><% end %>
   </li>
   <hr>
   <li class="<%= 'active' if current_page?(reports_url) %>"> <%= link_to reports_url do %>
-        <i class="fa fa-list-ul" aria-hidden="true"> My Reports </i><% end %>
+        <i class="fa fa-list-ul" aria-hidden="true">  Reports </i><% end %>
   </li>
   <hr>
   <li class="<%= 'active' if current_page?(reports_url) %>"><%= link_to calculator_url do %>        

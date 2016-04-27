@@ -39,7 +39,21 @@
 
               </td>
 
-              <td> <%= button_to 'Add Exercise', new_exercise_path(:sample_exercise_id => exercise.id), class: 'btn btn-success btn-sm' %>
+              <td> 
+
+
+                <%= link_to(
+                            content_tag(
+                                    :i,
+                                    ' Exercise',
+                                    class: 'fa fa-plus'
+                            ),
+                            new_exercise_path(:sample_exercise_id => exercise.id),
+                            style: "color: white",
+                            class: 'btn btn-success btn-sm'
+                    )
+                %>
+              
               </td>
             </tr>
         <% end %>

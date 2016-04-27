@@ -75,10 +75,36 @@
 
               <td> <%= link_to ' View Exercises ', routine_path(routine), class: 'btn btn-default btn-sm' %>
               </td>
-              <td> <%= link_to ' Edit ', edit_routine_path(routine), class: 'btn btn-info btn-sm', style: "color: white" %>
+              <td>
+
+                <%= link_to(
+                            content_tag(
+                                    :i,
+                                    nil,
+                                    class: 'fa fa-pencil'
+                            ),
+                            edit_routine_path(routine),
+                            style: "color: white", class: 'btn btn-info btn-md'
+                    )
+                %>
+              
+              
               </td>
-              <td><%= link_to 'Delete', routine, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn
-        btn-danger btn-sm', style: "color: white" %></td>
+              <td>
+                <%= link_to(
+                            content_tag(
+                                    :i,
+                                    nil,
+                                    class: 'fa fa-trash-o'
+                            ),
+                            routine,
+                            method: :delete,
+                            data: {
+                                    confirm: "Are you sure you want to delete this Routine?"
+                            }, style: "color: white", class: 'btn btn-danger btn-md'
+                    )
+                %>
+              </td>
             </tr>
         <% end %>
         </tbody>
@@ -88,8 +114,18 @@
       
       <div class="row">
         <div class="col-xs-3">
-          <%= link_to new_routine_path, style: "color: white", class: 'btn btn-success' do %>
-              <i class="glyphicon glyphicon-plus"></i> New Routine <% end %>
+          <%= link_to(
+                      content_tag(
+                              :i,
+                              ' Routine',
+                              class: 'fa fa-plus'
+                      ),
+                      new_routine_path,
+                      style: "color: white",
+                      class: 'btn btn-success'
+              )
+          %>
+
         </div>
 
         <div class="col-md-8">
