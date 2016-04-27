@@ -75,15 +75,58 @@
       </td>
         
         <td>
-          <%= link_to ' Add Log ', new_exercise_entry_path(:exercise_id => exercise.id), class: 'btn btn-success btn-sm glyphicon
-        glyphicon-plus', style: "color: white" %>
+          <%= link_to(
+                      content_tag(
+                              :i,
+                              ' Log',
+                              class: 'fa fa-plus'
+                      ),
+                      new_exercise_entry_path(:exercise_id => exercise.id),
+                      style: "color: white",
+                      class: 'btn btn-success btn-md'
+              ) 
+          %>
         </td>
-        <td> <%= link_to ' History ', exercise, class: 'btn btn-default btn-sm'%>
+        
+        <td> 
+          <%= link_to(
+                      content_tag(
+                              :i,
+                              nil,
+                              class: 'fa fa-history'
+                      ),
+                      exercise,
+                      class: 'btn btn-default btn-md'
+              )
+          %>
         </td>
-        <td> <%= link_to ' Edit ', edit_exercise_path(exercise), class: 'btn btn-info btn-sm', style: "color: white" %>
+        <td> 
+          <%= link_to(
+                      content_tag(
+                              :i,
+                              nil,
+                              class: 'fa fa-pencil'
+                      ),
+                      edit_exercise_path(exercise),
+                      style: "color: white", class: 'btn btn-info btn-md'
+              )
+          %>
         </td>
-        <td><%= link_to ' Delete ', exercise, method: :delete, data: { confirm: "Deleting this exercise will delete all logs for this exercise. \nYou cannot undo this action. Do you want to continue?" }, class: 'btn
-        btn-danger btn-sm', style: "color: white" %>
+        <td>
+          <%= link_to(
+                      content_tag(
+                              :i,
+                              nil,
+                              class: 'fa fa-trash-o'
+                      ),
+                      exercise,
+                      method: :delete,
+                      data: {
+                              confirm: "Deleting this exercise will delete all logs for this exercise. \nYou cannot undo this action. Do you want to continue?"
+                      }, style: "color: white", class: 'btn btn-danger btn-md'
+              )
+          %>
+          
         </td>
       </tr>
     <% end %>
@@ -94,8 +137,18 @@
         
         <div class="row">
           <div class="col-xs-3">
-            <%= link_to new_exercise_path, style: "color: white", class: 'btn btn-success' do %>
-                <i class="glyphicon glyphicon-plus"></i> New Exercise  <% end %>
+            <%= link_to(
+                        content_tag(
+                                :i,
+                                ' New Exercise',
+                                class: 'fa fa-plus'
+                        ),
+                        new_exercise_path,
+                        style: "color: white",
+                        class: 'btn btn-success btn-md'
+                )
+            %>
+
           </div>
           
           <div class="col-md-8">
