@@ -8,8 +8,6 @@ class ExerciseEntriesController < ApplicationController
     # @exercise_entries = ExerciseEntry.all
     respond_with(@exercise_entries)
   end
-
-
   
   def graphs
     @exercise_entries = current_user.exercise_entries(current_user)
@@ -19,7 +17,6 @@ class ExerciseEntriesController < ApplicationController
   end
 
   def show
-    # redirect_to exercise_entries_url
     respond_with(@exercise_entry)
   end
 

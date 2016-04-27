@@ -1,17 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-3">
+    
+    <div class="col-xs-2">
+      <%= render 'layouts/left_panel_two' %>
     </div>
+
+    <div class="col-xs-1">
+    </div>
+    
     <div class="col-xs-9">
       <%= yield %>
       
       <ul class="nav nav-tabs" role="tablist">
         <li class="active"><%= link_to 'My Exercise Log', exercise_entries_path %> </li>
-        <li><%= link_to 'My Exercises', exercises_path %> </li>
       </ul>
       
-<Title> Exercise Log Summary | Weight Lifting Pro </Title>
-      <h3><%= current_user.fname %>'s Exercise Log Summary</h3>
+<Title> Exercise Log | Weight Lifting Pro </Title>
+      <h3><%= current_user.fname %>'s Exercise Log <%= link_to(image_tag("/Exercise_Log_small-01.png", size: "50"), exercise_entries_path) %> </h3>
       
       <div class="table-responsive">
       <table class ="table table-striped table-hover">
@@ -90,7 +95,7 @@
         </div>
         
         <div class="col-md-8">
-          <%= button_to ' Graphs ', {:controller=>"exercise_entries", :action=> "graphs"}, {class:"btn btn-warning"}%>
+          <%= button_to ' Progress Graphs ', {:controller=>"exercise_entries", :action=> "graphs"}, {class:"btn btn-warning"}%>
         </div>
         
         <div class="col-xs-1">

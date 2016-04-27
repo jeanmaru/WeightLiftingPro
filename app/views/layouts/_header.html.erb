@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-custom">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     
     <div class="navbar-header navbar-left">
@@ -40,6 +40,7 @@
 
             <li> <%=  link_to destroy_user_session_path, method: :delete  do %>
                   <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><% end %>
+
 
       <% else %>
             <li><%= link_to 'Login', new_user_session_path %></li>

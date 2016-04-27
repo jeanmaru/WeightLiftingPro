@@ -2,10 +2,11 @@
 
 <div class="container">
 
-<% if user_signed_in? %>
+
+  <% if user_signed_in? %>
       <br>
       <br>
-      <br>
+      
       <div class="row">
         <div class="col-xs-2">
               <%= render 'layouts/left_panel' %>
@@ -14,15 +15,15 @@
 </div>
 
         <div class="col-xs-3">
-          <%= link_to(image_tag("/Dumbell.png", size: "260"), exercises_path) %>
+          <%= link_to(image_tag("/Dumbell.png", size: "265"), exercises_path) %>
         </div>
 
         <div class="col-xs-3">
-          <%= link_to(image_tag("/Exercise%20Log-01.png", size: "260"), exercise_entries_path) %>
+          <%= link_to(image_tag("/Exercise%20Log-01.png", size: "265"), exercise_entries_path) %>
         </div>
 
         <div class="col-xs-3">
-          <%= link_to(image_tag("/Routines.png", size: "260"), routines_path) %>
+          <%= link_to(image_tag("/Routines.png", size: "265"), routines_path) %>
         </div>
       
 <% else %>

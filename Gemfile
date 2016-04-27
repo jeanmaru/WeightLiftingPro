@@ -29,6 +29,7 @@ gem 'groupdate'
 gem 'will_paginate', '~> 3.0.6'
 
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 

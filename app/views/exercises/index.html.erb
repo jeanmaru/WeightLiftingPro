@@ -1,7 +1,13 @@
 <div class="container">
    <div class="row">
-      <div class="col-xs-3">
+
+      <div class="col-xs-2">
+         <%= render 'layouts/left_panel_two' %>
+       </div>
+     
+      <div class="col-xs-1">
       </div>
+     
       <div class="col-xs-9">
         <%= yield %>
 
@@ -13,8 +19,8 @@
   </ul>
 
   <title>My Exercises | Weight Lifting Pro</title>
-  <h3><%= current_user.fname %>'s Exercises</h3>
-
+  <h3><%= current_user.fname %>'s Exercises <%= link_to(image_tag("/Dumbell_small-01.png", size: "50"), exercises_path) %> </h3>
+        
   <table class ="table table-hover">
   <thead>
     <tr>
