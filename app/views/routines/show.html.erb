@@ -40,7 +40,7 @@
               </p>
                 <% end %>
 
-            <% if exercise.exercise_entries.present?%>
+            <% if exercise.exercise_entries.present? %>
           <table>
                   <tr>
                     <td> <h5> <strong> Last Log: <%= exercise.exercise_entries.order("created_at").last.created_at.strftime("%B %e, %Y") %></strong></h5></td>
@@ -60,6 +60,8 @@
                   </tr>
                 <% end %>
                 </table>
+                <% else%>
+            <p><i> You have not logged this exercise, yet! </i></p>
             <% end %>
 
             <br>
