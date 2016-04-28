@@ -13,10 +13,22 @@
 
         <title>Routine: Exercises | Weight Lifting Pro</title>
 
-  <h3> <%= @routine.name %></h3>
+  <h3> <strong><%= @routine.name %></strong>        
+    <%= link_to(
+                                                                content_tag(
+                                                                        :i,
+                                                                        nil,
+                                                                        class: 'fa fa-pencil'
+                                                                ),
+                                                                edit_routine_path(@routine),
+                                                                style: "color: white", class: 'btn btn-info btn-md'
+                                                        )
+  %>
+  </h3>
+
+    <br>
 
     <% @routine.exercises.each do |exercise| %>
-        <h3><% @routine.name %> </h3>
           
         <div class="well">
           <div class="row">
@@ -77,14 +89,20 @@ btn-danger btn-sm"}  %>
     <% end %>
 
       <div class ="row">
-        <div class="col-md-5">
-          <%= link_to 'Edit Routine', edit_routine_path(@routine) %>
+        <div class="col-md-9">
           </div>
-        <div class="col-md-5">
-          <%= link_to 'My Routines', routines_path %>
-        </div>
-        <div class="col-md-2">
-          <%= link_to "Back", :back %>
+
+        <div class="col-md-3">
+
+          <%= link_to(
+                      content_tag(
+                              :i,
+                              ' back',
+                              class: 'fa fa-arrow-left'
+                      ),
+                      :back
+              )
+          %>
         </div>
       </div>
       
