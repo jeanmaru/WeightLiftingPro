@@ -8,41 +8,46 @@
 
 
 <div class="container">
+  <div class="row">
+    <br>
+    <div class="col-xs-2">
+      <%= render 'layouts/left_panel_two' %>
+    </div>
+
+    <div class="col-xs-2">
+    </div>
+
+    <div class="col-xs-4">
+      <%= yield %>
   
   <title>Exercise History | Weight Lifting Pro</title>
-  
-  <p id="notice"><%= notice %></p>
-
-<p>
-  <h3>
-    <div class="row">
-      <div class="col-xs-7 col-xs-offset-4">
-        <%= @exercise.sample_exercise.name %>
-      </div>
-    </div>
+      
+  <h3><%= @exercise.sample_exercise.name %>
+    <%= link_to(
+                content_tag(
+                        :i,
+                        nil,
+                        class: 'fa fa-pencil'
+                ),
+                edit_exercise_path(@exercise),
+                style: "color: white", class: 'btn btn-info btn-md'
+        )
+    %>
   </h3>
-  </p>
+
 
 <h4>
-    <div class="row">
-      <div class="col-xs-7 col-xs-offset-4">
-        <% if @exercise.routine.nil? %>
-           <i>*This exercise does not belong to a routine </i>
-              <% else  %>
-          <span style="color:darkgreen"> Routine: <%= @exercise.routine.name %> </span> |
-              <%= link_to 'View Routine', routine_path(@exercise.routine.id)  %>
-      <% end %>      
-      </div>
-    </div>
+  <% if @exercise.routine.nil? %>
+      <i>*This exercise does not belong to a routine </i>
+  <% else  %>
+      <span style="color:darkgreen"> Routine: <%= @exercise.routine.name %> </span> |
+      <%= link_to 'View Routine', routine_path(@exercise.routine.id)  %>
+      <% end %>
   </h4>
   
 <br />
-  
-  <div class="row">
-          <div class="col-xs-7 col-xs-offset-4">
 
-
-            <%= link_to(
+      <%= link_to(
                         content_tag(
                                 :i,
                                 ' Log',
@@ -53,26 +58,15 @@
                         class: 'btn btn-success btn-md'
                 )
             %>
-            
-            
-            
-          </div>
-        </div>
-  
-
-  <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
 
       <br>
-      
+      <br>
       <% @exercise.exercise_entries.order(created_at: :desc).paginate(:page => params[:page], :per_page => 3).each do |log| %>
           
           <div class="well">
             <div class="row">
 
               <h4><strong><%= log.created_at.strftime("%B %e, %Y") %></strong> </h4>
-              
-              
                 <strong>Weight:</strong>
                 <%= log.weight %> <%= log.measure %>
               
@@ -117,32 +111,27 @@
 
       <% end %>
 
-      <%= will_paginate @exercise_entries %>
-
       <div class ="row">
-          <div class="col-md-10">
-            <%= link_to 'My Exercises', exercises_path %>
-            |
-            <%= link_to 'Edit Exercise', edit_exercise_path(@exercise) %>
-
-          </div>
-          <div class="col-md-2">
-            <%= link_to(
-                        content_tag(
-                                :i,
-                                nil,
-                                class: 'fa fa-arrow-left'
-                        ),
-                        :back
-                )
-            %>        </div>
+        <div class="col-md-9">
+        </div>
+        <div class="col-md-3">
+          <%= link_to(
+                      content_tag(
+                              :i,
+                              ' back',
+                              class: 'fa fa-arrow-left'
+                      ),
+                      :back
+              )
+          %>        </div>
       </div>
+
+      <br>
+      <br>
     </div>
 
-      <br>
-      <br>
-</div>
-  </div>
+      <%= will_paginate @exercise_entries %>
+    
     
     <% if @exercise_entries.present? %>
     <br>
@@ -189,3 +178,5 @@
 <br>
 
 
+  </div>
+</div>
