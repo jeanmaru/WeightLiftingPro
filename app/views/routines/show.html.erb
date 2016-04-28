@@ -1,20 +1,20 @@
 <div class="container">
-  <title>Routine: Exercises | Weight Lifting Pro</title>
-
-  <p id="notice"><%= notice %></p>
-
-  <p>
-  <h3>
-    <div class="row">
-      <div class="col-xs-7 col-xs-offset-4">
-    <%= @routine.name %>
-          </div>
-    </div>
-  </h3>
-  </p>
-
   <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
+    <br>
+    <div class="col-xs-2">
+      <%= render 'layouts/left_panel_two' %>
+    </div>
+
+    <div class="col-xs-2">
+    </div>
+
+    <div class="col-xs-4">
+        <%= yield %>
+
+        <title>Routine: Exercises | Weight Lifting Pro</title>
+
+  <h3> <%= @routine.name %></h3>
+
     <% @routine.exercises.each do |exercise| %>
         <h3><% @routine.name %> </h3>
           
