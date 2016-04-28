@@ -73,7 +73,18 @@
                 
               </td>
 
-              <td> <%= link_to ' View Exercises ', routine_path(routine), class: 'btn btn-default btn-sm' %>
+              <td> 
+
+                <%= link_to(
+                            content_tag(
+                                    :i,
+                                    nil,
+                                    class: 'fa fa-eye'
+                            ),
+                            routine_path(routine),
+                          class: 'btn btn-default btn-md'
+                    )
+                %>
               </td>
               <td>
 
