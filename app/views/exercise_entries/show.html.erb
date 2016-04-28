@@ -1,48 +1,71 @@
 <div class="container">
-  <title>Exercise Entry  | Weight Lifting Pro</title>
-  <p id="notice"><%= notice %></p>
-
-  <p>
-  <h4>
     <div class="row">
-      
-      <div class="col-xs-6 col-xs-offset-4">
-        <%= @exercise_entry.exercise.sample_exercise.name %> 
+      <br>
+      <div class="col-xs-2">
+        <%= render 'layouts/left_panel_two' %>
       </div>
-    </div>
-  </h4>
-  </p>
 
-  <div class="row">
-    <div class="col-xs-6 col-xs-offset-4">
+      <div class="col-xs-2">
+      </div>
+      
+      <div class="col-xs-4">
+        <div class="well">
+        <%= yield %>
+        <title>Exercise Entry  | Weight Lifting Pro</title>
 
-      <p>
-        <strong>Weight:</strong>
-        <%= @exercise_entry.weight %> <%= @exercise_entry.measure %>
-      </p>
+
+        <h4><%= @exercise_entry.exercise.sample_exercise.name %></h4>
+        <p>
+          <strong>Weight:</strong>
+          <%= @exercise_entry.weight %> <%= @exercise_entry.measure %>
+        </p>
 
         <p>
           <strong>Reps:</strong>
           <%= @exercise_entry.reps %>
         </p>
-        
+
         <p>
           <strong>Sets:</strong>
           <%= @exercise_entry.sets %>
         </p>
-              
+
         <p>
           <strong>Notes:</strong>
           <%= @exercise_entry.notes %>
         </p>
+          <br>
+          
+          <div class="col-xs-8">
+          <%= link_to(
+                      content_tag(
+                              :i,
+                              nil,
+                              class: 'fa fa-pencil'
+                      ),
+                      edit_exercise_entry_path(@exercise_entry),
+                      style: "color: white", class: 'btn btn-info btn-md'
+              )
+          %>
+          </div>
 
-      
-<%= link_to 'Edit', edit_exercise_entry_path(@exercise_entry) %> |
-<%= link_to 'Exercises Log', exercise_entries_path %> |
-      <%= link_to 'My Exercises', exercises_path %>   |   
-      <%= link_to '+Add Log', new_exercise_entry_path(:exercise_id => @exercise_entry.exercise_id) %>
+
+          <%= link_to(
+                      content_tag(
+                              :i,
+                              ' Log',
+                              class: 'fa fa-plus'
+                      ),
+                      new_exercise_entry_path(:exercise_id => @exercise_entry.exercise_id),
+                      style: "color: white",
+                      class: 'btn btn-success btn-md'
+              )
+          %>
+        </div>
 
 
+
+
+      </div>
     </div>
-  </div>
-</div>
+    </div>

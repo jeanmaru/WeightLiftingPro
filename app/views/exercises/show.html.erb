@@ -40,8 +40,23 @@
   
   <div class="row">
           <div class="col-xs-7 col-xs-offset-4">
-        <%= link_to ' Add Log ', new_exercise_entry_path(:exercise_id => @exercise.id), class: 'btn btn-success btn-sm glyphicon
-        glyphicon-plus', style: "color: white" %>
+
+
+            <%= link_to(
+                        content_tag(
+                                :i,
+                                ' Log',
+                                class: 'fa fa-plus'
+                        ),
+                        new_exercise_entry_path(:exercise_id => @exercise.id),
+                        style: "color: white",
+                        class: 'btn btn-success btn-md'
+                )
+            %>
+            
+            
+            
+            
           </div>
         </div>
   
@@ -82,7 +97,20 @@
               <div class="col-md-9">
                   </div>
               <div class="col-md-3">
-                <td><%= link_to 'Edit', edit_exercise_entry_path(log), class: 'btn btn-info btn-sm', style: "color: white" %></td>
+                <td>
+                  <%= link_to(
+                              content_tag(
+                                      :i,
+                                      nil,
+                                      class: 'fa fa-pencil'
+                              ),
+                              edit_exercise_entry_path(log),
+                              style: "color: white", class: 'btn btn-info btn-md'
+                      )
+                  %>
+                
+                
+                </td>
               </div>
 
             </div>
@@ -100,8 +128,15 @@
 
           </div>
           <div class="col-md-2">
-            <%= link_to "Back", :back %>
-        </div>
+            <%= link_to(
+                        content_tag(
+                                :i,
+                                nil,
+                                class: 'fa fa-arrow-left'
+                        ),
+                        :back
+                )
+            %>        </div>
       </div>
     </div>
 
