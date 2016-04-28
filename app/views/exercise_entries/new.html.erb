@@ -14,14 +14,23 @@
         <li class="active"><%= link_to 'New Exercise Log', exercises_path %> </li>
       </ul>
 
-
       <title> Log an Exercise | Weight Lifting Pro</title>
       
-      <h3>Log an Exercise</h3>
+      <h3><strong> Log an Exercise </strong></h3>
 
       <% if @exercise.present? %>
-
-              <%= render 'exercise_name'%>
+            <h4>  Exercise: <%= render 'exercise_name'%></h4>
+          
+          <h5>
+            <% if @exercise.routine.nil? %>
+                <i>*This exercise does not belong to a routine </i>
+            <% else  %>
+                <span style="color:darkgreen"> Routine: <%= @exercise.routine.name %> </span> |
+                <%= link_to 'View Routine', routine_path(@exercise.routine.id)  %>
+            <% end %>
+          </h5>
+          
+          
 
               <% if @exercise.notes? %>
                   <p>
