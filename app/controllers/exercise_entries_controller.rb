@@ -66,7 +66,8 @@ class ExerciseEntriesController < ApplicationController
 
   def destroy
     @exercise_entry.destroy
-    respond_with(@exercise_entry)
+    flash[:alert] = 'Notice: Exercise Log Deleted.'
+    respond_with(@exercise_entry)    
   end
 
   private

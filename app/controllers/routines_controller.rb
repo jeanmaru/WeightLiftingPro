@@ -18,10 +18,24 @@ class RoutinesController < ApplicationController
     @routine = Routine.find(params[:id])
   end
 
+  # def create
+  #   @routine = current_user.routines.new(routine_params)
+  #   @routine.save
+  #   respond_with(@routine)
+  # end
+
   def create
     @routine = current_user.routines.new(routine_params)
-    @routine.save
-    respond_with(@routine)
+
+    respond_to do |format|
+      if @routine.save
+        format.html {  redirect_to routines_path(@routine), notice: 'Routine Successfully Created!' }
+        format.json { render :show, status: :created, location: @routine }
+      else
+        format.html { render :new }
+        format.json { render json: @routine.errors, status: :unprocessable_entity }
+      end
+    end
   end
   
   def update
@@ -31,6 +45,7 @@ class RoutinesController < ApplicationController
 
   def destroy
     @routine.destroy
+    flash[:alert] = 'Notice: Routine Deleted.'
     respond_with(@routine)
   end
   
