@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-2">
+      <%= render 'layouts/left_panel_two' %>
+    </div>
+
+    <div class="col-xs-1">
+    </div>
+
+    <div class="col-xs-9">
+      <%= yield %>
+
+      <title> Measurements | Weight Lifting Pro</title>
+
+
+
+      <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Upper arm left:</strong>
+  <%= @muscle_measure.upper_arm_left %>
+</p>
+
+<p>
+  <strong>Upper arm right:</strong>
+  <%= @muscle_measure.upper_arm_right %>
+</p>
+
+<p>
+  <strong>Forearm right:</strong>
+  <%= @muscle_measure.forearm_right %>
+</p>
+
+<p>
+  <strong>Forearm left:</strong>
+  <%= @muscle_measure.forearm_left %>
+</p>
+
+<p>
+  <strong>Thigh left:</strong>
+  <%= @muscle_measure.thigh_left %>
+</p>
+
+<p>
+  <strong>Thigh right:</strong>
+  <%= @muscle_measure.thigh_right %>
+</p>
+
+<p>
+  <strong>Calf left:</strong>
+  <%= @muscle_measure.calf_left %>
+</p>
+
+<p>
+  <strong>Calf right:</strong>
+  <%= @muscle_measure.calf_right %>
+</p>
+
+<p>
+  <strong>Waist:</strong>
+  <%= @muscle_measure.waist %>
+</p>
+
+<p>
+  <strong>Shoulder:</strong>
+  <%= @muscle_measure.shoulder %>
+</p>
+
+<p>
+  <strong>Chest:</strong>
+  <%= @muscle_measure.chest %>
+</p>
+
+<%= link_to 'Edit', edit_muscle_measure_path(@muscle_measure) %> |
+<%= link_to 'Back', muscle_measures_path %>
+    </div>
+  </div>
+</div>

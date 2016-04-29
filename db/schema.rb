@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429200420) do
+ActiveRecord::Schema.define(version: 20160429220841) do
 
   create_table "exercise_entries", force: true do |t|
     t.integer  "reps"
@@ -42,6 +42,26 @@ ActiveRecord::Schema.define(version: 20160429200420) do
   add_index "exercises", ["routine_id"], name: "index_exercises_on_routine_id"
   add_index "exercises", ["sample_exercise_id"], name: "index_exercises_on_sample_exercise_id"
   add_index "exercises", ["user_id"], name: "index_exercises_on_user_id"
+
+  create_table "muscle_measures", force: true do |t|
+    t.decimal  "upper_arm_left"
+    t.decimal  "upper_arm_right"
+    t.decimal  "forearm_right"
+    t.decimal  "forearm_left"
+    t.decimal  "thigh_left"
+    t.decimal  "thigh_right"
+    t.decimal  "calf_left"
+    t.decimal  "calf_right"
+    t.decimal  "waist"
+    t.decimal  "shoulder"
+    t.decimal  "chest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "unit"
+  end
+
+  add_index "muscle_measures", ["user_id"], name: "index_muscle_measures_on_user_id"
 
   create_table "routines", force: true do |t|
     t.string   "name"

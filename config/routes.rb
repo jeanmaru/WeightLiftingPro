@@ -1,5 +1,7 @@
 WeightLiftingPro::Application.routes.draw do
 
+  resources :muscle_measures
+
   resources :exercise_entries
 
   root to: "home#index"
@@ -29,6 +31,7 @@ WeightLiftingPro::Application.routes.draw do
   resources :exercises
   resources :routines
   resources :sample_exercises
+  
 
 
 

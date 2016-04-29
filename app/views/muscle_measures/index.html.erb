@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-2">
+      <%= render 'layouts/left_panel_two' %>
+    </div>
+
+    <div class="col-xs-1">
+    </div>
+
+    <div class="col-xs-9">
+      <%= yield %>
+
+      <title> Measurements | Weight Lifting Pro</title>
+
+      <h1>Listing muscle_measures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Upper arm left</th>
+      <th>Upper arm right</th>
+      <th>Thigh left</th>
+      <th>Thigh right</th>
+      <th>Calf left</th>
+      <th>Calf right</th>
+      <th>Waist</th>
+      <th>Chest</th>
+      <th>Unit</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @muscle_measures.each do |muscle_measure| %>
+      <tr>
+        <td><%= muscle_measure.upper_arm_left %></td>
+        <td><%= muscle_measure.upper_arm_right %></td>
+        <td><%= muscle_measure.thigh_left %></td>
+        <td><%= muscle_measure.thigh_right %></td>
+        <td><%= muscle_measure.calf_left %></td>
+        <td><%= muscle_measure.calf_right %></td>
+        <td><%= muscle_measure.waist %></td>
+        <td><%= muscle_measure.chest %></td>
+        <td><%= muscle_measure.unit %></td>
+        <td><%= link_to 'Show', muscle_measure %></td>
+        <td><%= link_to 'Edit', edit_muscle_measure_path(muscle_measure) %></td>
+        <td><%= link_to 'Destroy', muscle_measure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Muscle measure', new_muscle_measure_path %>
+      
+    </div>
+  </div>
+</div>

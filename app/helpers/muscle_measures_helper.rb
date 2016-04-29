@@ -1,0 +1,2 @@
+module MuscleMeasuresHelper
+end

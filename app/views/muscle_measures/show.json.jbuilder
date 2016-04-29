@@ -1,0 +1,1 @@
+json.extract! @muscle_measure, :id, :upper_arm_left, :upper_arm_right, :forearm_right, :forearm_left, :thigh_left, :thigh_right, :calf_left, :calf_right, :waist, :shoulder, :chest, :references, :created_at, :updated_at
