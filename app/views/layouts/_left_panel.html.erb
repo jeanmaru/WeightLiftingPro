@@ -18,6 +18,26 @@
     </h5>
 
     <hr>
+    
+    <h5>
+          <% case current_user.level
+               when 'Beginner' %>
+          <i class="fa fa-battery-quarter" aria-hidden="true"></i>
+          <%= @user.level %> 
+
+          <%  when 'Intermediate' %>
+          <i class="fa fa-battery-half" aria-hidden="true"></i>
+          <%= @user.level %> 
+          
+          <%  when 'Advanced' %>
+          <i class="fa fa-battery-full" aria-hidden="true"></i>
+          <%= @user.level %>   
+                  
+          <% end %> 
+
+    </h5>
+    
+    <hr>
     <ul class="nav">
     <li>
       <%= link_to edit_user_registration_path do %>
