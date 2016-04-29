@@ -132,11 +132,7 @@
     </div>
 
     
-    
-    <% if @exercise_entries.count > 2 %>
-    <br>
-    <br>
-    <br>
+    <% if @exercise_entries.count >= 2 %>
 
     <div class ="row">
     <div class="col-xs-9 col-xs-offset-3">
@@ -145,9 +141,9 @@
       <!--<p class="text-center"> <strong><= @exercise.sample_exercise.name %> Lifting History Log</strong>  </p>-->
       <!--<= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), ytitle: "Weight Lifted", xtitle: "Log Date", height: "210px", discrete: true%>-->
       <!-- -->
-      <br>
-      <br>
-      <br>
+      <!--<br>-->
+      <!--<br>-->
+      <!--<br>-->
       
       <p class="text-center"><strong>  <%= @exercise.sample_exercise.name %> Weight Frequency </strong> </p>
       <%= column_chart @exercise_entries.group(:weight).count(:weight), ytitle: "Frequency", xtitle: "Weight Lifted", height: "210px", discrete: true, exporting: {
