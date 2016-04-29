@@ -24,9 +24,16 @@
       
       <br />
       <div class="row">
-        <div class="col-md-11"></div>
-        <%= link_to 'Back', :back %>
-        </div>
+        <div class="col-xs-10"></div>
+        <%= link_to(
+                    content_tag(
+                            :i,
+                            ' back',
+                            class: 'fa fa-arrow-left'
+                    ),
+                    :back
+            )
+        %>        </div>
           </div>
     
 

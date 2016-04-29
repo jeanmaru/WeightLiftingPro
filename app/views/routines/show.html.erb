@@ -25,7 +25,15 @@
                                                         )
   %>
   </h3>
-
+      <%= link_to(
+                  content_tag(
+                          :i,
+                          ' back',
+                          class: 'fa fa-arrow-left'
+                  ),
+                  :back
+          )
+      %>
     <br>
 
     <% @routine.exercises.each do |exercise| %>

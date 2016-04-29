@@ -3,10 +3,19 @@
     </h4>
  <hr>
     
+    
     <% if @user.dob.present? %>
     <h5>
-      <%= fa_icon 'user' %>
-      <%= "#{pluralize(age(@user.dob), 'year')} old" %>
+      <% case current_user.gender
+           when 'Female' %>
+          <i class="fa fa-female" aria-hidden="true"></i>
+          <%= "#{pluralize(age(@user.dob), 'year')} old" %>
+
+      <%  when 'Male' %>
+          <i class="fa fa-male" aria-hidden="true"></i>
+          <%= "#{pluralize(age(@user.dob), 'year')} old" %>
+          
+        <% end %>
     </h5>
         <% end %>
     

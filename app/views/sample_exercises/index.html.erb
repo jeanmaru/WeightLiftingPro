@@ -63,13 +63,20 @@
       <br />
 
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-9">
           <%= link_to 'My Exercises', exercises_path, style: "color: white", class: 'btn btn-primary' %>
         </div>
 
-        <div class="col-xs-1">
-          <%= link_to "Back", :back %>
-
+        <div class="col-xs-3">
+          <%= link_to(
+                      content_tag(
+                              :i,
+                              ' back',
+                              class: 'fa fa-arrow-left'
+                      ),
+                      :back
+              )
+          %>
         </div>
       </div>
     </div>
