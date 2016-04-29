@@ -31,11 +31,14 @@
           <strong>Sets:</strong>
           <%= @exercise_entry.sets %>
         </p>
-
+          
+        <% if @exercise_entry.notes? %>
         <p>
           <strong>Notes:</strong>
           <%= @exercise_entry.notes %>
         </p>
+          <% end %>
+          
           <br>
           
           <div class="col-xs-8">

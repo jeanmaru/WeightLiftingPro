@@ -22,12 +22,55 @@
       <br>
       <br>
       <h4 class="text-center">  Exercises Log History </h4>
-      <%= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), ytitle: "Weight Lifted", height: "250px", discrete: true %>
+      <%= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), 
+                     ytitle: "Weight Lifted", height: "250px", discrete: true %>
       
       <br>
       <br>      
       <br>
+
+      <!--<script type="text/javascript" charset="utf-8">
+//          $(function() {
+//              new Highcharts.Chart({
+//                  chart: {
+//                      renderTo: "exercise_chart",
+//                      type: 'line'
+//                  },
+//                  title: {
+//                      text: "Exercises"
+//                  },
+//                  xAxis: {
+//                      type: "datetime"
+//                  },
+//                  yAxis: {
+//                      title: {
+//                          text: "Weight"
+//                      }
+//                  },
+//                  tooltip: {
+//                      formatter: function() {
+//                          return Highcharts.dateFormat("%B %e, %Y", this.x) + ': ' +
+//                                  "$" + Highcharts.numberFormat(this.y, 2);
+//                      }
+//                  },
+//                  series: [
+//                      {
+//                         name: "<= :exercise_id %>",
+//                          pointInterval: <= 1.day * 1000 %>,
+//                          pointStart: <= 3.weeks.ago.to_i * 1000 %>,
+//                      },
+//                  ]
+//              });
+//          });
+      <!--</script>-->
+      <!--<div id="exercise_chart" style="width:560px; height:300px;"></div>-->
+
+
       
+      
+      
+
+
 
       <h4 class="text-center">  Exercise Frequency </h4>
       <%= column_chart @exercise_entries.group(:exercise_id).count, ytitle: "Frequency", xtitle: "Exercise", height: "250px"%>
