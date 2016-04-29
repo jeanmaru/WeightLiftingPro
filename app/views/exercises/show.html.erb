@@ -125,15 +125,15 @@
               )
           %>        </div>
       </div>
+      <%= will_paginate @exercise_entries %>
 
       <br>
       <br>
     </div>
 
-      <%= will_paginate @exercise_entries %>
     
     
-    <% if @exercise_entries.present? %>
+    <% if @exercise_entries.count > 2 %>
     <br>
     <br>
     <br>
@@ -142,9 +142,9 @@
     <div class="col-xs-9 col-xs-offset-3">
 
     <div class="col-md-8">
-      <p class="text-center"> <strong><%= @exercise.sample_exercise.name %> Lifting History Log</strong>  </p>
-      <%= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), ytitle: "Weight Lifted", xtitle: "Log Date", height: "210px", discrete: true%>
-      
+      <!--<p class="text-center"> <strong><= @exercise.sample_exercise.name %> Lifting History Log</strong>  </p>-->
+      <!--<= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), ytitle: "Weight Lifted", xtitle: "Log Date", height: "210px", discrete: true%>-->
+      <!-- -->
       <br>
       <br>
       <br>
@@ -176,6 +176,8 @@
 <br>
 <br>
 <br>
+    <br>
+
 
 
   </div>
