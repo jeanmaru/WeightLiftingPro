@@ -9,9 +9,6 @@ class ExercisesController < ApplicationController
   end
 
   def show
-    # @exercise = current_user.exercises.find(params[:id])
-    # respond_with(@exercise)
-    # redirect_to exercises_url
     @exercise = current_user.exercises.find(params[:id])
     @exercise_entries = @exercise.exercise_entries.paginate(:page => params[:page], :per_page => 3)
   end

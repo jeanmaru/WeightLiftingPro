@@ -8,55 +8,122 @@
     <div class="col-xs-1">
     </div>
 
-    <div class="col-xs-9">
+    <div class="col-xs-10">
       <%= yield %>
+      
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><%= link_to 'My Measurements', muscle_measures_path %> </li>
+        <li><%= link_to 'New Measurement', new_muscle_measure_path%></li>
+      </ul>
 
       <title> Measurements | Weight Lifting Pro</title>
 
-      <h1>Listing muscle_measures</h1>
-
-<table>
+      <h3><%= current_user.fname %>'s Measurements </h3>
+      
+      <table class ="table table-hover">
   <thead>
-    <tr>
-      <th>Upper arm left</th>
-      <th>Upper arm right</th>
-      <th>Thigh left</th>
-      <th>Thigh right</th>
-      <th>Calf left</th>
-      <th>Calf right</th>
+
+  <tr>
+      <th>Date</th>
+      <th>Left Bicep</th>
+      <th>Right Bicep</th>
+      <th>Left Thigh</th>
+      <th>Right Thigh</th>
+      <th>Left Calf</th>  
+      <th>Right Calf</th>
       <th>Waist</th>
       <th>Chest</th>
-      <th>Unit</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
+  
   </thead>
-
+  
+  
   <tbody>
-    <% @muscle_measures.each do |muscle_measure| %>
-      <tr>
-        <td><%= muscle_measure.upper_arm_left %></td>
-        <td><%= muscle_measure.upper_arm_right %></td>
-        <td><%= muscle_measure.thigh_left %></td>
-        <td><%= muscle_measure.thigh_right %></td>
-        <td><%= muscle_measure.calf_left %></td>
-        <td><%= muscle_measure.calf_right %></td>
-        <td><%= muscle_measure.waist %></td>
-        <td><%= muscle_measure.chest %></td>
-        <td><%= muscle_measure.unit %></td>
-        <td><%= link_to 'Show', muscle_measure %></td>
-        <td><%= link_to 'Edit', edit_muscle_measure_path(muscle_measure) %></td>
-        <td><%= link_to 'Destroy', muscle_measure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% @muscle_measures.each do |muscle_measure| %>
+
+
+  <tr>
+        <td><%= muscle_measure.created_at.strftime("%B %e, %Y") %></td>
+
+    <td>  <% if  muscle_measure.upper_arm_left? %><%= sprintf("%g", muscle_measure.upper_arm_left) %>
+    <%= muscle_measure.unit %> <% end %></td>
+        
+        <td><% if  muscle_measure.upper_arm_right? %><%= sprintf("%g", muscle_measure.upper_arm_right) %>
+          <%= muscle_measure.unit %><% end %></td>
+        
+        <td><% if  muscle_measure.thigh_left? %> <%= sprintf("%g", muscle_measure.thigh_left) %>
+          <%= muscle_measure.unit %> <% end %></td>
+
+        <td><% if  muscle_measure.thigh_right? %><%= sprintf("%g", muscle_measure.thigh_right) %>
+          <%= muscle_measure.unit %> <% end %></td>
+
+        <td><% if  muscle_measure.calf_left? %><%= sprintf("%g", muscle_measure.calf_left) %>
+          <%= muscle_measure.unit %> <% end %></td>
+        
+        <td><% if  muscle_measure.calf_right? %><%= sprintf("%g", muscle_measure.calf_right) %>
+          <%= muscle_measure.unit %> <% end %></td>
+        
+        <td><% if  muscle_measure.waist? %><%= sprintf("%g", muscle_measure.waist) %>
+          <%= muscle_measure.unit %> <% end %></td>
+
+        <td><% if  muscle_measure.chest? %><%= sprintf("%g", muscle_measure.chest) %>
+          <%= muscle_measure.unit %> <% end %></td>
+
+        <td>
+
+          <%= link_to(
+                      content_tag(
+                              :i,
+                              nil,
+                              class: 'fa fa-pencil'
+                      ),
+                      edit_muscle_measure_path(muscle_measure),
+                      style: "color: white", class: 'btn btn-info btn-md'
+              )
+          %>
+        </td>
+    
+        <td>
+          <%= link_to(
+                      content_tag(
+                              :i,
+                              nil,
+                              class: 'fa fa-trash-o'
+                      ),
+                      muscle_measure,
+                      method: :delete,
+                      data: {
+                              confirm: "Are you sure you want to continue?"
+                      }, style: "color: white", class: 'btn btn-danger btn-md'
+              )
+          %>
+        </td>
+    
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+      <div class="col-xs-11">
 
-<%= link_to 'New Muscle measure', new_muscle_measure_path %>
-      
+          <%= link_to(
+                  content_tag(
+                          :i,
+                          ' New Muscle Measure',
+                          class: 'fa fa-plus'
+                  ),
+                  new_muscle_measure_path,
+                  style: "color: white",
+                  class: 'btn btn-success btn-md'
+          )
+      %>
+        </div>
+
+      <div class="col-xs-1">
+        <%= link_to "Back", :back %>
+      </div>
+
     </div>
   </div>
 </div>

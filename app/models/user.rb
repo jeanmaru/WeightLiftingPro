@@ -11,5 +11,5 @@ class User < ActiveRecord::Base
   has_many :exercises
   has_many :routines
   has_many :exercise_entries
-  has_many :muscle_measurements
+  has_many :muscle_measures, dependent: :destroy
 end

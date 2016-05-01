@@ -1,6 +1,48 @@
-<h1>Editing muscle_measure</h1>
+<div class="container">
+  <div class="row">
 
-<%= render 'form' %>
+    <div class="col-xs-2">
+      <%= render 'layouts/left_panel_two' %>
+    </div>
 
-<%= link_to 'Show', @muscle_measure %> |
-<%= link_to 'Back', muscle_measures_path %>
+    <div class="col-xs-2">
+    </div>
+
+    <div class="col-xs-6">
+      <%= yield %>
+      
+      <ul class="nav nav-tabs" role="tablist">
+        <li><%= link_to 'My Measurements', muscle_measures_path %> </li>
+        <li class="active"><%= link_to 'Edit Measurement', new_muscle_measure_path%></li>
+      </ul>
+
+      <title> Edit Measurements | Weight Lifting Pro</title>
+
+      <h3><strong> Edit Measurement</strong></h3>
+      <br>
+      
+      <%= render 'form' %>
+      
+
+      <br>
+      <div class="row">
+        <div class="col-xs-3">
+        </div>
+
+        <%= link_to(
+                    content_tag(
+                            :i,
+                            ' back',
+                            class: 'fa fa-arrow-left'
+                    ),
+                    :back
+            )
+        %>
+      </div>
+    </div>    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>

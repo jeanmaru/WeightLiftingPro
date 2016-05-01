@@ -28,16 +28,6 @@
 </p>
 
 <p>
-  <strong>Forearm right:</strong>
-  <%= @muscle_measure.forearm_right %>
-</p>
-
-<p>
-  <strong>Forearm left:</strong>
-  <%= @muscle_measure.forearm_left %>
-</p>
-
-<p>
   <strong>Thigh left:</strong>
   <%= @muscle_measure.thigh_left %>
 </p>
@@ -63,17 +53,14 @@
 </p>
 
 <p>
-  <strong>Shoulder:</strong>
-  <%= @muscle_measure.shoulder %>
-</p>
-
-<p>
   <strong>Chest:</strong>
   <%= @muscle_measure.chest %>
 </p>
 
 <%= link_to 'Edit', edit_muscle_measure_path(@muscle_measure) %> |
-<%= link_to 'Back', muscle_measures_path %>
+<%= link_to 'Back', :back %> |
+      <%= link_to 'Muscle Measurements', muscle_measures_path %>
+
     </div>
   </div>
 </div>

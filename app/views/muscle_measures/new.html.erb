@@ -8,17 +8,35 @@
     <div class="col-xs-2">
     </div>
 
-    <div class="col-xs-3">
+    <div class="col-xs-6">
       <%= yield %>
+
+      <ul class="nav nav-tabs" role="tablist">
+        <li><%= link_to 'My Measurements', muscle_measures_path %> </li>
+        <li class="active"><%= link_to 'New Measurement', new_muscle_measure_path%></li>
+      </ul>
       
 <title>New Measurement | Weight Lifting Pro</title>
       
 <h3><strong> New Measurement</strong></h3>
 <br>
 <%= render 'form' %>
+      <br>
+      <div class="row">
+      <div class="col-xs-3">
+      </div>
 
-<%= link_to 'Back', muscle_measures_path %>
-    </div>
+      <%= link_to(
+                  content_tag(
+                          :i,
+                          ' back',
+                          class: 'fa fa-arrow-left'
+                  ),
+                  :back
+          )
+      %>
+      </div>
+      </div>
   </div>
 </div>
 <br>
