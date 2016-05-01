@@ -23,6 +23,11 @@
         <i class="fa fa-list-ul" aria-hidden="true">  Reports </i><% end %>
   </li>
   <hr>
+  <li class="<%= 'active' if current_page?(muscle_measures_url) %>"> <%= link_to reports_url do %>
+        <i class="fa fa-arrows-h" aria-hidden="true">  Measurements </i><% end %>
+  </li>
+  
+  <hr>
   <li class="<%= 'active' if current_page?(reports_url) %>"><%= link_to calculator_url do %>        
         <i class="fa fa-calculator" aria-hidden="true"> Unit Converter </i><% end %>
   </li>

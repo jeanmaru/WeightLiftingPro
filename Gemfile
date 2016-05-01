@@ -7,6 +7,7 @@ gem 'haml'
 gem 'less-rails'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem "twitter-bootstrap-rails", github: 'torstenb/twitter-bootstrap-rails'
 
 gem 'bootstrap-sass'
 gem 'activesupport'
