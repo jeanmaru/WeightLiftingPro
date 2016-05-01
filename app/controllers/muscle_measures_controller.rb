@@ -43,7 +43,7 @@ class MuscleMeasuresController < ApplicationController
 
     def muscle_measure_params
       if params[:muscle_measure].present?
-        params.require(:muscle_measure).permit(:upper_arm_left, :upper_arm_right, :forearm_right, :forearm_left, :thigh_left, :thigh_right, :calf_left, :calf_right, :waist, :shoulder, :chest, :user_id, :unit)
+        params.require(:muscle_measure).permit(:upper_arm_left, :upper_arm_right, :thigh_left, :thigh_right, :calf_left, :calf_right, :waist, :chest, :user_id, :unit)
       end
     end
 end

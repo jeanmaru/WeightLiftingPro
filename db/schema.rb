@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429220841) do
+ActiveRecord::Schema.define(version: 20160429231946) do
 
   create_table "exercise_entries", force: true do |t|
     t.integer  "reps"
@@ -46,14 +46,11 @@ ActiveRecord::Schema.define(version: 20160429220841) do
   create_table "muscle_measures", force: true do |t|
     t.decimal  "upper_arm_left"
     t.decimal  "upper_arm_right"
-    t.decimal  "forearm_right"
-    t.decimal  "forearm_left"
     t.decimal  "thigh_left"
     t.decimal  "thigh_right"
     t.decimal  "calf_left"
     t.decimal  "calf_right"
     t.decimal  "waist"
-    t.decimal  "shoulder"
     t.decimal  "chest"
     t.datetime "created_at"
     t.datetime "updated_at"

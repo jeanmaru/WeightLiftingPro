@@ -176,6 +176,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
+    timeliness (0.3.8)
     transaction-simple (1.4.0.2)
     treetop (1.4.15)
       polyglot
@@ -185,6 +186,8 @@ GEM
     tzinfo (0.3.48)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
+    validates_timeliness (4.0.2)
+      timeliness (~> 0.3.7)
     warden (1.2.6)
       rack (>= 1.0)
     wicked_pdf (1.0.6)
@@ -224,6 +227,7 @@ DEPENDENCIES
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)
+  validates_timeliness (~> 4.0)
   wicked_pdf
   will_paginate (~> 3.0.6)
   wkhtmltopdf-binary

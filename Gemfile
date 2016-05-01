@@ -27,7 +27,7 @@ gem 'highcharts-rails'
 
 gem 'groupdate'
 gem 'will_paginate', '~> 3.0.6'
-
+gem 'validates_timeliness', '~> 4.0'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
