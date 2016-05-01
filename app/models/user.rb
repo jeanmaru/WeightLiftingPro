@@ -7,8 +7,7 @@ class User < ActiveRecord::Base
   validates :fname, :measure, :body_weight, :gender, :level, :dob, presence: true
 
   validates_date :dob, :between =>  [ 60.years.ago , 16.years.ago]
-
-
+  
   has_many :exercises
   has_many :routines
   has_many :exercise_entries

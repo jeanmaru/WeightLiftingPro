@@ -1,177 +1,184 @@
 <div class="container">
-   <div class="row">
+  <div class="row">
 
-      <div class="col-xs-2">
-         <%= render 'layouts/left_panel_two' %>
-       </div>
-     
-      <div class="col-xs-1">
-      </div>
-     
-      <div class="col-xs-9">
-        <%= yield %>
+    <div class="col-xs-2">
+      <%= render 'layouts/left_panel_two' %>
+    </div>
+
+    <div class="col-xs-1">
+    </div>
+
+    <div class="col-xs-9">
+      <%= yield %>
 
 
-  <ul class="nav nav-tabs" role="tablist">
-    <li class="active"><%= link_to 'My Exercises', exercises_path %> </li>
-    <li><%= link_to 'New Exercise', new_exercise_path %></li>
-    <li><%= link_to 'All Exercises', sample_exercises_path %></li>
-  </ul>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><%= link_to 'My Exercises', exercises_path %> </li>
+        <li><%= link_to 'New Exercise', new_exercise_path %></li>
+        <li><%= link_to 'All Exercises', sample_exercises_path %></li>
+      </ul>
 
-  <title>My Exercises | Weight Lifting Pro</title>
-  <h3><%= current_user.fname %>'s Exercises <%= link_to(image_tag("/Dumbell_small-01.png", size: "50"), exercises_path) %> </h3>
-        
-  <table class ="table table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
+      <title>My Exercises | Weight Lifting Pro</title>
+      <h3><%= current_user.fname %>'s Exercises <%= link_to(image_tag("/Dumbell_small-01.png", size: "50"), exercises_path) %> </h3>
 
-  <tbody>
+      <table class ="table table-hover">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Notes</th>
+        </tr>
+        </thead>
 
-  <% @exercises.order(created_at: :desc).each do |exercise| %>
+        <tbody>
+        <!--ScheduledCourse.all.joins(:course).order('course.name')-->
+        <!--course has_many :scheduled courses scheduled_courses :belongs_to course-->
+        <!-- -->
+        <!--exercise belongs to sample_exercise-->
+        <!--sample exercise has many exercises-->
+        <!--< SampleExercise.all.joins(:exercises).order('name ASC').each do |exercise| %>-->
 
-      <tr>
-        <td>
+
+            <% @exercises.order(created_at: :desc).each do |exercise| %>
+
+            <tr>
+              <td>
          <span class="has-tooltip" data-toggle="tooltip" data-placement="top" title="<%= "Created on #{exercise.created_at.strftime("%m/%e/%Y at %w:%M %p")}, Last modified on #{exercise.updated_at.strftime("%m/%e/%Y at %w:%M %p")}" %>">
            <%= exercise.sample_exercise.name %>
          </span>
-        </td>
+              </td>
 
-        <td>
-          <% if exercise.notes? %>
+              <td>
+                <% if exercise.notes? %>
 
-              <!-- Button trigger modal -->
-              <% if exercise.notes? %>
-                  <button type="button" class="btn btn-link has-popover" data-toggle="modal" data-toggle="popover"
-                          title="Notes" data-target="#exercise-<%= exercise.id %>-notes" data-content="<%= exercise.notes %>">View Notes</button>
-              <% end %>
+                    <!-- Button trigger modal -->
+                    <% if exercise.notes? %>
+                        <button type="button" class="btn btn-link has-popover" data-toggle="modal" data-toggle="popover"
+                                title="Notes" data-target="#exercise-<%= exercise.id %>-notes" data-content="<%= exercise.notes %>">View Notes</button>
+                    <% end %>
 
-              <!-- Modal -->
-              <div class="myModalWindow">
-              <div class="modal fade" id="exercise-<%= exercise.id %>-notes" tabindex="-1" role="dialog"
-                   aria-labelledby="exercise-<%= exercise.id %>-label" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="exercise-<%= exercise.id %>-label">Notes</h4>
+                    <!-- Modal -->
+                    <div class="myModalWindow">
+                      <div class="modal fade" id="exercise-<%= exercise.id %>-notes" tabindex="-1" role="dialog"
+                           aria-labelledby="exercise-<%= exercise.id %>-label" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="exercise-<%= exercise.id %>-label">Notes</h4>
+                            </div>
+                            <div class="modal-body">
+                              <%= exercise.notes %>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="modal-body">
-                      <%= exercise.notes %>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
 
-  <% end %>
-          
-      </td>
-        
-        <td>
+                <% end %>
+
+              </td>
+
+              <td>
+                <%= link_to(
+                            content_tag(
+                                    :i,
+                                    ' Log',
+                                    class: 'fa fa-plus'
+                            ),
+                            new_exercise_entry_path(:exercise_id => exercise.id),
+                            style: "color: white",
+                            class: 'btn btn-success btn-md'
+                    )
+                %>
+              </td>
+
+              <td>
+                <%= link_to(
+                            content_tag(
+                                    :i,
+                                    nil,
+                                    class: 'fa fa-history'
+                            ),
+                            exercise,
+                            class: 'btn btn-default btn-md'
+                    )
+                %>
+              </td>
+              <td>
+                <%= link_to(
+                            content_tag(
+                                    :i,
+                                    nil,
+                                    class: 'fa fa-pencil'
+                            ),
+                            edit_exercise_path(exercise),
+                            style: "color: white", class: 'btn btn-info btn-md'
+                    )
+                %>
+              </td>
+              <td>
+                <%= link_to(
+                            content_tag(
+                                    :i,
+                                    nil,
+                                    class: 'fa fa-trash-o'
+                            ),
+                            exercise,
+                            method: :delete,
+                            data: {
+                                    confirm: "Deleting this exercise will delete all logs for this exercise. \nYou cannot undo this action. Do you want to continue?"
+                            }, style: "color: white", class: 'btn btn-danger btn-md'
+                    )
+                %>
+
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <div class="row">
+        <div class="col-xs-3">
           <%= link_to(
                       content_tag(
                               :i,
-                              ' Log',
+                              ' New Exercise',
                               class: 'fa fa-plus'
                       ),
-                      new_exercise_entry_path(:exercise_id => exercise.id),
+                      new_exercise_path,
                       style: "color: white",
                       class: 'btn btn-success btn-md'
-              ) 
+              )
           %>
-        </td>
-        
-        <td> 
+
+        </div>
+
+        <div class="col-md-8">
           <%= link_to(
                       content_tag(
                               :i,
-                              nil,
-                              class: 'fa fa-history'
+                              ' Exercise Log',
+                              class: 'fa fa-calendar'
                       ),
-                      exercise,
-                      class: 'btn btn-default btn-md'
+                      exercise_entries_path,
+                      style: "color: white",
+                      class: 'btn btn-primary'
               )
           %>
-        </td>
-        <td> 
-          <%= link_to(
-                      content_tag(
-                              :i,
-                              nil,
-                              class: 'fa fa-pencil'
-                      ),
-                      edit_exercise_path(exercise),
-                      style: "color: white", class: 'btn btn-info btn-md'
-              )
-          %>
-        </td>
-        <td>
-          <%= link_to(
-                      content_tag(
-                              :i,
-                              nil,
-                              class: 'fa fa-trash-o'
-                      ),
-                      exercise,
-                      method: :delete,
-                      data: {
-                              confirm: "Deleting this exercise will delete all logs for this exercise. \nYou cannot undo this action. Do you want to continue?"
-                      }, style: "color: white", class: 'btn btn-danger btn-md'
-              )
-          %>
-          
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-        
-        <br>
-        
-        <div class="row">
-          <div class="col-xs-3">
-            <%= link_to(
-                        content_tag(
-                                :i,
-                                ' New Exercise',
-                                class: 'fa fa-plus'
-                        ),
-                        new_exercise_path,
-                        style: "color: white",
-                        class: 'btn btn-success btn-md'
-                )
-            %>
+        </div>
 
-          </div>
+        <div class="col-xs-1">
+          <%= link_to "Back", :back %>
 
-          <div class="col-md-8">
-            <%= link_to(
-                        content_tag(
-                                :i,
-                                ' Exercise Log',
-                                class: 'fa fa-calendar'
-                        ),
-                        exercise_entries_path,
-                        style: "color: white",
-                        class: 'btn btn-primary'
-                )
-            %>
-          </div>
-
-          <div class="col-xs-1">
-            <%= link_to "Back", :back %>
-
-          </div>
-                </div>
-</div>
-   </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <br>
