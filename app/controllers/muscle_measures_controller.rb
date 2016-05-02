@@ -18,6 +18,7 @@ class MuscleMeasuresController < ApplicationController
 
   def new
     @muscle_measure = MuscleMeasure.new
+    respond_with(@muscle_measure)
   end
 
   def edit
