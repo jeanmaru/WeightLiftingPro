@@ -29,6 +29,14 @@
       <br>      
       <br>
 
+      <% @exercise.each do |e| %>
+          <td><%= e.weight %> <%= e.measure %> </td>
+
+    <% end %>
+      
+      
+
+
       <!--<script type="text/javascript" charset="utf-8">
 //          $(function() {
 //              new Highcharts.Chart({

@@ -1,14 +1,23 @@
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+
+
 <div class="container">
   <div class="row">
-
     <div class="col-xs-2">
       <%= render 'layouts/left_panel_two' %>
     </div>
 
     <div class="col-xs-1">
     </div>
+    
+    <div class="col-xs-9">
 
-    <div class="col-xs-10">
       <%= yield %>
       
       <ul class="nav nav-tabs" role="tablist">
@@ -25,14 +34,8 @@
 
   <tr>
       <th>Date</th>
-      <th>Left Bicep</th>
-      <th>Right Bicep</th>
-      <th>Left Thigh</th>
-      <th>Right Thigh</th>
-      <th>Left Calf</th>  
-      <th>Right Calf</th>
-      <th>Waist</th>
-      <th>Chest</th>
+      <th>Name</th>
+      <th>Measurement</th>
     </tr>
   
   </thead>
@@ -45,32 +48,11 @@
   <tr>
         <td><%= muscle_measure.created_at.strftime("%B %e, %Y") %></td>
 
-    <td>  <% if  muscle_measure.upper_arm_left? %><%= sprintf("%g", muscle_measure.upper_arm_left) %>
-    <%= muscle_measure.unit %> <% end %></td>
+    <td>  <%= muscle_measure.name %> </td>
         
-        <td><% if  muscle_measure.upper_arm_right? %><%= sprintf("%g", muscle_measure.upper_arm_right) %>
-          <%= muscle_measure.unit %><% end %></td>
-        
-        <td><% if  muscle_measure.thigh_left? %> <%= sprintf("%g", muscle_measure.thigh_left) %>
-          <%= muscle_measure.unit %> <% end %></td>
+        <td><%= sprintf("%g", muscle_measure.measurement) %> <%= muscle_measure.unit %></td>
 
-        <td><% if  muscle_measure.thigh_right? %><%= sprintf("%g", muscle_measure.thigh_right) %>
-          <%= muscle_measure.unit %> <% end %></td>
-
-        <td><% if  muscle_measure.calf_left? %><%= sprintf("%g", muscle_measure.calf_left) %>
-          <%= muscle_measure.unit %> <% end %></td>
-        
-        <td><% if  muscle_measure.calf_right? %><%= sprintf("%g", muscle_measure.calf_right) %>
-          <%= muscle_measure.unit %> <% end %></td>
-        
-        <td><% if  muscle_measure.waist? %><%= sprintf("%g", muscle_measure.waist) %>
-          <%= muscle_measure.unit %> <% end %></td>
-
-        <td><% if  muscle_measure.chest? %><%= sprintf("%g", muscle_measure.chest) %>
-          <%= muscle_measure.unit %> <% end %></td>
-
-        <td>
-
+    <td>
           <%= link_to(
                       content_tag(
                               :i,
@@ -103,9 +85,12 @@
     <% end %>
   </tbody>
 </table>
+      <%= will_paginate @muscle_measures %>
 
-<br>
-      <div class="col-xs-11">
+
+      <br>
+      <div class="row">
+      <div class="col-xs-4">
 
           <%= link_to(
                   content_tag(
@@ -120,10 +105,22 @@
       %>
         </div>
 
+      <div class="col-md-7">
+        <%= button_to ' Progress Graphs ', {:controller=>"muscle_measures", :action=> "graphs"}, {class:"btn btn-warning"}%>
+      </div>
+      
+
       <div class="col-xs-1">
         <%= link_to "Back", :back %>
       </div>
+        
 
     </div>
-  </div>
+  </div>  
 </div>
+</div>
+
+
+<br>
+<br>
+<br>

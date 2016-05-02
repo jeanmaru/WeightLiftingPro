@@ -1,0 +1,49 @@
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="http://code.highcharts.com/highcharts-more.js"></script>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-2">
+      <%= render 'layouts/left_panel_two' %>
+    </div>
+
+    <div class="col-xs-1">
+    </div>
+
+    <div class="col-xs-9">
+
+      <%= yield %>
+
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><%= link_to 'My Measurement Graphs', muscle_measures_path %> </li>
+        <li><%= link_to 'My Measurements', muscle_measures_path %> </li>
+        <li><%= link_to 'New Measurement', new_muscle_measure_path%></li>
+      </ul>
+
+      <title> Measurements | Weight Lifting Pro</title>
+
+      <h3><%= current_user.fname %>'s Measurements </h3>
+      
+      <br>
+      <br>
+
+              <h4 class="text-center">  Measurements History </h4>
+              <%= line_chart @muscle_measures.group(:name).group(:created_at).sum(:measurement),
+                             ytitle: "Measurement", height: "250px", discrete: true %>
+
+            </div>
+          </div>
+          </div>
+
+      <br>
+      <br>
+
+<br>
+<br>
+<br>

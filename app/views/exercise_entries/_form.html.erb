@@ -36,10 +36,12 @@
       </div>
         
         <%= f.hidden_field :exercise_id %>
-        
+        <%= f.hidden_field :sample_exercise_id %>
+
+
         <br>
               <div class="actions">
-          <%= f.submit exercise_id: "exercise.id", :class => "btn btn-md btn-primary", :style=>'width: 200px'%>
+          <%= f.submit exercise_id: "exercise.id", sample_exercise_id: "sample_exercise.id", :class => "btn btn-md btn-primary", :style=>'width: 200px'%>
         </div>
 
         </div>

@@ -4,7 +4,12 @@ class MuscleMeasuresController < ApplicationController
   respond_to :html, :json, :pdf, :xml
 
   def index
-    @muscle_measures = current_user.muscle_measures(current_user).order(created_at: :desc)
+    @muscle_measures = current_user.muscle_measures(current_user).order(created_at: :desc).paginate(:page => params[:page], :per_page => 5)
+  end
+
+  def graphs
+    @muscle_measures = current_user.muscle_measures(current_user)
+    respond_with(@muscle_measure)
   end
 
   def show 
@@ -17,7 +22,6 @@ class MuscleMeasuresController < ApplicationController
 
   def edit
     @muscle_measure = MuscleMeasure.find(params[:id])
-
   end
   
   def create
@@ -52,6 +56,6 @@ end
     end
 
     def muscle_measure_params
-        params.require(:muscle_measure).permit(:upper_arm_left, :upper_arm_right, :thigh_left, :thigh_right, :calf_left, :calf_right, :waist, :chest, :user_id, :unit)
+        params.require(:muscle_measure).permit(:user_id, :unit, :measurement, :name)
     end
 end

@@ -5,7 +5,6 @@ class ExerciseEntriesController < ApplicationController
 
   def index
     @exercise_entries = current_user.exercise_entries(current_user).paginate(:page => params[:page], :per_page => 10)
-    # @exercise_entries = ExerciseEntry.all
     respond_with(@exercise_entries)
   end
   
@@ -23,6 +22,7 @@ class ExerciseEntriesController < ApplicationController
 
   def new
     @exercise =  Exercise.find(params[:exercise_id])
+    # @sample_exercise =  SampleExercise.find(params[:sample_exercise_id])
     @exercise_entry = @exercise.exercise_entries.build
     respond_with(@exercise_entry)
   end
@@ -32,18 +32,9 @@ class ExerciseEntriesController < ApplicationController
     @exercise_entry = ExerciseEntry.find(params[:id])
   end
 
-  # def create
-  #   @exercise_entry = current_user.exercise_entries.new(exercise_entry_params)
-  #   @exercise_entry.save
-    
-    # flash[:notice] = 'Exercise Entry Successfully Created!'
-    # @exercise_entry.save
-    
-  #   respond_with(@exercise_entry)
-  # end
-
 
   def create
+    # @exercise_entry.sample_exercise_id = @sample_exercise.id
     @exercise_entry = current_user.exercise_entries.new(exercise_entry_params)
 
     respond_to do |format|
@@ -76,6 +67,6 @@ class ExerciseEntriesController < ApplicationController
     end
 
     def exercise_entry_params
-      params.require(:exercise_entry).permit(:reps, :sets, :weight, :measure, :notes, :exercise_id, :user_id, :sample_exercise_id, :sample_exercise_name)
+      params.require(:exercise_entry).permit(:reps, :sets, :weight, :measure, :notes, :exercise_id, :user_id, :sample_exercise_id)
     end
 end

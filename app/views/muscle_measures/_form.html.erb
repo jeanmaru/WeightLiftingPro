@@ -1,5 +1,4 @@
 
-
 <%= form_for(@muscle_measure) do |f| %>
   <% if @muscle_measure.errors.any? %>
     <div id="error_explanation">
@@ -14,42 +13,17 @@
   <% end %>
 
     <div class="field form-group">
-    <%= f.label :upper_arm_left %><br>
-    <%= f.number_field :upper_arm_left, min: 0, max: 100, step: 0.25, :style => "width:20%", autofocus: true,  class: 'form-control' %>
-  </div>
-    <div class="field form-group">
-    <%= f.label :upper_arm_right %><br>
-    <%= f.number_field :upper_arm_right, min: 0, max: 100, step: 0.25, :style => "width:20%", autofocus: true,  class: 'form-control'  %>
-  </div>
-    <div class="field form-group">
-    <%= f.label :thigh_left %><br>
-    <%= f.number_field :thigh_left, min: 0, max: 200, step: 0.25, :style => "width:20%", autofocus: true,  class: 'form-control'  %>
-  </div>
-  <div class="field">
-    <%= f.label :thigh_right %><br>
-    <%= f.number_field :thigh_right, min: 0, max: 200, step: 0.25, :style => "width:20%", autofocus: true,  class: 'form-control'  %>
-  </div>
-    <div class="field form-group">
-    <%= f.label :calf_left %><br>
-    <%= f.number_field :calf_left, min: 0, max: 100, step: 0.25, :style => "width:20%", autofocus: true,  class: 'form-control'  %>
-  </div>
-    <div class="field form-group">
-    <%= f.label :calf_right %><br>
-    <%= f.number_field :calf_right, min: 0, max: 100, step: 0.25, :style => "width:20%", autofocus: true,  class: 'form-control'  %>
-  </div>
-    <div class="field form-group">
-    <%= f.label :waist %><br>
-    <%= f.number_field :waist, min: 0, max: 300, step: 0.25, :style => "width:20%", autofocus: true,  class: 'form-control'  %>
-  </div>
-
-    <div class="field form-group">
-    <%= f.label :chest %><br>
-    <%= f.number_field :chest, min: 0, max: 200, step: 0.25, :style => "width:20%", autofocus: true,  class: 'form-control'  %>
-  </div>
-
-    <div class="field form-group">
-    <%= f.select(:unit, options_for_select([['in'], ['cm']], @muscle_measure.unit)) %>
+      <%= f.label :name, "Select a Body Part To Measure:" %><br>
+      <%= f.select :name, options_for_select([['Left Bicep'], ['Right Bicep'], ['Left Thigh'], ['Right Thigh'], ['Left Calf'], ['Right Calf'], ['Left Forearm'], ['Right Forearm'], ['Left Shoulder'], ['Right Shoulder'], ['Waist'], ['Chest']],  @muscle_measure.name), {class: 'form-control'} %>
     </div>
+    
+
+    <div class="field form-group">
+      <%= f.label :measurement %><br>
+      <%= f.number_field :measurement, min: 5, max: 200, step: 0.25  %>
+      <%= f.select :unit, options_for_select([['in'], ['cm']], @muscle_measure.unit) %>
+    </div>
+    
     <div class="actions">
     <%= f.submit 'Create!', :class => "btn btn-md btn-primary", :style=>'width: 160px' %>
   </div>

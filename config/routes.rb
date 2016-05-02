@@ -16,7 +16,9 @@ WeightLiftingPro::Application.routes.draw do
   post "/exercises/new"
   post "/routines/remove_exercise_from_routine"
   post "/exercise_entries/graphs"
-  
+  post "/muscle_measures/graphs"
+
+
   post "/reports/download_monthly_pdf"
   get "/reports/download_monthly_pdf"
   
