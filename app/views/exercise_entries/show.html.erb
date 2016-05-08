@@ -67,7 +67,17 @@
               )
           %>
         </div>
+          <% if @exercise_entry.exercise.routine.nil? %>
+              <i>*This exercise does not belong to a routine </i>
+          <% else  %>
+              <span style="color:darkgreen"> Routine: <%= @exercise_entry.exercise.routine.name %> </span> |
+              <%= link_to 'View Routine', routine_path(@exercise_entry.exercise.routine.id)  %> |
+          <% end %>
+    
+        
+        <%= link_to 'Exercises', exercise_entries_path  %>
 
       </div>
-    </div>
+
+          </div>
     </div>
