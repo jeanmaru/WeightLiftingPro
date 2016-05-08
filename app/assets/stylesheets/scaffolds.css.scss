@@ -5,16 +5,19 @@ body {
   font-size: 14px;
   line-height: 19px;
 }
+
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 14px;
   line-height: 19px;
 }
+
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }
+
 a {
   color: #000;
   &:visited {
@@ -24,19 +27,23 @@ a {
     color: #fff;
   }
 }
+
 div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
 }
+
 #notice {
   color: green;
 }
+
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
+
 #error_explanation {
   width: 450px;
   border: 2px solid red;

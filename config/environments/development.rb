@@ -7,6 +7,7 @@ WeightLiftingPro::Application.configure do
   config.cache_classes = false
 
   # requires must go inside the Initializer block
+  require 'ruport/acts_as_reportable' # ActiveRecord data collection for Ruport.
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -28,26 +29,9 @@ WeightLiftingPro::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-  
-  
-  #------ Added Everything Below This Line -------#
 
-  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
-  # yet still be able to expire them through the digest params.
-  config.assets.digest = true
-  # Adds additional error checking when serving assets at runtime.
-  # Checks for improperly declared sprockets dependencies.
-  # Raises helpful error messages.
-  config.assets.raise_runtime_errors = true
-  # Raises error for missing translations
-  # config.action_view.raise_on_missing_translations = true
-  #Allow Helper for states
-  config.action_controller.include_all_helpers = true
-  
-  
-  
   #------- Gmail Config --------#
-  
+
   config.action_mailer.default_url_options = {:host => "localhost:3000"}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
@@ -59,4 +43,5 @@ WeightLiftingPro::Application.configure do
       password: 'password1234!',
       authentication: 'plain',
       enable_starttls_auto: true }
+
 end
