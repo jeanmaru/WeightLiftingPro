@@ -6,7 +6,10 @@ class ExercisesController < ApplicationController
   
   def index
     @exercises = current_user.exercises(current_user)
+    # @exercises = Exercise.where(:sample_exercise_id => true) & Exercise.where(:user_id => current_user)
   end
+
+
 
   def show
     @exercise = current_user.exercises.find(params[:id])

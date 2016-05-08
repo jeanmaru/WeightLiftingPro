@@ -3,7 +3,10 @@ class SampleExercisesController < ApplicationController
   
   def index
     @sample_exercises = SampleExercise.order(:name)
+    # @exercises = current_user.exercises(current_user)
+
   end
+
 
   # def new
   #   @sample_exercises = SampleExercise.all

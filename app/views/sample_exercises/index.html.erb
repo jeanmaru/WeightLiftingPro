@@ -30,7 +30,12 @@
         </thead>
 
         <tbody>
-
+        <!--ScheduledCourse.all.joins(:course).order('course.name')-->
+        <!--course has_many :scheduled courses scheduled_courses :belongs_to course-->
+        <!-- -->
+        <!--exercise belongs to sample_exercise-->
+        <!--sample exercise has many exercises-->
+        <% SampleExercise.all.includes(:exercises).order('name ASC') %>
 
         <% @sample_exercises.each do |exercise| %>
             <tr>

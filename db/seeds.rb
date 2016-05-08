@@ -91,3 +91,17 @@
 # sample_exercise_list.each do |name|
 #   SampleExercise.create( name: name  )
 # end
+
+
+
+# sample_exercise_list = [
+#      "Tricep Dips",
+#      "Tricep Extension (Machine)",
+#      "Hip Abductor",
+#      "Tricep Kickbacks - Dumbbell"
+# 
+# ]
+# 
+# sample_exercise_list.each do |name|
+#   SampleExercise.create( name: name  )
+# end
