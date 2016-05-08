@@ -25,7 +25,9 @@
                                                         )
   %>
   </h3>
-      <%= link_to(
+      <% if @routine.exercises.count >2 %>
+
+    <%= link_to(
                   content_tag(
                           :i,
                           ' back',
@@ -34,6 +36,7 @@
                   :back
           )
       %>
+          <% end %>
     <br>
 
     <% @routine.exercises.each do |exercise| %>
