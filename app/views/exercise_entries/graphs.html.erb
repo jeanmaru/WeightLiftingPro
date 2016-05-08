@@ -23,211 +23,417 @@
       <br>
       <h4 class="text-center">  Exercises Log History </h4>
       <%= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), 
-                     ytitle: "Weight Lifted", height: "250px", discrete: true %>
-      
+                     ytitle: "Weight Lifted", height: "250px", discrete: true, 
+                     xAxis:(type = 'datetime', labels = (format = '{value:%Y-%m-%d}'))  %>
+          
+          
+          <!--highcharts: {options: {global: {useUTC: false}}}-->
+      <!--xAxis { type: 'datetime'},-->
+      <!--labels:-->
+      <!--{-->
+      <!--enabled: false-->
+      <!--}-->
       <br>
+      <div class="col-xs-1">
+      </div>
+
+      <table colspan ="5">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th style="padding:0 20px 0 40px;">Exercise</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+        
 
 
-      <tbody>
-      <% current_user.exercises.each do |e| %>
+        <% current_user.exercises.each do |e| %>
           <tr>
-            <td>
-          <% if e.sample_exercise.id == 1 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
+            <% if e.sample_exercise.id == 1 %>
+                <td ><%= e.id %> </td>
+              <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
           <%end%>
-            </td>
-            <td>
+            
           <% if e.sample_exercise.id == 2 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-            </td>
+            <td><%= e.id %></td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+            <%end%>
+            
+            
           <% if e.sample_exercise.id == 3 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
+            <td><%= e.id %></td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+          <%end%>     
+            
+            <% if e.sample_exercise.id == 5 %>
+                <td><%= e.id %></td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
           <%end%>
-          <% if e.sample_exercise.id == 5 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 6 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 7 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 8 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 9 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 10 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 11 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 12 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 13 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 14 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 15 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 18 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 17 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 19 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 20 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 21 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 22 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 23 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 24 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 25 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 26 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 27 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 28 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 29 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 30 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 31 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 32 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 33 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 34 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 35 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 36 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 37 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 38 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 39 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
-          <% if e.sample_exercise.id == 40 %>
-              <%= e.id %>
-              <%= e.sample_exercise.name %>
-              <br>
-          <%end%>
+            
+            
+              <% if e.sample_exercise.id == 6 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+              <%end%>
+            
+            
+              <% if e.sample_exercise.id == 7 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+              <%end%>
+            
+            
+              <% if e.sample_exercise.id == 8 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+              <%end%>
+            
+            
+              <% if e.sample_exercise.id == 9 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+              <%end%>
+            
+            
+              <% if e.sample_exercise.id == 10 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+              <%end%>
+            
+            
+              <% if e.sample_exercise.id == 11 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+              <%end%>
+            
+            
+              <% if e.sample_exercise.id == 12 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+              <%end%>
+            
+            
+              <% if e.sample_exercise.id == 13 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+              <%end%>
+            
+            
+              <% if e.sample_exercise.id == 14 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+            
+            
+              <% if e.sample_exercise.id == 15 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+
+            
+              <% if e.sample_exercise.id == 18 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+            
+              <% if e.sample_exercise.id == 17 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+            
+            
+              <% if e.sample_exercise.id == 19 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+            
+            
+              <% if e.sample_exercise.id == 20 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+
+            
+              <% if e.sample_exercise.id == 21 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+            
+            
+              <% if e.sample_exercise.id == 22 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+            
+            
+              <% if e.sample_exercise.id == 23 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+            
+              <% if e.sample_exercise.id == 24 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+            
+              <% if e.sample_exercise.id == 25 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+   
+            
+              <% if e.sample_exercise.id == 26 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+            
+              <% if e.sample_exercise.id == 27 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+            
+              <% if e.sample_exercise.id == 28 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>   
+            
+            
+              <% if e.sample_exercise.id == 29 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+    
+            
+              <% if e.sample_exercise.id == 30 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>  
+            
+    
+            
+              <% if e.sample_exercise.id == 31 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+
+            
+              <% if e.sample_exercise.id == 32 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+            
+            
+              <% if e.sample_exercise.id == 33 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+            
+            
+              <% if e.sample_exercise.id == 34 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+            
+            
+              <% if e.sample_exercise.id == 35 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                  
+              <%end%>
+            
+ 
+              
+                <% if e.sample_exercise.id == 36 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                    
+                <%end%> 
+              
+              
+                <% if e.sample_exercise.id == 37 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                    
+                <%end%>
+              
+
+
+              
+                <% if e.sample_exercise.id == 38 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                    
+                <%end%>
+              
+
+              
+                <% if e.sample_exercise.id == 39 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                    
+                <%end%> 
+              
+
+              
+                <% if e.sample_exercise.id == 40 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                    
+                <%end%>
+              
+
+              
+                <% if e.sample_exercise.id == 41 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                    
+                <%end%>  
+              
+              
+              
+                <% if e.sample_exercise.id == 42 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                    
+                <%end%>
+              
+
+
+              
+                <% if e.sample_exercise.id == 43 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                    
+                <%end%>  
+              
+
+              
+                <% if e.sample_exercise.id == 44 %>
+                <td>
+                  <%= e.id %>
+                </td>
+                <td style="padding:0 20px 0 40px;"> <%= e.sample_exercise.name %> </td>
+                    
+                <%end%> 
+              
+            </tr>
       <% end %>
-
-
+        </tbody>
+</table>
 
       <br>
       <br>
@@ -240,6 +446,9 @@
 //                  },
 //                  title: {
 //                      text: "Exercises"
+
+
+
 //                  },
 //                  xAxis: {
 //                      type: "datetime"
