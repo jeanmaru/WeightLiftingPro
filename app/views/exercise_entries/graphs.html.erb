@@ -21,7 +21,7 @@
       <%= yield %>
       <br>
       <br>
-      <h4 class="text-center">  Exercises Log History </h4>
+      <h4 class="text-center"> <strong> Exercises Log History</strong>  </h4>
       <%= line_chart @exercise_entries.group(:exercise_id).group(:created_at).sum(:weight), 
                      ytitle: "Weight Lifted", height: "250px", discrete: true, 
                      xAxis:(type = 'datetime', labels = (format = '{value:%Y-%m-%d}'))  %>
@@ -483,7 +483,7 @@
 
 
 
-      <h4 class="text-center">  Exercise Frequency </h4>
+      <h4 class="text-center"> <strong>  Exercise Frequency </strong></h4>
       <%= column_chart @exercise_entries.group(:exercise_id).count, ytitle: "Frequency", xtitle: "Exercise", height: "250px"%>
 
       <br>
