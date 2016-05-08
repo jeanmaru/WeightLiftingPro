@@ -21,19 +21,31 @@
       <%= yield %>
   
   <title>Exercise History | Weight Lifting Pro</title>
-      
-  <h3><%= @exercise.sample_exercise.name %>
-    <%= link_to(
-                content_tag(
-                        :i,
-                        nil,
-                        class: 'fa fa-pencil'
-                ),
-                edit_exercise_path(@exercise),
-                style: "color: white", class: 'btn btn-info btn-md'
-        )
-    %>
-  </h3>
+
+      <div class="col-xs-15">
+        <table>
+          <tr>
+            
+          <td>
+            <h3><%= @exercise.sample_exercise.name %>  </h3>
+          </td>
+
+          <td>
+            <%= link_to(
+                        content_tag(
+                                :i,
+                                nil,
+                                class: 'fa fa-pencil'
+                        ),
+                        edit_exercise_path(@exercise),
+                        style: "color: white", class: 'btn btn-info btn-md'
+                )
+            %>
+          </td>
+          </tr>
+        </table>
+
+        </div>
 
 
 <h4>
