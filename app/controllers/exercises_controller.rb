@@ -49,7 +49,7 @@ end
     @exercise.update(exercise_params)
     
     respond_to do |format|
-      format.html { redirect_to exercises_path(@exercise), :notice => 'Exercise Successfully Updated!' }
+      format.html { redirect_to @exercise, :notice => 'Exercise Successfully Updated!' }
       format.json  { render :show, status: :ok, location: @exercise }
     end
   end
