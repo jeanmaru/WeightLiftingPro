@@ -92,7 +92,7 @@
               </div>
             
             <div class="col-md-3">
-              <%= button_to "Remove", {:controller=>"routines", :action=>"remove_exercise_from_routine", :routine_id => @routine.id, :exercise_id => exercise.id, :method=>:post},  {class:"btn
+              <%= button_to "Remove", {:controller=>"routines", :action=>"remove_exercise_from_routine", :routine_id => @routine.id, :exercise_id => exercise.id, :method=>:post, data: { confirm: "Are you sure?" }},   {class:"btn
 btn-danger btn-sm"}  %>
             </div>
 

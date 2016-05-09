@@ -53,6 +53,7 @@ class RoutinesController < ApplicationController
     @exercise = Exercise.find(params[:exercise_id])
     @routine = Routine.find(params[:routine_id])
     @routine.exercises.delete(@exercise.id)
+    flash[:alert] = 'Notice: Exercise Removed From Routine.'
     respond_with(@exercise)
   end
 
