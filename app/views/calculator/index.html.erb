@@ -30,8 +30,22 @@
       <br>
 
       <% unless @result.nil? %>
-          <h4><strong>= <%= @result %> <%= params[:operation]%> </strong> </h4>
-      <% end %>
+<br>
+          <div class="col-xs-8">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <strong> Result: </strong>
+              </div>
+              <div class="panel-body">             
+                <%= @result %> <%= params[:operation]%> 
+              </div>
+
+            </div>
+          </div>
+          </div>
+
+    <% end %>
+
 
     </div>
   </div>
