@@ -29,11 +29,8 @@ module WeightLiftingPro
     require 'pdfkit'
     config.middleware.use PDFKit::Middleware
 
-    
-    # 
-    # PDFKit.configure do |config|
-    #   config.default_options[:load_error_handling] = 'ignore'
-    # end
+    config.force_ssl = true
+
     
   end
 end
