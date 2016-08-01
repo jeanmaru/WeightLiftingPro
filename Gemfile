@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+ruby "2.1.5"
+
+gem 'rails_12factor', group: :production
 
 gem 'devise'
 gem 'bootstrap-on-rails'
