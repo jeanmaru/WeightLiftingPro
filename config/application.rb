@@ -29,6 +29,7 @@ module WeightLiftingPro
     require 'pdfkit'
     config.middleware.use PDFKit::Middleware
     
+    config.assets.enabled = true
 
     
   end

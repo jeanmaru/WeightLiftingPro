@@ -28,14 +28,15 @@
       
 <% else %>
       <div class="jumbotron">
-    <h1><strong>Welcome to Weight Lifting Pro!</strong></h1>
-    <p> This app helps you log your weightlifting exercises and routines. </p>
-      <br>
-      <br>
+          <div class ="h100"><strong>Welcome to Weight Lifting Pro!</strong></div>
+    <br>
+
+    <h4> This app helps you log your weight lifting exercises and routines. </h4>
+        <h4> <%= link_to 'Login', new_user_session_path %> or <%= link_to 'Sign Up', new_user_registration_path %> to get started! </h4>
+
       </div>
 <% end %>
-
-
+  
       
     </div>
 </div>
