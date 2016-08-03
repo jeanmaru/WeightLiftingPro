@@ -36,9 +36,6 @@ class ReportsController < ApplicationController
               :page_size => 'Letter',
               :disposition => 'attachment')
   end
-  
-
-  
-  
+    
 
 end
