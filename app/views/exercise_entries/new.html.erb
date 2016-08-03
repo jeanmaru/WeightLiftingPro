@@ -42,7 +42,7 @@
               <% end %>
       <% end %>
       
-      <div class="col-lg-10">
+      <div class="col-lg-11">
       </div>
 
       <td>
@@ -63,74 +63,131 @@
       <br>
       
       <%= render 'form' %>
-      <br>
-      <br>
 
-      <div class="col-md-9">
-        <table>
+
+      <div class="col-xs-10">
+      </div>
+
+    <div class="col-md-2">
+
+      <%= link_to(
+                  content_tag(
+                          :i,
+                          ' back',
+                          class: 'fa fa-arrow-left'
+                  ),
+                  :back
+          )
+      %>
+      
+      </div>
+      
+      <div class="col-xs-2">
+      </div>
+
           <% if @exercise.present? %>
-              <br>
-
+          
+                  
               <!-- Exercise: Squat -->
 
               <% if current_user.gender = 'Female' && @exercise.sample_exercise.id == 1 %>
-                  Suggested Weight:
-                  <% case current_user.level
+                    <div class="col-md-6">
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                          <strong> Suggested Weight: </strong>
+                        </div>
+                        <div class="panel-body">
+                          
+                        <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_30 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_30 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_50 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_50 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </td> </tr>
+
+                              </div>
+                              </div>
+                              </div>
                   <% end %>
 
+              
+
               <% elsif current_user.gender = 'Male' && @exercise.sample_exercise.id == 1 %>
-                  Suggested Weight:
+              <div class="col-md-6">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <strong> Suggested Weight: </strong>
+                  </div>
+                  <div class="panel-body">
+                    
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_85 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_85 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_50 %> <%=current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_50 %> <%=current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_200 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_200 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
+                  </div>
+                </div>
+              </div>
               <% end %>
 
               <!-- Exercise: Deadlift -->
 
               <% if current_user.gender = 'Female' && @exercise.sample_exercise.id == 2 %>
-                  Suggested Weight:
+              <div class="col-md-6">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <strong> Suggested Weight: </strong>
+                  </div>
+                  <div class="panel-body">
+                    
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_20 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_45 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_20 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_45 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_40 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_85 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_40 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_85 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </td> </tr>
+
+                        </div>
+                        </div>
+                        </div>
                   <% end %>
 
               <% elsif current_user.gender = 'Male' && @exercise.sample_exercise.id == 2 %>
-                  Suggested Weight:
+              <div class="col-md-6">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <strong> Suggested Weight: </strong>
+                  </div>
+                  <div class="panel-body">
+                    
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_50 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_50 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_250 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_250 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
+              </div>
+              </div>
+              </div>
               <% end %>
 
 
@@ -141,28 +198,28 @@
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_65 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_65 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_85 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_85 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
 
               <% elsif current_user.gender = 'Male' && @exercise.sample_exercise.id == 3 %>
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
               <% end %>
 
@@ -172,28 +229,28 @@
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_65 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_65 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_85 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_85 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
 
               <% elsif current_user.gender = 'Male' && @exercise.sample_exercise.id == 17 %>
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
               <% end %>
 
@@ -205,28 +262,28 @@
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_40 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_80 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_40 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_80 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_75 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_75 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_150 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_200 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_150 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_200 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
 
               <% elsif current_user.gender = 'Male' && @exercise.sample_exercise.id == 5 %>
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_50 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_50 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_200 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_250 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_200 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_250 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
               <% end %>
 
@@ -238,28 +295,28 @@
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_75 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_75 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_65 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_65 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_80 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_80 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
 
               <% elsif current_user.gender = 'Male' && @exercise.sample_exercise.id == 10 %>
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
               <% end %>
 
@@ -271,28 +328,28 @@
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_65 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_65 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_45 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_75 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_45 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_75 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
 
               <% elsif current_user.gender = 'Male' && @exercise.sample_exercise.id == 11 %>
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_40 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_85 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_40 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_85 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_125 %>  <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_125 %>  <%= current_user.measure %>  </td> </tr>
                   <% end %>
               <% end %>
 
@@ -304,28 +361,28 @@
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_05 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_15 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_05 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_15 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_10 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_25 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_10 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_25 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_35 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_35 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
 
               <% elsif current_user.gender = 'Male' && @exercise.sample_exercise.id == 12 %>
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_10 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_20 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_10 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_20 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_25 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_25 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_35 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_35 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
               <% end %>
 
@@ -338,28 +395,28 @@
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_10 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_20 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_10 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_20 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_40 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_40 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_45 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_60 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_45 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_60 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
 
               <% elsif current_user.gender = 'Male' && @exercise.sample_exercise.id == 13 %>
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_20 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_40 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_20 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_40 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_50 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_50 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_50 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_70 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_50 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_70 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
               <% end %>
 
@@ -371,28 +428,28 @@
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_10 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_20 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_10 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_20 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_20 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_30 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_20 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_30 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_45 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_45 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
 
               <% elsif current_user.gender = 'Male' && @exercise.sample_exercise.id == 20 %>
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_30 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_30 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_40 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_40 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_35 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_50 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_35 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_50 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
               <% end %>
 
@@ -404,28 +461,28 @@
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_10 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_20 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_10 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_20 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_20 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_30 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_20 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_30 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_45 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_30 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_45 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
 
               <% elsif current_user.gender = 'Male' && @exercise.sample_exercise.id == 25 %>
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_30 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_15 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_30 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_40 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_25 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_40 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %>  <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_85 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %>  <%= current_user.measure %>  </td> </tr>
                   <% end %>
               <% end %>
 
@@ -437,28 +494,28 @@
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_50 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_70 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_50 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_70 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_90 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_90 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
 
               <% elsif current_user.gender = 'Male' && @exercise.sample_exercise.id == 38 %>
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_60 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_120 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_120 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_150 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_175%>  <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_150 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_175%>  <%= current_user.measure %>  </td> </tr>
                   <% end %>
               <% end %>
 
@@ -470,28 +527,28 @@
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: 35 lbs  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: 65 lbs  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: 35 lbs  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: 65 lbs  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_75 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_75 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_125 %> <%= current_user.measure %>  </td> </tr>
                   <% end %>
 
               <% elsif current_user.gender = 'Male' && @exercise.sample_exercise.id == 39 %>
                   Suggested Weight:
                   <% case current_user.level
                        when 'Beginner' %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_35 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_70 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_35 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_70 %> <%= current_user.measure %>  </td> </tr>
                   <% when 'Intermediate'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_100 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_100 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_150 %> <%= current_user.measure %>  </td> </tr>
                   <% when  'Advanced'  %>
-                      <tr> <td> <b> Max Goal for 5 Reps: <%= bw_150 %> <%= current_user.measure %>  </b></td> </tr>
-                      <tr> <td> <b> Max Goal for 1 Rep: <%= bw_200 %>  <%= current_user.measure %>  </b></td> </tr>
+                      <tr> <td>  Max Goal for 5 Reps: <%= bw_150 %> <%= current_user.measure %>  </td> </tr>
+                      <tr> <td>  Max Goal for 1 Rep: <%= bw_200 %>  <%= current_user.measure %>  </td> </tr>
                   <% end %>
               <% end %>
           <% end %>
@@ -499,27 +556,14 @@
 
 
           <br />
-        </table>
+
+        </div>
+
+
 
 
       </div>
-
-      <div class="col-md-2">
-
-      <%= link_to(
-                  content_tag(
-                          :i,
-                          ' back',
-                          class: 'fa fa-arrow-left'
-                  ),
-                  :back
-          )
-      %>
-      
-
-      </div>
-
-
+    
 
       <br />
       <br />
@@ -534,3 +578,4 @@
 <br>
 <br>
 <br>
+</div>
