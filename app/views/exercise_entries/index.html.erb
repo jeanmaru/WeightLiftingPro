@@ -36,7 +36,7 @@
     <% @exercise_entries.order(created_at: :desc).each do |exercise_entry| %>
       <tr>
         <td>
-                 <span class="has-tooltip" data-toggle="tooltip" data-placement="top" title="<%= "Created on #{exercise_entry.created_at.strftime("%m/%d/%Y at %w:%M %p")}, Last modified on #{exercise_entry.updated_at.strftime("%m/%e/%Y at %w:%M %p")}" %>">
+                 <span class="has-tooltip" data-toggle="tooltip" data-placement="top" title="<%= "Created on #{exercise_entry.created_at.strftime("%m/%d/%Y at %w:%M %p")}, Last modified on #{exercise_entry.updated_at.strftime("%m/%d/%Y at %w:%M %p")}" %>">
            <%= exercise_entry.created_at.strftime("%B %e, %Y") %></td>
         <td><%= exercise_entry.exercise.sample_exercise.name %></td>
         <td><%= exercise_entry.weight %> <%= exercise_entry.measure %> </td>
