@@ -109,5 +109,9 @@ module ReportsHelper
   def bw_80
     current_user.body_weight * 0.80
   end
+
+  def bw_90
+    current_user.body_weight * 0.90
+  end
   
 end
