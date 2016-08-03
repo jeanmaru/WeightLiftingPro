@@ -18,10 +18,24 @@ pre {
   padding: 10px;
   font-size: 11px;
 }
+
 a {
-  color: inherit;
+  color: #fff;
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: #fff;
+    background-color: transparent;
+  }
 }
 
+.dropshadowclass {
+  border: solid 1px #CCC;
+  -moz-box-shadow: 5px 5px 0px #999;
+  -webkit-box-shadow: 5px 5px 0px #999;
+  box-shadow: 5px 5px 0px #999;
+}
 
 div {
   &.field, &.actions {
