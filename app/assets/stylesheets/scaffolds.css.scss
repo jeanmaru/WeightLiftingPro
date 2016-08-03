@@ -18,17 +18,10 @@ pre {
   padding: 10px;
   font-size: 11px;
 }
-
 a {
-  color: #fff;
-  &:visited {
-    color: #666;
-  }
-  &:hover {
-    color: #fff;
-    background-color: transparent;
-  }
+  color: inherit;
 }
+
 
 div {
   &.field, &.actions {
