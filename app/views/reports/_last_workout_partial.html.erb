@@ -15,7 +15,7 @@ before the DB was migrated to postgresql-->
     <!-- current_user.exercise_entries.where(:created_at <= last_entry_date).each do |exercise| %> -->
 
 
-    <% current_user.exercise_entries.order(created_at: :desc).each do |exercise| %>
+    <% current_user.exercise_entries.each do |exercise| %>
 
 
         <% if exercise.created_at <= last_entry_date && exercise.created_at >= last_entry_date.at_midnight %>
