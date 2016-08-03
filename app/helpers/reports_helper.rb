@@ -7,6 +7,12 @@ module ReportsHelper
     Date.today - 30.days
   end
 
+  def last_entry_date
+    @exercise_entries = current_user.exercise_entries(current_user)
+    @last_entry = @exercise_entries.last
+    @last_entry_date = @last_entry.created_at
+  end
+
 
   def bw_85
     current_user.body_weight * 0.85

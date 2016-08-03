@@ -1,6 +1,24 @@
+<!-- This is the line of code that worked properly to pull 
+each exercise entry that was created last for each exercise 
+before the DB was migrated to postgresql-->
+<!-- < current_user.exercise_entries.order(created_at: :desc).group(:exercise_id).each do |exercise| %> --> 
 
-<% current_user.exercise_entries.order(created_at: :desc).group(:exercise_id).each do |exercise| %>
 
+<!-- < current_user.exercise_entries.where(:created_at => last_entry_date).each do |exercise| %> -->
+
+   <!-- < current_user.exercise_entries.where(:created_at => created_at.last).each do |exercise| %> -->
+
+   <!-- < current_user.exercise_entries.group(:exercise_id, :id).order(created_at: :desc).each do |exercise| %> -->
+
+    <!-- current_user.exercise_entries.where("strftime('%m/%d'/%y, created_at) = ?", last_entry_date.strftime('%m/%d')).each do |exercise| %> -->
+
+    <!-- current_user.exercise_entries.where(:created_at <= last_entry_date).each do |exercise| %> -->
+
+
+    <% current_user.exercise_entries.order(created_at: :desc).each do |exercise| %>
+
+
+        <% if exercise.created_at <= last_entry_date && exercise.created_at >= last_entry_date.at_midnight %>
 
     <table>
       <tr> <td> <h4> <strong><%= exercise.created_at.strftime("%A, %B %e, %Y") %> </strong><br>
@@ -413,6 +431,7 @@
 
       <br />
     </table>
+<% end %>
 <% end %>
 <br />
 <br />
