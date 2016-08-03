@@ -9,7 +9,7 @@ module ReportsHelper
 
   def last_entry_date
     @exercise_entries = current_user.exercise_entries(current_user)
-    @last_entry = @exercise_entries.last
+    @last_entry = @exercise_entries.first
     @last_entry_date = @last_entry.created_at
   end
 
