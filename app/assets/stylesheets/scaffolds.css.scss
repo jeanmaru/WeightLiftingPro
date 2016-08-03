@@ -19,10 +19,9 @@ pre {
   font-size: 11px;
 }
 
-a.plain {
-  &:hover {
-    background: none;
-  }
+a.version:hover {
+  background-color: $bodyBackground;
+  text-decoration: none;
 }
 
 div {
