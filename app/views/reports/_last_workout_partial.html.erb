@@ -18,11 +18,10 @@ before the DB was migrated to postgresql-->
     <% current_user.exercise_entries.each do |exercise| %>
 
 
-        <% if exercise.created_at == last_entry_date %>
+        <% if (exercise.created_at == last_entry_date) ||(exercise.created_at <= last_entry_date && exercise.created_at >= last_entry_date.at_midnight) %>
 
-        <% elsif exercise.created_at <= last_entry_date && exercise.created_at >= last_entry_date.at_midnight %>
-
-            <table>
+        
+    <table>
       <tr> <td> <h4> <strong><%= exercise.created_at.strftime("%A, %B %e, %Y") %> </strong><br>
         <%= exercise.exercise.sample_exercise.name %></h4></td> </tr>
       <tr> <td><b> Reps: </b><%= exercise.reps %></td> </tr>
