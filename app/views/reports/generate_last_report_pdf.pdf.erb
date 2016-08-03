@@ -8,10 +8,10 @@
 <br>
 
 
-<% current_user.exercise_entries.order(created_at: :desc).group(:exercise_id).each do |exercise| %>
+<% current_user.exercise_entries.order(created_at: :desc).each do |exercise| %>
 
 
-    <% if exercise.created_at >= start_date_week %>
+    <% if exercise.created_at <= last_entry_date && exercise.created_at >= last_entry_date.at_midnight %>
 
         <table>
           <tr> <td> <strong><%= exercise.created_at.strftime("%A, %B %e, %Y") %> </strong></td> </tr>
