@@ -27,7 +27,7 @@ class ReportsController < ApplicationController
   end
 
   def download_last_pdf
-    html = render_to_string(:action => 'reports/generate_last_report_pdf.pdf.erb')
+    html = render_to_string(:action => '/generate_last_report_pdf.pdf.erb')
     pdf = WickedPdf.new.pdf_from_string(html)
 
     send_data(pdf,
