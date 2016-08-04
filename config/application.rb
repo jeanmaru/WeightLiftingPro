@@ -25,9 +25,7 @@ module WeightLiftingPro
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
     config.assets.precompile += %w( *.svg *.eot *.woff *.ttf )
 
-    # in application.rb(Rails3) or environment.rb(Rails2)
-    require 'pdfkit'
-    config.middleware.use PDFKit::Middleware
+
     
     config.assets.enabled = true
 
